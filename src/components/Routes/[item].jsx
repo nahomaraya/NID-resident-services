@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
 import { ArrowBackIcon } from "../Icons";
+import InputBar from "../InputBar/InputBar";
 
 const Item = (props) => {
-  const { page } = props;
-  if (page === "homepage") {
-    return <div id="page">{page}</div>;
+  const { name,inst,input } = props;
+  if (name === "homepage") {
+    return <div id="page">{name}</div>;
   } else {
     return (
       <div id="page">
-        <Link to="/">
-          <button className="btn">
-            <ArrowBackIcon /> Back to Home
-          </button>
-        </Link>
-        {page}
+      
+        <InputBar name={name}inst={inst} input={input}/>
+        
+        
       </div>
     );
   }

@@ -12,6 +12,11 @@ import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import DownloadingIcon from '@mui/icons-material/Downloading';
+import FingerprintIcon from '@mui/icons-material/Fingerprint';
+import HistoryIcon from '@mui/icons-material/History';
+
 export {
   HomeOutlinedIcon as HomeIcon,
   WebOutlinedIcon as LayoutIcon,
@@ -25,4 +30,9 @@ export {
   InputOutlinedIcon as ModalIcon,
   ArrowBackIcon,
   ArrowRightOutlinedIcon as ArrowIcon,
+  LockOpenIcon as LockIcon,
+  DownloadingIcon as DownIcon,
+  FingerprintIcon as FingerIcon,
+  HistoryIcon as HistIcon,
+  
 };

@@ -10,13 +10,14 @@ import {
   SidebarToggler,
 } from "./SidebarStyles";
 import BrandLogo from "./BrandLogo.svg";
+import NID from "./NID.svg";
 
 import { SidebarItems } from "..";
 
 const MOBILE_VIEW = window.innerWidth < 468;
 
 export default function Sidebar({ children }) {
-  const [displaySidebar, setDisplaySidebar] = useState(!MOBILE_VIEW);
+  const [displaySidebar, setDisplaySidebar] = useState(MOBILE_VIEW);
 
   const handleSidebarDisplay = (e) => {
     e.preventDefault();
@@ -34,13 +35,12 @@ export default function Sidebar({ children }) {
           <SidebarLogoWrapper displaySidebar={displaySidebar}>
             <SidebarLogo href="#">
               <span className="app-brand-logo demo">
-                <img src={BrandLogo} alt="Brand logo" />
+                <img src={NID} alt="NID logo" />
               </span>
               <SidebarBrand
                 displaySidebar={displaySidebar}
                 className="app__brand__text"
-              >
-                Frest
+              >National ID
               </SidebarBrand>
             </SidebarLogo>
             <SidebarToggler
