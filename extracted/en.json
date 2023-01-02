@@ -1,0 +1,11 @@
+{
+  "home.select language": {
+    "defaultMessage": "Select your prefered language",
+    "description": "select language"
+  },
+  "home.welcome-to": {
+    "defaultMessage": "Welcome to National ID Resident Services",
+    "description": "welcome to text"
+  }
+}
+

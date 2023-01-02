@@ -13,6 +13,7 @@ import BrandLogo from "./BrandLogo.svg";
 import NID from "./NID.svg";
 
 import { SidebarItems } from "..";
+import { ArrowBack, ArrowForward, MenuOpen } from "../Icons";
 
 const MOBILE_VIEW = window.innerWidth < 468;
 
@@ -33,24 +34,22 @@ export default function Sidebar({ children }) {
       <SidebarContainer displaySidebar={displaySidebar}>
         <SidebarWrapper>
           <SidebarLogoWrapper displaySidebar={displaySidebar}>
-            <SidebarLogo href="#">
+            <SidebarLogo href="#" >
               <span className="app-brand-logo demo">
                 <img src={NID} alt="NID logo" />
               </span>
               <SidebarBrand
                 displaySidebar={displaySidebar}
                 className="app__brand__text"
-              >National ID
+              >FAYDA
               </SidebarBrand>
             </SidebarLogo>
-            <SidebarToggler
+            {/* <SidebarToggler
               displaySidebar={displaySidebar}
               onClick={handleSidebarDisplay}
             >
-              <div className="outer__circle">
-                <div className="inner__circle" />
-              </div>
-            </SidebarToggler>
+             <MenuOpen/>
+            </SidebarToggler> */}
           </SidebarLogoWrapper>
           <SidebarItems displaySidebar={displaySidebar} />
         </SidebarWrapper>

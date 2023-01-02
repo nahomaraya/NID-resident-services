@@ -17,6 +17,11 @@ import DownloadingIcon from '@mui/icons-material/Downloading';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import HistoryIcon from '@mui/icons-material/History';
 
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+
 export {
   HomeOutlinedIcon as HomeIcon,
   WebOutlinedIcon as LayoutIcon,
@@ -34,5 +39,8 @@ export {
   DownloadingIcon as DownIcon,
   FingerprintIcon as FingerIcon,
   HistoryIcon as HistIcon,
+  ArrowBackIosIcon as ArrowBack,
+  ArrowForwardIosIcon as ArrowForward,
+  MenuOpenIcon as MenuOpen
   
 };

@@ -17,6 +17,7 @@ export const SidebarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 0.9rem;
+ 
 `;
 
 export const SidebarLogoWrapper = styled.div`
@@ -99,6 +100,7 @@ export const SidebarContainer = styled.div`
   transition: width 350ms ease;
   border-right: 1px solid #d4d8dd;
   overflow-x: hidden;
+  z-index: 9999;
   ${({ displaySidebar }) =>
     displaySidebar && "box-shadow: 8px 0px 12px 0px rgba(0,0,0,0.1)"};
 

@@ -1,0 +1,10 @@
+{
+    "home.select language": {
+      "defaultMessage": "Sélectionnez votre langue préférée",
+      "description": "choisir la langue"
+    },
+    "home.welcome-to": {
+      "defaultMessage": "Bienvenue aux services d'identification nationale aux résidents",
+      "description": "texte de bienvenue"
+    }
+  }
