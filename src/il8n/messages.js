@@ -16,6 +16,7 @@ export const messages = {
               },
     [LOCALES.AMHARIC]: {
       "home.select language":"ቋንቋ ይምረጡ",
+      "home.welcome-to":"እንኳን ወደ ብሔራዊ መታወቂያ ነዋሪ አገልግሎቶች በደህና መጡ"
     }
         
     };
