@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer";
 import Loading from "../LoadingScreen/Loading";
 
 const Item = (props) => {
-  const { name,inst,input } = props;
+  const { name,inst,input,action } = props;
   const [card, setCard] = useState(true);
   if (name === "homepage") {
     return <div id="page">{name}</div>;
@@ -16,8 +16,7 @@ const Item = (props) => {
       <div id="page">
       {card ? <InputBar name={name}inst={inst} input={input} onCardChange={setCard}/>: 
       <>
-      <Loading size={35}/>
-      <OTP/> 
+      <OTP action={action}/> 
       </>}
       {/* <InputBar name={name}inst={inst} input={input} onCardChange={setCard}/>
       <OTP/> */}

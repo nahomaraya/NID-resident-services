@@ -7,7 +7,7 @@ const InputBar = (props) => {
         props.onCardChange(event.target.value)
       }, [props.onCardChange])
     return (
-        <div class=" bg-gray-100 flex">
+        <div class=" bg-[#184e66] flex">
         <div class="md:container mx-auto bg-[#184e66] rounded-lg p-14">
             <form >
                <h1 class="text-center font-bold text-white text-4xl"><FormattedMessage id={props.name}/></h1>

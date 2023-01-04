@@ -13,6 +13,7 @@ import { LanguageContext } from "./providers/LangProvider";
 
 
 
+
 function App() {
 
  
@@ -35,12 +36,13 @@ function App() {
               <Route
                 key={index}
                 path={item.path}
-                element={<DynamicItem name={item.name} inst={item.instruction} input={item.input}/>}
+                element={<DynamicItem name={item.name} inst={item.instruction} input={item.input} action={item.action}/>}
               />
             ))}
         </Routes>
+
       </Sidebar>
-     
+ 
     </div>
     </IntlProvider>
     </LanguageContext.Provider>
