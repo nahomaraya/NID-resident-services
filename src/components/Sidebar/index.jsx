@@ -15,14 +15,14 @@ import NID from "./NID.svg";
 import { SidebarItems } from "..";
 import { ArrowBack, ArrowForward, MenuOpen } from "../Icons";
 
-const MOBILE_VIEW = window.innerWidth < 468;
+const MOBILE_VIEW = window.innerWidth < 320;
 
 export default function Sidebar({ children }) {
-  const [displaySidebar, setDisplaySidebar] = useState(MOBILE_VIEW);
+  const [displaySidebar, setDisplaySidebar] = useState(!MOBILE_VIEW);
 
   const handleSidebarDisplay = (e) => {
     e.preventDefault();
-    if (window.innerWidth > 468) {
+    if (window.innerWidth > 320) {
       setDisplaySidebar(!displaySidebar);
     } else {
       setDisplaySidebar(false);
@@ -34,7 +34,7 @@ export default function Sidebar({ children }) {
       <SidebarContainer displaySidebar={displaySidebar}>
         <SidebarWrapper>
           <SidebarLogoWrapper displaySidebar={displaySidebar}>
-            <SidebarLogo href="#" >
+            <SidebarLogo href="#">
               <span className="app-brand-logo demo">
                 <img src={NID} alt="NID logo" />
               </span>
@@ -51,7 +51,7 @@ export default function Sidebar({ children }) {
              <MenuOpen/>
             </SidebarToggler> */}
           </SidebarLogoWrapper>
-          <SidebarItems displaySidebar={displaySidebar} />
+          <SidebarItems displaySidebar={displaySidebar}/>
         </SidebarWrapper>
       </SidebarContainer>
       <Children displaySidebar={displaySidebar}>{children}</Children>

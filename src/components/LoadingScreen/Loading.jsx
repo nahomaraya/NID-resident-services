@@ -1,20 +1,12 @@
 import React from 'react'
 
 
-
- const Loading = ({size}) => {
-
-return (
-  <div className="w-[50%]  flex-center h-10">
-    <div
-      style={{ width: `${size}px`, height: `${size}px` }}
-      className="animate-spin">
-      <div className="h-full w-full border-4 border-t-purple-500
-       border-b-purple-700 rounded-[50%]">
-      </div>
+const LoadingScreen = () => {
+  return (
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <img src="../../public/fingerprint.gif" alt="Loading..." className="w-16 h-16" />
     </div>
-  </div>
-);
+  );
 }
 
-export default Loading;
+export default LoadingScreen;

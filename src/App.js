@@ -2,7 +2,7 @@
 import React, {useContext, useState} from "react";
 import { Routes, Route } from "react-router-dom";
 import { DynamicItem, Sidebar, dummyData } from "./components";
-import Footer from "./components/Footer/Footer";
+
 import "./App.css";
 import Home from "./pages/Home";
 import {IntlProvider} from "react-intl";
@@ -10,6 +10,9 @@ import { messages } from "./il8n/messages";
 import { LOCALES } from "./il8n/locales";
 
 import { LanguageContext } from "./providers/LangProvider";
+import Header from "./components/Header/Header";
+import Sidebarr from "./components/Sidebarr/SIdebarr";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -27,8 +30,9 @@ function App() {
     locale={language}
     defaultLocale={LOCALES.ENGLISH}
   > 
-    <div id="main">
-      <Sidebar>
+    
+     
+      <Sidebarr>
         <Routes>
           <Route path="/" element={<Home/>} />
           {dummyData &&
@@ -41,9 +45,9 @@ function App() {
             ))}
         </Routes>
 
-      </Sidebar>
- 
-    </div>
+      </Sidebarr>
+    
+   
     </IntlProvider>
     </LanguageContext.Provider>
   

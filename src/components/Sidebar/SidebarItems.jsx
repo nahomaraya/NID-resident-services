@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {FormattedMessage} from "react-intl"
 import { Link } from "react-router-dom";
 import {
   ItemsList,
@@ -24,7 +25,8 @@ const SidebarItems = ({ displaySidebar }) => {
             <ItemWrapper>
               {itemData.icon}
               <ItemName displaySidebar={displaySidebar}>
-                {itemData.name}
+                
+                <FormattedMessage id={itemData.name}/>
               </ItemName>
             </ItemWrapper>
           </Link>

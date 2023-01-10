@@ -6,7 +6,7 @@ export const Children = styled.div`
   height: 100%;
   margin-left: ${({ displaySidebar }) => (displaySidebar ? "15rem" : "5rem")};
 
-  @media (max-width: 468px) {
+  @media (max-width: 320px) {
     margin-left: 5rem;
   }
 `;
@@ -28,7 +28,7 @@ export const SidebarLogoWrapper = styled.div`
     displaySidebar ? "space-between" : "center"};
   align-items: center;
 
-  @media (max-width: 468px) {
+  @media (max-width: 320px) {
     justify-content: center;
   }
 `;
@@ -38,7 +38,7 @@ export const SidebarLogo = styled.a`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 468px) {
+  @media (max-width: 320px) {
     display: none;
   }
 `;
@@ -51,7 +51,7 @@ export const SidebarToggler = styled.button`
   cursor: pointer;
   display: ${({ displaySidebar }) => (displaySidebar ? "block" : "none")};
 
-  @media (max-width: 468px) {
+  @media (max-width: 320px) {
     display: block;
   }
 `;
@@ -113,7 +113,7 @@ export const SidebarContainer = styled.div`
     ${({ displaySidebar }) =>
       !displaySidebar && "box-shadow: 8px 0px 12px 0px rgba(0,0,0,0.1)"};
 
-    @media (min-width: 468px) {
+    @media (min-width: 320px) {
       width: ${({ displaySidebar }) => !displaySidebar && "15rem"};
 
       ${SidebarLogoWrapper} {
@@ -160,7 +160,7 @@ export const SidebarContainer = styled.div`
     }
   }
 
-  @media (max-width: 468px) {
+  @media (max-width: 320px) {
     width: 5rem;
   }
 `;
