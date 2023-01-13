@@ -22,6 +22,12 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import InfoIcon from '@mui/icons-material/Info';
+import AppsIcon from '@mui/icons-material/Apps';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
+
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 export {
   HomeOutlinedIcon as HomeIcon,
@@ -44,6 +50,11 @@ export {
   ArrowBackIosIcon as ArrowBack,
   ArrowForwardIosIcon as ArrowForward,
   MenuOpenIcon as MenuOpen,
-  SafetyCheckIcon as SafetyIcon
+  SafetyCheckIcon as SafetyIcon,
+  InfoIcon as AboutIcon,
+  AppsIcon as ServicesIcon,
+  ContactPageIcon as ContactIcon,
+  ArrowDropDownIcon as ArrowDown,
+  ArrowDropUpIcon as ArrowUp
   
 };

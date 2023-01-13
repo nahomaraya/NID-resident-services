@@ -2,10 +2,11 @@
 
 :root {
   --header-height: 3rem;
-  --nav-width: 68px;
+  --nav-width: 0px;
+  --full-nav-width: 100%;
   --first-color: #18272a;
-  --first-color-light: #AFA5D9;
-  --white-color: #F7F6FB;
+  --first-color-light:#b9cdd2;
+  --white-color: #dce6e8;
   --body-font: 'Nunito', sans-serif;
   --normal-font-size: 1rem;
   --z-fixed: 100
@@ -36,6 +37,11 @@
 }
 
 .header_toggle {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer
+}
+.header_toggle_open{
   color: var(--first-color);
   font-size: 1.5rem;
   cursor: pointer
@@ -61,7 +67,7 @@
   width: var(--nav-width);
   height: 100vh;
   background-color: var(--first-color);
-  padding: .5rem 1rem 0 0;
+ 
   transition: .5s;
   z-index: var(--z-fixed)
 }
@@ -104,17 +110,28 @@
   margin-bottom: 1.5rem;
   transition: .3s
 }
+#nav_link{
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 1.5rem;
+  transition: .3s;
+ 
+}
 
 .nav_link:hover {
   color: var(--white-color)
 }
 
+#nav_link:hover {
+  color: var(--white-color)
+}
 .nav_icon {
   font-size: 1.25rem
 }
 
 .show {
   left: 0
+  
 }
 
 .body-pd {
@@ -160,15 +177,16 @@
   }
 
   .l-navbar {
+  
     left: 0;
-    padding: 1rem 1rem 0 0
+    
   }
 
   .show {
-    width: calc(var(--nav-width) + 168px)
+    width: calc(var(--nav-width) + 320px)
   }
 
   .body-pd {
-    padding-left: calc(var(--nav-width) + 188px)
+    padding-left: calc(var(--nav-width) + 250px)
   }
 }

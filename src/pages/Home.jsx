@@ -33,19 +33,20 @@ const Home = (props) => {
      
        <div className='bg-welcome flex items-center justify-center h-screen w-full bg-cover bg-center'>
         
-            <div className="flex flex-col items-center justify-center transform duration-500 inset-y-3/4 group-hover:-inset-y-0">
-                <h2 className="mb-2 text-5xl  text-white font-bold text-center place-content-center">
+            <div className="flex flex-col items-center transform duration-500 inset-y-3/4 group-hover:-inset-y-0">
+                <h1 className="mb-2 lg:text-5xl md:text-3xl   text-white font-bold text-center">
                     
                     <FormattedMessage id="home.welcome-to"/>
-                </h2>
-                <h2 className="text-lg text-center text-white place-content-center">
+                </h1>
+                <p className="lg:text-2xl md:text-3xl text-center text-white">
                    
                     <FormattedMessage id="home.select language"/>
-                </h2>
-                <div className="lg:flex lg:flex-row lg:items-center md:flex-col md:items-center gap-5 mt-4">
-                <button type="button" onClick={() => setLanguage(LOCALES.ENGLISH)} class="inline-block px-7 py-3 bg-blue-600 text-white font-large text-4xl font-mono leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">English</button>
-                {/* <button type="button" onClick={() => setLanguage(LOCALES.FRENCH)} class="inline-block  px-7 py-3 bg-purple-600 text-white font-large text-4xl font-mono leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">Français</button> */}
-                <button type="button" onClick={() => setLanguage(LOCALES.AMHARIC)} class="inline-block px-7 py-3 bg-purple-600 text-white font-large text-4xl font-mono leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">አማርኛ</button>
+                </p>
+              <div className="flex flex-row items-center gap-10 mt-4">
+                <button type="button" onClick={() => setLanguage(LOCALES.ENGLISH)} class="inline-block px-7 py-3 bg-[#18272a] text-[#b9cdd2] font-large lg:text-xl md:text-sm font-mono leading-tight uppercase rounded-full shadow-md hover:bg-[#101a1c] hover:shadow-lg focus:bg-[#487680] focus:shadow-lg focus:outline-none focus:ring active:shadow-lg transition duration-150 ease-in-out">English</button>
+                
+                <button type="button" onClick={() => setLanguage(LOCALES.AMHARIC)} class="inline-block px-7 py-3 bg-[#18272a] text-[#b9cdd2] font-large lg:text-xl md:text-sm  font-mono leading-tight uppercase rounded-full shadow-md hover:bg-[#101a1c] hover:shadow-lg focus:bg-[#487680] focus:shadow-lg focus:outline-none focus:ring active:shadow-lg transition duration-150 ease-in-out">አማርኛ</button>
+                
               </div>
             </div>
             </div>

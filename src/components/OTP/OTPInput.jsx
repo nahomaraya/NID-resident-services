@@ -13,12 +13,14 @@ export default class OTPInput extends Component {
 
   render() {
     return (
-      <div class="flex justify-center text-center text-base mt-4 gap-6">
+      <div class="flex justify-center text-center text-4xl mt-4 gap-6">
       <OtpInput
         value={this.state.otp}
         onChange={this.handleChange}
         numInputs={6}
         separator={<span>-</span>}
+        inputProps={{ inputMode: 'numeric' }}
+        inputStyle="inputStyle"
       
       />
       

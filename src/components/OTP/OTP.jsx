@@ -11,10 +11,11 @@ import {
     DialogFooter,
   } from "@material-tailwind/react";
   import { Radio } from "@material-tailwind/react";
+import LoadingScreen from "../LoadingScreen/Loading";
 
 const OTP = (props) => {
 
-    const [phone, setPhone] = useState(props.otp=="Send OTP via Phone"? true: false);
+    const [phone, setPhone] = useState(!(props.otp=="Send OTP via Phone"));
     const [otpResent, setOTPResent] = useState(false);
     const [verify, setverify] = useState(false);
  
@@ -24,6 +25,7 @@ const OTP = (props) => {
     const navigate = useNavigate();
     const navigateHome = () => {
       // 👇️ navigate to /
+     
       navigate('/');
     };
     
@@ -31,26 +33,33 @@ const OTP = (props) => {
         setverify(!verify);
         
     }
+    useEffect(() => {
+      console.log(props.otp);
+    
+    
+    }, []);
+    
     return(
    
+        <div class="bg-[#184e66]">
         <div class="md:container mx-auto bg-[#184e66] rounded-lg p-14">
                
                     {
-                        props.otp=="Send OTP via Phone"? 
+                        phone? 
                     <div class="flex flex-col mt-4">
-                        <span> <h1 class="text-center font-bold text-white text-2xl"><FormattedMessage id="enter-otp"/></h1></span>
-                        <span class="font-bold text-white text-sm">+251 9******3</span>
+                        <span> <h1 class="text-center font-bold text-white lg:text-4xl md:text-2xl"><FormattedMessage id="enter-otp"/></h1></span>
+                        
                     </div>:
                     <div class="flex flex-col mt-4">
-                        <span> <h1 class="text-center font-bold text-white text-2xl"><FormattedMessage id="enter-otp"/></h1></span>
-                        <span class="font-bold text-white text-sm">na*******@gmail.com</span>
+                        <span> <h1 class="text-center font-bold  text-white lg:text-4xl md:text-2xl"><FormattedMessage id="enter-otp"/></h1></span>
+                      
                     </div>
                     }
                      
                      <div class="flex justify-center text-center">
                         
                            { 
-                         props.otp=="Send OTP via Phone"?  <a  class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline text-gray-900 dark:text-gray-300" onClick={() => setPhone(!phone)}><FormattedMessage id="send-via-email"/></a>:
+                         phone?  <a  class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline text-gray-900 dark:text-gray-300" onClick={() => setPhone(!phone)}><FormattedMessage id="send-via-email"/></a>:
                         <a class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline text-gray-900 dark:text-gray-300" onClick={()=> setPhone(!phone)}><FormattedMessage id="send-via-phone"/></a>
                       }
                     </div>
@@ -75,7 +84,7 @@ const OTP = (props) => {
                     <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">
                         <div className="bg-white rounded-lg shadow-xl p-4 md:p-8 lg:p-12 xl:p-16">
                             <h2 className="text-2xl font-bold mb-4 md:text-3xl lg:text-4xl xl:text-5xl"><FormattedMessage id="otp-resent"/></h2>
-                            <p className="text-gray-600 mb-4 md:text-xl lg:text-2xl xl:text-3xl">{ phone ? `Check for an SMS`: `Check your email`}</p>
+                            <p className="text-gray-600 mb-4 md:text-xl lg:text-2xl xl:text-3xl">{ phone ? <FormattedMessage id="check-phone"/>: <FormattedMessage id="check-email"/>}</p>
                             <button onClick={handleOpen} className="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full md:py-3 lg:py-4 xl:py-5">
                             <FormattedMessage id="close"/>
                             </button>
@@ -101,6 +110,7 @@ const OTP = (props) => {
                     </Dialog>
                  
                
+            </div>
             </div>
     
  

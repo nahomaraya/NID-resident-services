@@ -34,18 +34,26 @@ export const messages = {
           "revoke-virtual-id" : "Revoke Virtual ID",
           "revoke-virtual-id-inst": "To safeguard the confidentiality of a UIN and for its security, Virtual ID (VID) service is provided",
           "revoke-virtual-id-action": "Are you sure you want to revoke your virtual ID",
-          "enter-otp": "Enter the OTP you received at",
+          "enter-otp": "Enter the OTP you received",
           "verification-complete": "Verification Complete",
           "otp-resent": "OTP Code Resent",
           "check-email":"Check your email",
           "check-phone":"Check for an SMS",
+          "send-phone": "Send OTP via phone number",
+          "send-email": "Send OTP via email address",
           "send-via-phone":"Send via phone number instead",
           "send-via-email":"Send via email address instead",
           "resend":"Resend OTP",
           "verify":"Verify",
           "close":"Close",
           "yes": "Yes",
-          "no": "No"
+          "no": "No",
+          "page-inst-UIN/VID": "Input your UIN and select OTP verification mode",
+          "page-inst-RID": "Input your RID and select OTP verification mode",
+          "page-inst-UIN": "Input your UIN and select OTP verification mode",
+          "services": "Services",
+          "about": "About Us",
+          "contact": "Contact Us"
           },
         
     [LOCALES.FRENCH]: {
@@ -90,13 +98,21 @@ export const messages = {
       "otp-resent": "የOTP ኮድ እንደገና ተልኳል",
       "check-email":"ኢሜልዎን ያረጋግጡ",
       "check-phone":"SMS ካለ ያረጋግጡ",
+      "send-phone": "OTP በስልክ ቁጥር ላክ",
+      "send-email": "OTP በኢሜይል አድራሻ ላክ",
       "send-via-phone":"በምትኩ በስልክ ቁጥር ላክ",
       "send-via-email":"በምትኩ በኢሜይል አድራሻ ላክ",
       "resend":"OTP እንደገና ላክ",
       "verify":"አረጋግጥ",
       "close":"ቀጥል",
       "yes": "አዎ",
-      "no": "አይ"
+      "no": "አይ",
+      "page-inst-UIN/VID": "የእርስዎን UIN ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
+      "page-inst-RID": "የእርስዎን RID ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
+      "page-inst-UIN": "የእርስዎን UIN ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
+      "services": "አገልግሎቶች",
+      "about": "ስለ እኛ",
+      "contact": "አግኙን"
 
     }
         
