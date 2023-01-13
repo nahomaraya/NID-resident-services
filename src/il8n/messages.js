@@ -52,7 +52,7 @@ export const messages = {
           "page-inst-RID": "Input your RID and select OTP verification mode",
           "page-inst-UIN": "Input your UIN and select OTP verification mode",
           "services": "Services",
-          "about": "About Us",
+          "about": "About",
           "contact": "Contact Us"
           },
         

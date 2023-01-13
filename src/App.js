@@ -16,7 +16,7 @@ import Sidebarr from "./components/Sidebarr/SIdebarr";
 import Footer from "./components/Footer/Footer";
 import Navigation from "./components/Navigation/Navigation";
 import LoadingScreen from "./components/LoadingScreen/Loading";
-import SideNav from "./components/SideNav/SideNav";
+
 
 
 
@@ -53,12 +53,14 @@ function App() {
   > 
   
   
-  
-    {isDesktopOrLaptop &&  <Navigation />}
-    {isTabletOrMobile &&  <Sidebarr /> }
-    {/* <Sidebarr /> */}
-    {isLoading?  <LoadingScreen/>:
+     {isLoading?  <LoadingScreen/>:
+    
+           
+
+    
       <>
+       {isDesktopOrLaptop &&  <Navigation />}
+            {isTabletOrMobile &&  <Sidebarr /> }
        <Routes>
           <Route path="/" element={<Home/>} />
           
@@ -87,6 +89,7 @@ function App() {
              
             ))}
         </Routes>
+        <Footer/>
       </> 
     
     

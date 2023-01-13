@@ -35,7 +35,7 @@ const Item = (props) => {
     
       </>}
       <Description inst={inst}/>
-     
+      <Footer/>
     </div>
     );
   }
