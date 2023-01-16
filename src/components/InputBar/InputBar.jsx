@@ -1,18 +1,41 @@
 import React, {useCallback, useState} from "react";
 import {FormattedMessage} from "react-intl";
 import DropdownSelector from "../Dropdown/DropdownSelector";
+import OTP from "../OTP/OTP";
 
 
 const InputBar = (props) => {
+    const [id, setID] = useState('');
+ 
     const [otp, setOtp] = useState('');
     const handleCallback = (childData) => {
+        if(props.otpReq)
          props.setOtp(childData);
+
     }
     
     const handleGoState = useCallback(event => {
-        
+      
+        props.setIDtype('UIN');
+        //send req otp here?
         props.onCardChange(event.target.value)
       }, [props.onCardChange])
+
+    const handleChange = (event) => {
+        setID(event.target.value);
+        
+        props.setID(id);
+        
+      
+      
+        
+      };
+
+      const handleClick = () => {
+        // 👇 "message" stores input field value
+        //send post request here
+        console.log(id);
+      };
 
    
     
@@ -28,7 +51,8 @@ const InputBar = (props) => {
                     <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                    </div> */}
                  
-                   <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={props.input} required/>
+                   <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={props.input}  onChange={handleChange}
+        value={id} required/>
                    
             </div>
                 <div class="justify-center items-center  mt-3">
@@ -47,7 +71,9 @@ const InputBar = (props) => {
             </form>
            
         </div>
+        
     </div>
+    
     );
 }
 export default InputBar;

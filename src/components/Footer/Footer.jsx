@@ -11,7 +11,7 @@ import { faCopyright, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer >
             <div className="footer-container">
                 <div className="item1">
                    National ID
@@ -21,8 +21,7 @@ const Footer = () => {
                     <span style={{ paddingRight: 5 }}>Copyright </span>
                     <FontAwesomeIcon icon={faCopyright} />{" "}
                     <span style={{ paddingLeft: 5 }}>
-                        {new Date().getFullYear()} Fayda. All Rights
-                        Reserved.
+                        {new Date().getFullYear()} Fayda
                     </span>
                 </div>
                 <a

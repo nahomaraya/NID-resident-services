@@ -1,7 +1,7 @@
 
 import React, {useState, Fragment, useCallback, useEffect} from "react";
 import {FormattedMessage} from "react-intl";
-import {Routes, Route, useNavigate} from 'react-router-dom'
+import {Routes, Route, useNavigate, Navigate} from 'react-router-dom'
 import OTPInput from "./OTPInput";
 import {
     Button,
@@ -12,9 +12,12 @@ import {
   } from "@material-tailwind/react";
   import { Radio } from "@material-tailwind/react";
 import LoadingScreen from "../LoadingScreen/Loading";
+import { createPost } from "../../services/ResidentServices";
+import { version } from "react-dom";
 
 const OTP = (props) => {
-
+    const [request, setRequest ] = useState({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: '',}});
+    const [otpNo, setOtpNo] = useState('');
     const [phone, setPhone] = useState(!(props.otp=="Send OTP via Phone"));
     const [otpResent, setOTPResent] = useState(false);
     const [verify, setverify] = useState(false);
@@ -25,16 +28,35 @@ const OTP = (props) => {
     const navigate = useNavigate();
     const navigateHome = () => {
       // 👇️ navigate to /
-     
-      navigate('/');
+      //  createPost(request)
+      //   .then(response => {
+         
+      //     setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
+         
+      // });
+      //navigate to path here
+      
+      navigate('/',{state:{request}});
+   
     };
     
     const handleVerify = () => {
-        setverify(!verify);
+     
+       console.log(otpNo);
+       request.request.otp = otpNo;
+       setRequest(request);
+    
+       setverify(!verify);
         
     }
     useEffect(() => {
-      console.log(props.otp);
+      request.id = props.apiId;
+      request.version = "v2";
+      request.requestTime = new Date().toLocaleString();
+      request.request.individualId = props.id;
+      request.request.individualIdType = props.idType;
+      // request.request.{props.request} = props.id
+      setRequest(request);
     
     
     }, []);
@@ -64,7 +86,7 @@ const OTP = (props) => {
                       }
                     </div>
                     <div id="otp" class="flex flex-row justify-center text-center px-2 mt-3">
-                       <OTPInput/>
+                       <OTPInput setOtpNo={setOtpNo}/>
       
                       </div>
                       

@@ -71,7 +71,7 @@ function App() {
                 <Route
                   key={index}
                   path={subitem.path}
-                  element={<DynamicItem name={subitem.name} inst={subitem.instruction} input={subitem.input} action={subitem.action}/>}
+                  element={<DynamicItem name={subitem.name} inst={subitem.instruction} input={subitem.input} action={subitem.action} apiId={subitem.apiID}/>}
                 />
                 
               )):

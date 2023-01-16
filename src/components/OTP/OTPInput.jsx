@@ -4,7 +4,12 @@ import OtpInput from 'react-otp-input';
 export default class OTPInput extends Component {
   state = { otp: '' };
 
-  handleChange = (otp) => this.setState({ otp });
+  handleChange = (otp) => {
+    
+    
+    this.setState({ otp })
+    this.props.setOtpNo(otp);
+  };
 
   handleSubmit = (e) => {
     // ...

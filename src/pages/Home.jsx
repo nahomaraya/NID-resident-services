@@ -1,6 +1,6 @@
 import React , {useCallback, useContext, useEffect, useState }from "react";
 import {FormattedMessage} from "react-intl";
-import {  Routes, Route } from "react-router-dom";
+import {  Routes, Route, useLocation } from "react-router-dom";
 import { DynamicItem, Sidebar, dummyData } from "../components";
 import { Button } from "@material-tailwind/react";
 import '../App.css';
@@ -14,6 +14,9 @@ const Home = (props) => {
     // const handlelangChange = useCallback(event => {
     //     props.onlangChange(event.target.value)
     //   }, [props.onlangChange])
+    
+    const location = useLocation();
+    console.log(location.state);
     const welcome = ["Welcome to National ID Resident Serivces", "እንኳን ወደ ብሔራዊ መታወቂያ ነዋሪ አገልግሎቶች በደህና መጡ"];
     const selectLang = ["Select your prefered language" , "ቋንቋ ይምረጡ"];
     const { language, setLanguage } = useContext(LanguageContext);
@@ -23,6 +26,7 @@ const Home = (props) => {
           console.log("stopping");
           return;
         }
+       
         const interval = setInterval(() => {
           const updatedData = currentIndex + 1;
           setCurrentIndex(updatedData);
@@ -50,7 +54,7 @@ const Home = (props) => {
                 
               </div>
             </div>
-            <Footer/>
+          
             </div>
         
       
