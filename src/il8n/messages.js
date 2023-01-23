@@ -7,6 +7,7 @@ export const messages = {
           "home.welcome-to":"Welcome to National ID Resident Services",
           "home": "Home",
           "go": "Go",
+          "lang": "Languages",
           "update-demographic-data": "Update Demographic Data",
           "update-demographic-data-inst" : "This feature will allow an individual to initiate update of his/her demographic details",
           "update-demographic-data-action" : "Are you sure you want to update your demographic data",
@@ -34,7 +35,8 @@ export const messages = {
           "revoke-virtual-id" : "Revoke Virtual ID",
           "revoke-virtual-id-inst": "To safeguard the confidentiality of a UIN and for its security, Virtual ID (VID) service is provided",
           "revoke-virtual-id-action": "Are you sure you want to revoke your virtual ID",
-          "enter-otp": "Enter the OTP you received",
+          "enter-otp-phone": "Enter the OTP you received on your phone",
+          "enter-otp-email": "Enter the OTP you received on your email",
           "verification-complete": "Verification Complete",
           "otp-resent": "OTP Code Resent",
           "check-email":"Check your email",
@@ -51,9 +53,11 @@ export const messages = {
           "page-inst-UIN/VID": "Input your UIN and select OTP verification mode",
           "page-inst-RID": "Input your RID and select OTP verification mode",
           "page-inst-UIN": "Input your UIN and select OTP verification mode",
-          "services": "Services",
+          "services": "My Services",
           "about": "About",
-          "contact": "Contact Us"
+          "contact": "Contact Us",
+          "select-service-type": "Service Type",
+          "select-OTP-method": "OTP Verification Method",
           },
         
     [LOCALES.FRENCH]: {
@@ -66,6 +70,7 @@ export const messages = {
       "home.welcome-to":"እንኳን ወደ ብሔራዊ መታወቂያ ነዋሪ አገልግሎቶች በደህና መጡ",
       "home": "ዋና ገጽ",
       "go": "ጀምር",
+      "lang": "ቋንቋ",
       "update-demographic-data": "የስነሕዝብ መረጃን ያዘምኑ",
       "update-demographic-data-inst": "አንድ ግለሰብ የስነሕዝብ ዝርዝሮችን ማዘመን ያስችለዋል",
       "update-demographic-data-action" : "እርግጠኛ ነዎት የእርስዎን የስነ ሕዝብ አወቃቀር ማዘመን ይፈልጋሉ",
@@ -93,7 +98,8 @@ export const messages = {
       "revoke-virtual-id" : "Virtual ID ሰርዝ",
       "revoke-virtual-id-inst": "የUINን ምስጢራዊነት ለመጠበቅ እና ለደህንነቱ ሲባል፣ VID አገልግሎት ይሰጣል",
       "revoke-virtual-id-action": "እርግጠኛ ነህ VID መሻር እንደምትፈልግ እርግጠኛ ነህ",
-      "enter-otp": "የተቀበልከውን OTP አስገባ",
+      "enter-otp-phone": "በስልክዎ ላይ የተቀበሉትን OTP ያስገቡ",
+      "enter-otp-email": "በኢሜልዎ የተቀበሉትን OTP ያስገቡ",
       "verification-complete": "ማረጋገጫ ተጠናቋል",
       "otp-resent": "የOTP ኮድ እንደገና ተልኳል",
       "check-email":"ኢሜልዎን ያረጋግጡ",
@@ -110,9 +116,12 @@ export const messages = {
       "page-inst-UIN/VID": "የእርስዎን UIN ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
       "page-inst-RID": "የእርስዎን RID ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
       "page-inst-UIN": "የእርስዎን UIN ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
+    
       "services": "አገልግሎቶች",
       "about": "ስለ እኛ",
-      "contact": "አግኙን"
+      "contact": "አግኙን",
+      "select-service-type": "የአገልግሎት ዓይነት",
+      "select-OTP-method": "የOTP ማረጋገጫ ዘዴን",
 
     }
         

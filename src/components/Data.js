@@ -60,7 +60,7 @@ export const SIDEBAR_DATA = [
   {
     id: 4,
     name: "services",
-    path: "",
+    path: "/services",
     icon: <ServicesIcon />,
     iconClosed: <ArrowDown/>,
     iconOpened: <ArrowUp/>,
@@ -74,7 +74,7 @@ export const SIDEBAR_DATA = [
         action: "update-demographic-data-action",
         request: "demographics",
         otpReq: true,
-        apiID: "mosip.resident.updateuin",
+        apiID: "",
         icon: <LayoutIcon />,
        
       },
@@ -100,6 +100,13 @@ export const SIDEBAR_DATA = [
         request: "authType",
         apiID: "mosip.resident.authlock",
         icon: <Lock />,
+        types: [
+          'demo',
+          'bio',
+          'bio-FMR',
+          'bio-IIR',
+          'bio-FID '
+        ]
       },
       {
         id: 4,
@@ -112,6 +119,13 @@ export const SIDEBAR_DATA = [
         request: "authType",
         apiID: "mosip.resident.authunlock",
         icon: <LockIcon />,
+        types: [
+          'demo',
+          'bio',
+          'bio-FMR',
+          'bio-IIR',
+          'bio-FID '
+        ]
       },
       {
         id: 5,
@@ -160,6 +174,10 @@ export const SIDEBAR_DATA = [
         request: "vidType",
         apiID: "mosip.resident.vid",
         icon: <AuthIcon />,
+        types: [
+          'PERPETUAL',
+          'TEMPORARY'
+        ]
       },
       {
         id: 9,
@@ -172,6 +190,10 @@ export const SIDEBAR_DATA = [
         request: "vidStatus",
         apiID:"mosip.resident.vidstatus",
         icon: <SafetyIcon />,
+        types: [
+          'PERPETUAL',
+          'TEMPORARY'
+        ]
       },
 
     ]

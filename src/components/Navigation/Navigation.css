@@ -14,6 +14,7 @@
   }
 .nav-dropdown{
     background-color: #dce6e8;
+    position:absolute;
 }
   
   .nav-link {

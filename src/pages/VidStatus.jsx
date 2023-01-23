@@ -4,8 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import LoadingScreen from "../components/LoadingScreen/Loading";
 import { createPost } from "../services/ResidentServices";
 
-const VID = (props) => {
-  
+const VidStatus = (props) => {
   const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
       const timer = setTimeout(()=> {
@@ -18,6 +17,7 @@ const VID = (props) => {
     }, [])
     let loadingGif = require("../assets/fingerprint.gif");
     const location = useLocation();
+  ;
     const types = location.state.request.types;
     console.log(types);
     // location.state.request.request.cardType = "UIN";
@@ -28,28 +28,28 @@ const VID = (props) => {
     //     //   setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
          
     //   });
-    const handleClick = (type) => {
-      location.state.request.request.authType = type
-      console.log(location.state.request.request.authType)
-      createPost(location.state)
-       .then(response => {
-           console.log("sucess");
-         // setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
-         
-     });
-  
-    }
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
       });
       const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const handleClick = (type) => {
+        location.state.request.request.authType = type
+        console.log(location.state.request.request.authType)
+        createPost(location.state)
+         .then(response => {
+             console.log("sucess");
+           // setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
+           
+       });
+    
+      }
     return(
       <>
         {isLoading? <LoadingScreen/> : 
         <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
         <div class=" bg-[#184e66] flex">
-        <div class="md:container mx-auto bg-[#184e66] rounded-lg p-14 items-center justify-center">
-        <h2 className="text-center font-bold text-white">Chosse VID type to generate</h2>
+        <div class="md:container mx-auto bg-[#184e66] rounded-lg p-14">
+        <h2 className="text-center font-bold text-white">Chosse VID type to revoke</h2>
         <div className="flex flex-wrap justify-center items-center">
         { types.map(type => (
          <div className="w-full items-center sm:w-1/4 px-4 py-4">
@@ -59,7 +59,6 @@ const VID = (props) => {
          </div>
        </div>
       ))}
-     
         
         </div>
       </div>
@@ -70,4 +69,4 @@ const VID = (props) => {
     );
 
 }
-export default VID;
+export default VidStatus;

@@ -1,4 +1,4 @@
-const axios = require('axios');
+
 
 export async function createPost(data) {
     const response = await fetch(`http://localhost:3002/posts`, {

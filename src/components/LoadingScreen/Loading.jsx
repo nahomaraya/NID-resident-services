@@ -17,7 +17,7 @@ const LoadingScreen = (children) => {
   let loadingGif = require("../../assets/fingerprint.gif");
   if(isLoading){
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="bg-[#FCFCFF] flex items-center justify-center h-screen">
        <img src={loadingGif} alt="wait until the page loads" className='h-48'/>
 </div>
 

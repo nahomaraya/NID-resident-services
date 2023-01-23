@@ -15,8 +15,7 @@ const Home = (props) => {
     //     props.onlangChange(event.target.value)
     //   }, [props.onlangChange])
     
-    const location = useLocation();
-    console.log(location.state);
+  
     const welcome = ["Welcome to National ID Resident Serivces", "እንኳን ወደ ብሔራዊ መታወቂያ ነዋሪ አገልግሎቶች በደህና መጡ"];
     const selectLang = ["Select your prefered language" , "ቋንቋ ይምረጡ"];
     const { language, setLanguage } = useContext(LanguageContext);

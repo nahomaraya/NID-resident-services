@@ -44,7 +44,10 @@
 .header_toggle_open{
   color: var(--first-color);
   font-size: 1.5rem;
-  cursor: pointer
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header_img {
