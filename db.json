@@ -14,29 +14,6 @@
         }
       },
       "id": 1
-    },
-    {
-      "post": {
-        "request": {
-          "id": "mosip.resident.authlock",
-          "version": "1.1.5.6",
-          "requestTime": "1/23/2023, 10:45:35 AM",
-          "request": {
-            "individualId": "123456",
-            "individualIdType": "UIN/VID",
-            "otp": "000000",
-            "authType": "bio"
-          },
-          "types": [
-            "demo",
-            "bio",
-            "bio-FMR",
-            "bio-IIR",
-            "bio-FID "
-          ]
-        }
-      },
-      "id": 2
     }
   ],
   "comments": [

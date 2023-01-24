@@ -4,15 +4,14 @@ import {FormattedMessage} from "react-intl";
 const Description = (props) => {
 
     return(
-        <div class="bg-[#dce6e8]">
-            <div class="md:container mx-auto bg-[#dce6e8] rounded-lg p-14">
-                <p class="text-center font-bold text-[#304f55] text-2xl">
+        
+            <div class="rounded-lg lg:p-14 md:p-5 md:mt-5">
+                <h6 class="font-bold text-[#edf2f3] lg:text-3xl md:text-base">
                 <FormattedMessage id={props.inst}/>  
-                </p>
+                </h6>
 
             </div>
-        </div>
-        
+       
     );
 
 }

@@ -79,13 +79,13 @@ const OTP = (props) => {
     
     return(
    
-        <div class="bg-[#184e66]">
-        <div class="md:container mx-auto bg-[#184e66] rounded-lg p-14">
+      <div class=" bg-[#cadadd] flex h-full">
+      <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-14">
                
                     {
                         phone? 
                     <div class="flex flex-col mt-4">
-                        <span> <h1 class="text-center font-bold text-white lg:text-4xl md:text-2xl"><FormattedMessage id="enter-otp-phone"/></h1></span>
+                        <span> <h1 class="text-center font-bold text-white lg:text-4xl md:text-2xl "><FormattedMessage id="enter-otp-phone"/></h1></span>
                         
                     </div>:
                     <div class="flex flex-col mt-4">
@@ -97,8 +97,8 @@ const OTP = (props) => {
                      <div class="flex justify-center text-center">
                         
                            { 
-                         phone?  <a  class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline text-gray-900 dark:text-gray-300" onClick={handleResent}><FormattedMessage id="send-via-email"/></a>:
-                        <a class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline text-gray-900 dark:text-gray-300" onClick={handleResent}><FormattedMessage id="send-via-phone"/></a>
+                         phone?  <a  class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline hover:text-white text-gray-900 dark:text-gray-300" onClick={handleResent}><FormattedMessage id="send-via-email"/></a>:
+                        <a class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline hover:text-white text-gray-900 dark:text-gray-300" onClick={handleResent}><FormattedMessage id="send-via-phone"/></a>
                       }
                     </div>
                     <div id="otp" class="flex flex-row justify-center text-center px-2 mt-3">
@@ -108,8 +108,8 @@ const OTP = (props) => {
                       
                       <div class="flex justify-center text-center mt-5 gap-6">
                       {/* <ResendOTP onResendClick={() => console.log("Resend clicked")} /> */}
-                      <button type="submit" onClick={handleVerify} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="verify"/></button>
-                      <button type="button" onClick={handleOpen} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="resend"/></button>
+                      <button type="submit" onClick={handleVerify} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="verify"/></button>
+                      <button type="button" onClick={handleOpen} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="resend"/></button>
                       {/* {
                         phone? <button type="button" onClick={() => setPhone(!phone)} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">Send via email</button>:
                         <button type="button" onClick={() => setPhone(!phone)} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">Send via phone</button>

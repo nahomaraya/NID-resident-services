@@ -1,7 +1,7 @@
 
 
 export async function createPost(data) {
-    const response = await fetch(`http://localhost:3002/posts`, {
+    const response = await fetch(`http://172.20.67.229:3002/posts`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({post: data})

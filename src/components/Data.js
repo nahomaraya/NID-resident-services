@@ -74,7 +74,7 @@ export const SIDEBAR_DATA = [
         action: "update-demographic-data-action",
         request: "demographics",
         otpReq: true,
-        apiID: "",
+        apiID: "mosip.resident.updateuin",
         icon: <LayoutIcon />,
        
       },
@@ -101,11 +101,11 @@ export const SIDEBAR_DATA = [
         apiID: "mosip.resident.authlock",
         icon: <Lock />,
         types: [
-          'demo',
-          'bio',
-          'bio-FMR',
-          'bio-IIR',
-          'bio-FID '
+          'Demographic Auth Type',
+          'Biometric Auth Type',
+          'Biometirc-FMR Auth Type',
+          'Biometirc-IIR Auth Type',
+          'Biometric-FID Auth Type '
         ]
       },
       {
@@ -120,11 +120,11 @@ export const SIDEBAR_DATA = [
         apiID: "mosip.resident.authunlock",
         icon: <LockIcon />,
         types: [
-          'demo',
-          'bio',
-          'bio-FMR',
-          'bio-IIR',
-          'bio-FID '
+          'Demographic Auth Type',
+          'Biometric Auth Type',
+          'Biometirc-FMR Auth Type',
+          'Biometirc-IIR Auth Type',
+          'Biometric-FID Auth Type '
         ]
       },
       {
