@@ -22,17 +22,7 @@ const Unlock = (props) => {
  
  
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    if(isLoading){
-    const timer = setTimeout(()=> {
-       setIsLoading(false);
-    }, 5000);
-  
-    return () => {
-      clearTimeout(timer);
-    }
-  }
-  }, [isLoading])
+ 
   let loadingGif = require("../assets/fingerprint.gif");
   const location = useLocation();
   // location.state.request.request.cardType = "UIN";
@@ -86,6 +76,20 @@ const Unlock = (props) => {
       query: '(min-width: 1224px)'
     });
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  
+    useEffect(() => {
+      if(location.state!=null){
+      const timer = setTimeout(()=> {
+         setIsLoading(false);
+      }, 5000);
+    
+      return () => {
+        clearTimeout(timer);
+      }}
+      else{
+        navigate('/');
+      }
+    }, [])
     return(
       <>
       {isLoading? <LoadingScreen/> : 

@@ -11,15 +11,7 @@ const Reprint = (props) => {
     const location = useLocation();
     location.state.request.request.cardType = "UIN";
     console.log(location.state);
-    useEffect(() => {
-      const timer = setTimeout(()=> {
-         setIsLoading(false);
-      }, 5000);
-      handlePost();
-      return () => {
-        clearTimeout(timer);
-      }
-    }, [])
+   
 
     const handlePost = () => {
      
@@ -42,6 +34,20 @@ const Reprint = (props) => {
         query: '(min-width: 1224px)'
       });
       const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    
+      useEffect(() => {
+        if(location.state!=null){
+        const timer = setTimeout(()=> {
+           setIsLoading(false);
+        }, 5000);
+        handlePost();
+        return () => {
+          clearTimeout(timer);
+        }}
+        else{
+          navigate('/');
+        }
+      }, [])
     return(
         <>
         {isLoading? <LoadingScreen/> : 

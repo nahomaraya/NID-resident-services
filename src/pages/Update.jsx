@@ -1,4 +1,5 @@
-import {React, useState, useEffect} from "react";
+import {React, useState, useEffect, ChangeEvent} from "react";
+import FileBase from 'react-file-base64';
 import moment from "moment/moment";
 import {  useLocation, useHistory, useNavigate } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
@@ -18,12 +19,17 @@ import { createPost } from "../services/ResidentServices";
 const Options = () => {}
 const UpdateName = (props) =>{
     const [data, setData] = useState();
+    const [file, setFile] = useState();
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
+
+    const handleFileChange = (key, value) => {
+      setFile({...data, [key]: value});
+    };
     
     useEffect(() => {
-        props.onCallback(data);
+        props.onCallback(file);
       }, [props.active])
     
     return(
@@ -35,51 +41,68 @@ const UpdateName = (props) =>{
     <label for="checked-checkbox" class="ml-2 text-xl font-medium text-[#edf2f3]">Last Name</label>
      <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
     value={props.lastName} required/>
-
-
+    
+    <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+    {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
+    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
+     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
+     </div>
     </>);
 }
 const UpdateEmail = (props) => {
     const [data, setData] = useState();
+    const [file, setFile] = useState();
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
     
     useEffect(() => {
-        props.onCallback(data);
+        props.onCallback(file);
       }, [props.active])
     return(<>
       <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">Email</label>
          <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email"  onChange={(e) => handleChange('email', e.target.value)}
         value={props.email} required/>
+       <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+    {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
+    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
+     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  email:base64 })} onChange={(e) => e.target.files[0]} />
+     </div>
     </>);
 }
 const UpdatePhone = (props) => {
     const [data, setData] = useState();
+    const [file, setFile] = useState();
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
     
     useEffect(() => {
-        props.onCallback(data);
+        props.onCallback(file);
       }, [props.active])
     
     return(<>
       <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">Phone</label>
           <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Phone"  onChange={(e) => handleChange('phone', e.target.value)}
         value={props.email} required/>
+       <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+    {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
+    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
+     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  phone:base64 })} onChange={(e) => e.target.files[0]} />
+     </div>
     </>);
 }
 
 const UpdateDOB = (props) => {
     const [startDate, setStartDate] = useState(new Date());
     const [data, setData] = useState({});
+    const [file, setFile] = useState();
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
     
     useEffect(() => {
-        props.onCallback(data);
+        props.onCallback(file);
       }, [props.active])
     
     return (
@@ -87,18 +110,24 @@ const UpdateDOB = (props) => {
     <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">Select Date of Birth</label>
     <input type="date" class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date"  onChange={(e) => handleChange('date', e.target.value)}
     value={props.date} max={moment().format("YYYY-MM-DD")} required/>
+     <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+    {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
+    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
+     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  dob:base64 })} onChange={(e) => e.target.files[0]} />
+     </div>
  
         </>
     );
 }
 const UpdateAddress = (props) => {
     const [data, setData] = useState({});
+    const [file, setFile] = useState();
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
     
     useEffect(() => {
-        props.onCallback(data);
+        props.onCallback(file);
       }, [props.active])
     
      
@@ -116,6 +145,12 @@ const UpdateAddress = (props) => {
           <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">State</label>
           <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="State"  onChange={(e) => handleChange('state', e.target.value)}
         value={props.mobile} required/>
+
+<label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+    {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
+    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
+     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  address:base64 })} onChange={(e) => e.target.files[0]} />
+     </div>
         </>);
 
 }
@@ -128,6 +163,10 @@ const UpdateUIN = (props) => {
     const [documents, setDocuments] = useState([]);
     const [open, setOpen] = useState(false);
     const [data, setData] = useState();
+
+    const [isLoading, setIsLoading] = useState(true);
+    let loadingGif = require("../assets/fingerprint.gif");
+    const location = useLocation();
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
@@ -155,18 +194,6 @@ const UpdateUIN = (props) => {
     }
   
   
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-      const timer = setTimeout(()=> {
-         setIsLoading(false);
-      }, 5000);
-    
-      return () => {
-        clearTimeout(timer);
-      }
-    }, [])
-    let loadingGif = require("../assets/fingerprint.gif");
-    const location = useLocation();
    
     const handleClick = () => {
         setSendRequest(true);
@@ -194,6 +221,21 @@ const UpdateUIN = (props) => {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
       });
+
+      useEffect(() => {
+        if(location.state!=null){
+        const timer = setTimeout(()=> {
+           setIsLoading(false);
+        }, 5000);
+      
+        return () => {
+          clearTimeout(timer);
+        }}
+        else{
+          navigate('/');
+        }
+      }, [])
+  
     return(
         <>
         {isLoading? <LoadingScreen/> : 

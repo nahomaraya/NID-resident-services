@@ -18,15 +18,7 @@ const VID = (props) => {
   const [vidType, setVidType] = useState(true);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-    useEffect(() => {
-      const timer = setTimeout(()=> {
-         setIsLoading(false);
-      }, 5000);
-    
-      return () => {
-        clearTimeout(timer);
-      }
-    }, [])
+   
     let loadingGif = require("../assets/fingerprint.gif");
     const location = useLocation();
     const types = location.state.request.types;
@@ -83,6 +75,20 @@ const VID = (props) => {
         query: '(min-width: 1224px)'
       });
       const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    
+      useEffect(() => {
+        if(location.state!=null){
+        const timer = setTimeout(()=> {
+           setIsLoading(false);
+        }, 5000);
+      
+        return () => {
+          clearTimeout(timer);
+        }}
+        else{
+          navigate('/');
+        }
+      }, [])
     return(
       <>
         {isLoading? <LoadingScreen/> : 
