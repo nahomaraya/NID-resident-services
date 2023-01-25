@@ -8,25 +8,30 @@ import { createPost } from "../services/ResidentServices";
 const DownloadEUin = (props) => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-      const timer = setTimeout(()=> {
-         setIsLoading(false);
-      }, 5000);
-    
-      return () => {
-        clearTimeout(timer);
-      }
-    }, [])
     let loadingGif = require("../assets/fingerprint.gif");
     const location = useLocation();
     location.state.request.request.cardType = "UIN";
     console.log(location.state);
-     createPost(location.state)
-        .then(response => {
-            console.log("sucess");
-        //   setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
-         
-      });
+    useEffect(() => {
+      const timer = setTimeout(()=> {
+         setIsLoading(false);
+      }, 5000);
+       handlePost();
+      return () => {
+        clearTimeout(timer);
+      }
+    }, [])
+   
+     ;
+    const handlePost = () => {
+     
+        createPost(location.state)
+            .then(response => {
+                console.log("sucess");
+            //   setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
+             
+          });
+      }
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
       });

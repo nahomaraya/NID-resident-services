@@ -7,17 +7,29 @@ import { createPost } from "../services/ResidentServices";
 const Reprint = (props) => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
+    let loadingGif = require("../assets/fingerprint.gif");
+    const location = useLocation();
+    location.state.request.request.cardType = "UIN";
+    console.log(location.state);
     useEffect(() => {
       const timer = setTimeout(()=> {
          setIsLoading(false);
       }, 5000);
-    
+      handlePost();
       return () => {
         clearTimeout(timer);
       }
     }, [])
-    let loadingGif = require("../assets/fingerprint.gif");
-    const location = useLocation();
+
+    const handlePost = () => {
+     
+      createPost(location.state)
+          .then(response => {
+              console.log("sucess");
+          //   setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
+           
+        });
+    }
     // location.state.request.request.cardType = "UIN";
     // console.log(location.state);
     //  createPost(location.state)

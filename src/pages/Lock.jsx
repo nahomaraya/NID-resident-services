@@ -18,6 +18,7 @@ import { createPost } from "../services/ResidentServices";
 const Lock = (props) => {
   const [open, setOpen] = useState(false);
   const [authType, setAuthType] = useState('');
+  const [lockRequest, setLockRequest] = useState()
   const navigate = useNavigate();
  
  
@@ -37,23 +38,10 @@ const Lock = (props) => {
   const location = useLocation();
   // location.state.request.request.cardType = "UIN";
   const types = location.state.request.types;
+  
 
-  //  createPost(location.state)
-  //     .then(response => {
-  //         console.log("sucess");
-  //     //   setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
-       
-  //   });
   const navigatePage = () => {
-    // 👇️ navigate to /
-    //  createPost(request)
-    //   .then(response => {
-       
-    //     setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
-       
-    // });
-    //navigate to path here
-    
+   
    
     navigate('/');
  
@@ -70,6 +58,7 @@ const Lock = (props) => {
     console.log(type);
     location.state.request.request.authType = type
     console.log(location.state.request.request.authType)
+    
     navigatePage();
     createPost(location.state)
      .then(response => {

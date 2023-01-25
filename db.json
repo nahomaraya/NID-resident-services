@@ -5,15 +5,171 @@
         "request": {
           "id": "mosip.resident.checkstatus",
           "version": "1.1.5.6",
-          "requestTime": "1/23/2023, 10:16:27 AM",
+          "requestTime": "1/25/2023, 4:39:05 PM",
           "request": {
-            "individualId": "123456",
+            "individualId": "12345678",
             "individualIdType": "RID",
             "otp": "000000"
           }
         }
       },
       "id": 1
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.updateuin",
+          "version": "1.1.5.6",
+          "requestTime": "1/25/2023, 4:48:51 PM",
+          "request": {
+            "individualId": "111111",
+            "individualIdType": "UIN/VID",
+            "otp": "000000",
+            "documents": [
+              {
+                "first-name": "Nahom",
+                "last-name": "Araya"
+              },
+              {
+                "phone": "0909090909009"
+              }
+            ]
+          }
+        }
+      },
+      "id": 2
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.authlock",
+          "version": "1.1.5.6",
+          "requestTime": "1/25/2023, 4:54:14 PM",
+          "request": {
+            "individualId": "1234567",
+            "individualIdType": "UIN/VID",
+            "otp": "000000",
+            "authType": "Demographic Auth Type"
+          },
+          "types": [
+            "Demographic Auth Type",
+            "Biometric Auth Type",
+            "Biometirc-FMR Auth Type",
+            "Biometirc-IIR Auth Type",
+            "Biometric-FID Auth Type "
+          ]
+        }
+      },
+      "id": 3
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.authunlock",
+          "version": "1.1.5.6",
+          "requestTime": "1/25/2023, 5:17:04 PM",
+          "request": {
+            "individualId": "1234567",
+            "individualIdType": "UIN/VID",
+            "otp": "000000",
+            "authType": "Biometirc-FMR Auth Type"
+          },
+          "types": [
+            "Demographic Auth Type",
+            "Biometric Auth Type",
+            "Biometirc-FMR Auth Type",
+            "Biometirc-IIR Auth Type",
+            "Biometric-FID Auth Type "
+          ]
+        }
+      },
+      "id": 4
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.euin",
+          "version": "1.1.5.6",
+          "requestTime": "1/25/2023, 5:17:43 PM",
+          "request": {
+            "individualId": "12345678",
+            "individualIdType": "UIN/VID",
+            "otp": "000000",
+            "cardType": "UIN"
+          }
+        }
+      },
+      "id": 5
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.reprintuin",
+          "version": "1.1.5.6",
+          "requestTime": "1/25/2023, 5:25:11 PM",
+          "request": {
+            "individualId": "111111111",
+            "individualIdType": "UIN/VID",
+            "otp": "000000",
+            "cardType": "UIN"
+          }
+        }
+      },
+      "id": 6
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.vid",
+          "version": "1.1.5.6",
+          "requestTime": "1/25/2023, 5:26:11 PM",
+          "request": {
+            "individualId": "1234567",
+            "individualIdType": "UIN",
+            "otp": "000000",
+            "authType": "PERPETUAL"
+          },
+          "types": [
+            "PERPETUAL",
+            "TEMPORARY"
+          ]
+        }
+      },
+      "id": 7
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.vidstatus",
+          "version": "1.1.5.6",
+          "requestTime": "1/25/2023, 5:26:53 PM",
+          "request": {
+            "individualId": "12345",
+            "individualIdType": "UIN",
+            "otp": "000000"
+          },
+          "types": [
+            "PERPETUAL",
+            "TEMPORARY"
+          ]
+        }
+      },
+      "id": 8
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.checkstatus",
+          "version": "1.1.5.6",
+          "requestTime": "1/25/2023, 5:30:03 PM",
+          "request": {
+            "individualId": "111111111",
+            "individualIdType": "RID",
+            "otp": "000000"
+          }
+        }
+      },
+      "id": 9
     }
   ],
   "comments": [

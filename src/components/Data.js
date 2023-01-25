@@ -76,6 +76,12 @@ export const SIDEBAR_DATA = [
         otpReq: true,
         apiID: "mosip.resident.updateuin",
         icon: <LayoutIcon />,
+        documents: [
+          "name",
+          "email",
+          "phone",
+          "address",
+        ]
        
       },
       {
