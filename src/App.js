@@ -28,6 +28,7 @@ import Unlock from "./pages/Unlock";
 import VidStatus from "./pages/VidStatus";
 import AuthLock from "./pages/AuthLock";
 import AuthHistory from "./pages/AuthHistory";
+import AuthConfimation from "./pages/AuthConfirmation";
 
 
 
@@ -88,6 +89,7 @@ function App() {
           <Route path="/mosip.resident.vidstatus" element={<VidStatus/>}/>
           <Route path="/mosip.resident.authhistory" element={<AuthHistory/>}/>
           <Route path="/services" element={<Service/>}/>
+          <Route path="/authcomfirm" element={<AuthConfimation/>}/>
          
           
           {/* {dummyData &&

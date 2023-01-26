@@ -16,7 +16,6 @@ import { createPost } from "../services/ResidentServices";
 
 
 
-
 const AuthType = (props) => {
     const handleClick = (type, lock) => {
         props.setSelectedOption(type);
@@ -93,11 +92,10 @@ const AuthLock = () => {
     // });
     //navigate to path here
     
-   
-    navigate('/');
+   ;
+    navigate('/authcomfirm',{state:{authType,authAction}});
  
   };
-  
   const handleClick = (type) => {
     setOpen(!open);
     setAuthType(type);

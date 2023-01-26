@@ -21,6 +21,52 @@
         }
       },
       "id": 1
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.authunlock",
+          "version": "1.1.5.6",
+          "requestTime": "1/26/2023, 7:04:11 PM",
+          "request": {
+            "individualId": "1234567",
+            "individualIdType": "UIN/VID",
+            "otp": "000000",
+            "authType": "Demographic"
+          },
+          "types": [
+            "Demographic Auth Type",
+            "Biometric Auth Type",
+            "Biometirc-FMR Auth Type",
+            "Biometirc-IIR Auth Type",
+            "Biometric-FID Auth Type "
+          ]
+        }
+      },
+      "id": 2
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.authlock",
+          "version": "1.1.5.6",
+          "requestTime": "1/26/2023, 7:04:36 PM",
+          "request": {
+            "individualId": "1234567",
+            "individualIdType": "UIN/VID",
+            "otp": "000000",
+            "authType": "Biometric"
+          },
+          "types": [
+            "Demographic Auth Type",
+            "Biometric Auth Type",
+            "Biometirc-FMR Auth Type",
+            "Biometirc-IIR Auth Type",
+            "Biometric-FID Auth Type "
+          ]
+        }
+      },
+      "id": 3
     }
   ],
   "comments": [
