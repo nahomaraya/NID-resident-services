@@ -26,6 +26,8 @@ import VID from "./pages/VID";
 import Lock from "./pages/Lock";
 import Unlock from "./pages/Unlock";
 import VidStatus from "./pages/VidStatus";
+import AuthLock from "./pages/AuthLock";
+import AuthHistory from "./pages/AuthHistory";
 
 
 
@@ -79,11 +81,14 @@ function App() {
           <Route path="/mosip.resident.updateuin" element={<UpdateUIN/>}/>
           <Route path="/mosip.resident.authlock" element={<Lock/>}/>
           <Route path="/mosip.resident.authunlock" element={<Unlock/>}/>
+          <Route path="/mosip.resident.auth" element={<AuthLock/>}/>
           <Route path="/mosip.resident.euin" element={<DownloadEUin/>}/>
           <Route path="/mosip.resident.reprintuin" element={<Reprint/>}/>
           <Route path="/mosip.resident.vid" element={<VID/>}/>
           <Route path="/mosip.resident.vidstatus" element={<VidStatus/>}/>
+          <Route path="/mosip.resident.authhistory" element={<AuthHistory/>}/>
           <Route path="/services" element={<Service/>}/>
+         
           
           {/* {dummyData &&
             dummyData.map((item, index) => (

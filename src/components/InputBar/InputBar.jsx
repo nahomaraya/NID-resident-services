@@ -143,7 +143,7 @@ const InputBar = (props) => {
          : 
           <form onSubmit={handleGoState}>
           <div class="flex flex-col items-center justify-center p-3"> 
-            <div className="flex justify-center items-center lg:p-6 md:p-3 mb-4"><h6 className="font-bold text-white  lg:text-2xl md:text-xs mr-4"><FormattedMessage id={"select-service-type"}/>: </h6><DropdownSelector  options={['track-request-status','update-demographic-data', 'lock-auth-type', 'unlock-auth-type', 'download-eUIN', 'reprint-uin',  'generate-virtual-id', 'revoke-virtual-id']} onCallback = {handleService}/></div> 
+            <div className="flex justify-center items-center lg:p-6 md:p-3 mb-4"><h6 className="font-bold text-white  lg:text-2xl md:text-xs mr-4"><FormattedMessage id={"select-service-type"}/>: </h6><DropdownSelector  options={['track-request-status','update-demographic-data', 'auth-type', 'view-trans-hist', 'download-eUIN', 'reprint-uin', 'generate-virtual-id','revoke-virtual-id']} onCallback = {handleService}/></div> 
             <Description inst={service.instruction}/>
                </div>   
            

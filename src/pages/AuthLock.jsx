@@ -14,6 +14,9 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
 import LockIcon from '@mui/icons-material/Lock';
 import { createPost } from "../services/ResidentServices";
 
+
+
+
 const AuthType = (props) => {
     const handleClick = (type, lock) => {
         props.setSelectedOption(type);
@@ -24,8 +27,8 @@ const AuthType = (props) => {
      return(
     props.locked?
     <div class="flex items-center justify-center p-3 mb-5">
-      <p className="font-bold text-white  lg:text-xl md:text-xs mr-4">Current Status:</p> 
-     <p className="font-bold text-white  lg:text-xl md:text-xs mr-4"> Locked</p> 
+      <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Current Status:</h6> 
+     <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4"> Locked</h6> 
                    
     <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
         <LockIcon/>
@@ -35,8 +38,8 @@ const AuthType = (props) => {
     </div>
     :
     <div class="flex items-center justify-center p-3 mb-5">
-    <p className="font-bold text-white  lg:text-xl md:text-xs mr-4">Current Status:</p> 
-   <p className="font-bold text-white  lg:text-xl md:text-xs mr-4"> Unlocked</p>
+    <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Current Status:</h6> 
+   <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4"> Unlocked</h6>
     <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#729ca5] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
         <LockOpenIcon/>
         {props.type}
@@ -48,7 +51,7 @@ const AuthType = (props) => {
 
 }
 
-const Unlock = () => {
+const AuthLock = () => {
     const [open, setOpen] = useState(false);
   const [authType, setAuthType] = useState();
   const [authAction, setAuthAction] = useState();
@@ -130,18 +133,18 @@ const Unlock = () => {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   
     useEffect(() => {
-      
-      const timer = setTimeout(()=> {
-         setIsLoading(false);
-      }, 5000);
-    
-      return () => {
-        clearTimeout(timer);
-      }
-   
-      
-      
-    }, [])
+        if(location.state!=null){
+        const timer = setTimeout(()=> {
+           setIsLoading(false);
+        }, 5000);
+       
+        return () => {
+          clearTimeout(timer);
+        }}
+        else{
+          navigate('/');
+        }
+      }, [])
 
     return(
         <>
@@ -193,4 +196,4 @@ const Unlock = () => {
 
 
 }
-export default Unlock;
+export default AuthLock;

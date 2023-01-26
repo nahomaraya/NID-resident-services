@@ -97,14 +97,14 @@ export const SIDEBAR_DATA = [
       },
       {
         id: 3,
-        name: "lock-auth-type",
-        instruction: "lock-auth-type-inst",
+        name: "auth-type",
+        instruction: "auth-type-inst",
         path: "lut",
         input: "UIN/VID",
         otpReq: true,
-        action: "lock-auth-type-action",
+        action: "auth-type-action",
         request: "authType",
-        apiID: "mosip.resident.authlock",
+        apiID: "mosip.resident.auth",
         icon: <Lock />,
         types: [
           'Demographic Auth Type',
