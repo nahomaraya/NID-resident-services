@@ -161,7 +161,7 @@ const InputBar = (props) => {
                 <div className="flex justify-center items-center lg:p-6 md:p-2"><h6 className="font-bold text-white  lg:text-2xl md:text-xs mr-4"><FormattedMessage id={"select-OTP-method"}/>: </h6><DropdownSelector  options={['send-phone', 'send-email']} onCallback = {handleCallback}/></div> 
        
                 <div class="justify-center items-center p-1">
-                    <button type="submit"  class="inline-block px-7 py-3  bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60] hover:shadow-lg focus:bg-[#214b60] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="go"/></button>
+                    <button type="submit"  class="inline-block px-7 py-3  bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#214b60] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="go"/></button>
                 </div>
                       {/* <div class="sm:flex w-5/6 ml-auto  items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">
                           <input class="text-base text-gray-400 flex-grow outline-none px-2 " type="text" placeholder={props.input} />

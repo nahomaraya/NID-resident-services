@@ -30,6 +30,7 @@ import AuthLock from "./pages/AuthLock";
 import AuthHistory from "./pages/AuthHistory";
 import AuthConfimation from "./pages/AuthConfirmation";
 import UpdateConfimation from "./pages/UpdateConfirmation";
+import VIDConfimation from "./pages/VIDConfirmation";
 
 
 
@@ -91,7 +92,9 @@ function App() {
           <Route path="/mosip.resident.authhistory" element={<AuthHistory/>}/>
           <Route path="/services" element={<Service/>}/>
           <Route path="/authcomfirm" element={<AuthConfimation/>}/>
-          <Route paht="/updateconfirm" element={<UpdateConfimation/>}/>
+          <Route path="/updateconfirm" element={<UpdateConfimation/>}/>
+          <Route  path="/vidconfirm" element={<VIDConfimation/>}/>
+
          
           
           {/* {dummyData &&

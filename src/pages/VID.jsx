@@ -42,8 +42,8 @@ const VID = (props) => {
       // });
       //navigate to path here
       
-     
-      navigate('/');
+      navigate('/vidconfirm',{state:{vidType}});
+      
    
     };
     
@@ -99,11 +99,11 @@ const VID = (props) => {
       
         <div className="flex flex-wrap px-6 py-6">
       { types.map(type => (
-        
+        <div class="flex flex-col items-center justify-center p-3 mb-5">
        
-     <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(type)}}>{type}</button>  
-
-
+     <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(type)}}>{type}</button>  
+     <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">THis is a {type} VID</h6> 
+        </div>
       ))}
     </div>
       </div>

@@ -47,9 +47,9 @@ const Home = (props) => {
                     <FormattedMessage id="home.select language"/>
                 </p>
               <div className="flex flex-row items-center gap-10 mt-4">
-                <button type="button" onClick={() => setLanguage(LOCALES.ENGLISH)} class="inline-block px-7 py-3 bg-[#214b60] text-[#cdd7db] font-large lg:text-xl md:text-sm font-mono leading-tight uppercase rounded-full shadow-md hover:bg-[#072c3f] hover:shadow-lg focus:bg-[#487680] focus:shadow-lg focus:outline-none focus:ring active:shadow-lg transition duration-150 ease-in-out">English</button>
+                <button type="button" onClick={() => setLanguage(LOCALES.ENGLISH)} class="inline-block px-7 py-3 bg-[#5e90a9] text-[#cdd7db] font-large lg:text-xl md:text-sm font-mono leading-tight uppercase rounded-full shadow-md hover:bg-[#072c3f] hover:shadow-lg focus:bg-[#487680] focus:shadow-lg focus:outline-none focus:ring active:shadow-lg transition duration-150 ease-in-out">English</button>
                 
-                <button type="button" onClick={() => setLanguage(LOCALES.AMHARIC)} class="inline-block px-7 py-3 bg-[#214b60] text-[#cdd7db] font-large lg:text-xl md:text-sm  font-mono leading-tight uppercase rounded-full shadow-md hover:bg-[#072c3f] hover:shadow-lg focus:bg-[#487680] focus:shadow-lg focus:outline-none focus:ring active:shadow-lg transition duration-150 ease-in-out">አማርኛ</button>
+                <button type="button" onClick={() => setLanguage(LOCALES.AMHARIC)} class="inline-block px-7 py-3 bg-[#5e90a9] text-[#cdd7db] font-large lg:text-xl md:text-sm  font-mono leading-tight uppercase rounded-full shadow-md hover:bg-[#072c3f] hover:shadow-lg focus:bg-[#487680] focus:shadow-lg focus:outline-none focus:ring active:shadow-lg transition duration-150 ease-in-out">አማርኛ</button>
                 
               </div>
             </div>

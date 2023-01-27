@@ -27,7 +27,7 @@ const AuthType = (props) => {
     props.locked?
     <div class="flex flex-col items-center justify-center p-3 mb-5">
    
-    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
+    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
         <LockIcon/>
         {props.type}
         
@@ -37,7 +37,7 @@ const AuthType = (props) => {
     :
     <div class="flex flex-col items-center justify-center p-3 mb-5">
  
-    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
+    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
         <LockOpenIcon/>
         {props.type}
     </button> 
