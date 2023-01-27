@@ -54,7 +54,7 @@ const TrackStatus = (props) => {
         <>
         {isLoading? <LoadingScreen/> :  
         <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-        <div  class=" bg-[#cadadd] flex h-full">
+        <div  class=" bg-[#d5e8f2] flex h-full">
         <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-20">
                     <h1 className="text-center font-bold text-white  lg:text-4xl md:text-2xl">Revoke VID</h1>
                     <h2 className="text-center font-bold text-white  lg:text-2xl md:text-sm p-4">Your VID is revoked. Notification has been sent to the provided contact detail(s)</h2>

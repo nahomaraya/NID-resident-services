@@ -148,7 +148,7 @@ const AuthLock = () => {
       {isLoading? <LoadingScreen/> : 
       <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
      
-     <div  class=" bg-[#cadadd] flex h-full">
+     <div  class=" bg-[#d5e8f2]flex h-full">
         <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg lg:p-14 md:p-6">
         <h2 className="text-center font-bold text-white">Click on auth type to lock/unlock</h2>
            

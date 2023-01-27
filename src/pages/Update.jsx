@@ -241,7 +241,7 @@ const UpdateUIN = (props) => {
         <>
         {isLoading? <LoadingScreen/> : 
    <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-    <div class="bg-[#cadadd] flex">
+    <div class="bg-[#d5e8f2] flex">
         <div class="md:container mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-14 overflow-y-scroll">
            
             
