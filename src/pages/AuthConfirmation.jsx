@@ -23,7 +23,7 @@ const AuthConfimation = (props) => {
     const navigate = useNavigate();
     return(
       <>
-         <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
+        <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
           <div  class=" bg-[#cadadd] flex h-full">
           <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-20">
             {location.state.authAction? 
@@ -45,7 +45,7 @@ const AuthConfimation = (props) => {
                   
           </div>
           </div>
-      </div>
+        </div>
       </>
     );
   }
