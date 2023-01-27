@@ -36,15 +36,15 @@ const UpdateName = (props) =>{
     <>
     
     <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">First Name</label>
-    <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
+    <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
     value={props.firstName} required/>
     <label for="checked-checkbox" class="ml-2 text-xl font-medium text-[#edf2f3]">Last Name</label>
-     <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
+     <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
     value={props.lastName} required/>
     
     <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
-    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
+    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-[#05212f] border-gray-600 placeholder-gray-400">
      <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
      </div>
     </>);
@@ -192,7 +192,7 @@ const UpdateUIN = (props) => {
           
 
     }
-  
+   
   
    
     const handleClick = () => {
@@ -213,7 +213,8 @@ const UpdateUIN = (props) => {
         .then(response => {
             console.log("sucess");
         //   setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
-           navigate('/');
+        navigate('/updatecomfirm',{state:{arr}});
+   
       });
     }
    
@@ -276,7 +277,7 @@ const UpdateUIN = (props) => {
   
 </div>
       <div class="justify-center items-center  mt-3">
-          <button type="submit" onClick={()=>{setUpdate(true)}} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+          <button type="submit" onClick={()=>{setUpdate(true)}} class="inline-block px-7 py-3   bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Submit</button>
       </div>
       </>
       :
@@ -291,7 +292,7 @@ const UpdateUIN = (props) => {
        { (request.address) && <UpdateAddress onCallback = {handleDemographics} active={sendRequest}/>}
        </div>
        <div class="justify-center items-center  mt-3">
-          <button type="submit" onClick={handleClick} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+          <button type="submit" onClick={handleClick} class="inline-block px-7 py-3   bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
       </div>
        
 

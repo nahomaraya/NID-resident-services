@@ -82,6 +82,7 @@ const AuthHistory = () => {
       <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
         <div  class=" bg-[#cadadd] flex h-full">
         <div class="container bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-20">
+        <h1 className="text-center font-bold text-white  lg:text-4xl md:text-2xl">Auth Transaction History</h1>
           {/* <Box >
            <MaterialReactTable className="w-full" columns={columns} data={data} />
            </Box>      

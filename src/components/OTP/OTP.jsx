@@ -79,7 +79,7 @@ const OTP = (props) => {
     
     return(
    
-      <div class=" bg-[#cadadd] flex h-full">
+      <div class=" bg-[#d5e8f2] flex h-full">
       <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-14">
                
                     {
@@ -108,8 +108,8 @@ const OTP = (props) => {
                       
                       <div class="flex justify-center text-center mt-5 gap-6">
                       {/* <ResendOTP onResendClick={() => console.log("Resend clicked")} /> */}
-                      <button type="submit" onClick={handleVerify} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="verify"/></button>
-                      <button type="button" onClick={handleOpen} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="resend"/></button>
+                      <button type="submit" onClick={handleVerify} class="inline-block px-7 py-3  bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="verify"/></button>
+                      <button type="button" onClick={handleOpen} class="inline-block px-7 py-3  bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="resend"/></button>
                       {/* {
                         phone? <button type="button" onClick={() => setPhone(!phone)} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">Send via email</button>:
                         <button type="button" onClick={() => setPhone(!phone)} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">Send via phone</button>

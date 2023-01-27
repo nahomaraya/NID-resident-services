@@ -35,7 +35,7 @@ const Sidebarr = ({children}) => {
            
           <NavDropdown
               id="nav-dropdown-dark-example"
-              title={<><span className="text-[#304f55] text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}
+              title={<><span className="text-[#17242a] text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}
               menuVariant="dark"
              
             >

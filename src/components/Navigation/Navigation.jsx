@@ -55,14 +55,14 @@ const { language, setLanguage } = useContext(LanguageContext);
           // </Link>
           //  ))}
             // </NavDropdown>:
-           <Nav.Item class=" p-2 hover:text-[#304f55]">
+           <Nav.Item class=" p-2 hover:text-[#23363f]">
             <Link to={itemData.path} className="nav-link" >
-              <span className="text-[#304f55] text-xl font-bold"><FormattedMessage id={itemData.name}/></span>
+              <span className="text-[#17242a] text-xl font-bold"><FormattedMessage id={itemData.name}/></span>
             </Link>
           </Nav.Item>))}
           <NavDropdown
               id="nav-dropdown"
-              title={<><span className="text-[#304f55] text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}
+              title={<><span className="text-[#17242a] text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}
               menuVariant="dark"
              
             >

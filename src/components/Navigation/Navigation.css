@@ -1,7 +1,7 @@
 .navbar{
   display: flex;
   justify-content: flex-end; 
-  background-color: #dce6e8;
+  background-color: #acd2e5;
 }
 .nav-left{
     float: left;

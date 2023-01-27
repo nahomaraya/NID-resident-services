@@ -25,24 +25,23 @@ const AuthType = (props) => {
 
      return(
     props.locked?
-    <div class="flex items-center justify-center p-3 mb-5">
-      <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Current Status:</h6> 
-     <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4"> Locked</h6> 
-                   
-    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
+    <div class="flex flex-col items-center justify-center p-3 mb-5">
+   
+    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
         <LockIcon/>
         {props.type}
         
     </button>  
+    <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Status: Locked</h6> 
     </div>
     :
-    <div class="flex items-center justify-center p-3 mb-5">
-    <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Current Status:</h6> 
-   <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4"> Unlocked</h6>
-    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#729ca5] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
+    <div class="flex flex-col items-center justify-center p-3 mb-5">
+ 
+    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
         <LockOpenIcon/>
         {props.type}
-    </button>  
+    </button> 
+    <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Status: Unlocked</h6> 
     </div>
   
 
@@ -151,9 +150,9 @@ const AuthLock = () => {
      
      <div  class=" bg-[#cadadd] flex h-full">
         <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg lg:p-14 md:p-6">
-        <h2 className="text-center font-bold text-white">Choose auth type to lock/unlock</h2>
+        <h2 className="text-center font-bold text-white">Click on auth type to lock/unlock</h2>
            
-      <div className="flex flex-wrap px-6 py-6">
+      <div className="flex flex-wrap items-center justify-center px-6 py-6">
       { types.map(type => (
        
         // <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(type)}}>{type}</button>  
@@ -162,10 +161,10 @@ const AuthLock = () => {
       ))}
     </div>
 
-    <div class="justify-center items-center p-1 gap-3">
-                  <button type="submit" onClick={() => navigate('/')} class="inline-block lg:mr-10 px-7 py-3  bg-[#84a8b0] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg focus:bg-[#284247] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
-                  <button type="submit" onClick={() => navigate('/services')} class="inline-block px-7 py-3  bg-[#84a8b0] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg focus:bg-[#284247] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
-    </div>
+    <div class="justify-center items-center p-1">
+                  <button type="submit" onClick={() => navigate('/')} class="inline-block lg:mr-10 px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#6aa2be] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
+                  <button type="submit" onClick={() => navigate('/services')} class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#6aa2be] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
+              </div>
 
         </div>
         </div>
