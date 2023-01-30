@@ -8,6 +8,7 @@ import Loading from "../LoadingScreen/Loading";
 import Description from "../Description/Description";
 import otpContext from "../../providers/OTPprovider";
 import { useMediaQuery } from 'react-responsive'
+import ServiceList from "../ServiceList/ServiceList";
 
 const Service = (props) => {
   const { name,inst,input,action,apiId,requestType } = props;
@@ -52,7 +53,10 @@ const Service = (props) => {
   } else {
     return (
       <div id="page" className={isDesktopOrLaptop? "pt-14  h-full ": "h-full"}>
-      {card ? <InputBar name={name} input={input} onCardChange={setCard} setOtp={setOtp} setID={setID}  setService={setServiceType}/>: 
+      {card ? 
+      // <InputBar name={name} input={input} onCardChange={setCard} setOtp={setOtp} setID={setID}  setService={setServiceType}/>
+            <ServiceList/>
+      : 
       <>
       
            <OTP  otp={selectedOption} id={individualID} service={service}/> 

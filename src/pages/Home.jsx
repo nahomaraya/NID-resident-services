@@ -9,6 +9,7 @@ import '../App.css';
 import { LOCALES } from "../il8n/locales";
 import { LanguageContext } from "../providers/LangProvider";
 import Footer from "../components/Footer/Footer";
+import ServiceList from "../components/ServiceList/ServiceList";
 
 const Home = (props) => {
     // const handlelangChange = useCallback(event => {
@@ -53,6 +54,7 @@ const Home = (props) => {
                 
               </div>
             </div>
+            {/* <ServiceList/> */}
           
             </div>
         
