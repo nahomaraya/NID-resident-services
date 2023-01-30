@@ -241,8 +241,8 @@ const UpdateUIN = (props) => {
         <>
         {isLoading? <LoadingScreen/> : 
    <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-    <div class="bg-[#d5e8f2] flex">
-        <div class="md:container mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-14 overflow-y-scroll">
+     <div class=" bg-welcome flex h-full">
+      <div class="md:container  mx-auto  rounded-lg p-14 mt-5">
            
             
             {!update ?
@@ -277,7 +277,7 @@ const UpdateUIN = (props) => {
   
 </div>
       <div class="justify-center items-center  mt-3">
-          <button type="submit" onClick={()=>{setUpdate(true)}} class="inline-block px-7 py-3   bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#214b60]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+          <button type="submit" onClick={()=>{setUpdate(true)}} class="inline-block px-7 py-3   bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Submit</button>
       </div>
       </>
       :
@@ -292,7 +292,7 @@ const UpdateUIN = (props) => {
        { (request.address) && <UpdateAddress onCallback = {handleDemographics} active={sendRequest}/>}
        </div>
        <div class="justify-center items-center  mt-3">
-          <button type="submit" onClick={handleClick} class="inline-block px-7 py-3   bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+          <button type="submit" onClick={handleClick} class="inline-block px-7 py-3   bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
       </div>
        
 

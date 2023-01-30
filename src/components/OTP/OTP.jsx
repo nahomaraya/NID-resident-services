@@ -79,8 +79,8 @@ const OTP = (props) => {
     
     return(
    
-      <div class=" bg-[#d5e8f2] flex h-full">
-      <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-14">
+      <div class=" bg-welcome flex h-full">
+      <div class="md:container  mx-auto  rounded-lg p-14">
                
                     {
                         phone? 

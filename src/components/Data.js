@@ -24,6 +24,7 @@ import {
  
 } from "./Icons";
 
+
 export const langs = [
   {
     id: 1,
@@ -76,6 +77,7 @@ export const SIDEBAR_DATA = [
         otpReq: true,
         apiID: "mosip.resident.updateuin",
         icon: <LayoutIcon />,
+        image: require('../assets/images/demographic.jpg'),
         documents: [
           "name",
           "email",
@@ -94,6 +96,7 @@ export const SIDEBAR_DATA = [
         action: "track-request-status-action",
         apiID: "mosip.resident.checkstatus",
         icon: <CalendarIcon />,
+        image: require('../assets/images/request.jpg')
       },
       {
         id: 3,
@@ -106,6 +109,7 @@ export const SIDEBAR_DATA = [
         request: "authType",
         apiID: "mosip.resident.auth",
         icon: <Lock />,
+        image: require('../assets/images/lockUnlock.png'),
         types: [
           'Demographic Auth Type',
           'Biometric Auth Type',
@@ -114,27 +118,9 @@ export const SIDEBAR_DATA = [
           'Biometric-FID Auth Type '
         ]
       },
+     
       {
         id: 4,
-        name: "unlock-auth-type",
-        instruction: "unlock-auth-type-inst",
-        path: "ult",
-        input: "UIN/VID",
-        otpReq: true,
-        action: "unlock-auth-type-action",
-        request: "authType",
-        apiID: "mosip.resident.authunlock",
-        icon: <LockIcon />,
-        types: [
-          'Demographic Auth Type',
-          'Biometric Auth Type',
-          'Biometirc-FMR Auth Type',
-          'Biometirc-IIR Auth Type',
-          'Biometric-FID Auth Type '
-        ]
-      },
-      {
-        id: 5,
         name: "download-eUIN",
         instruction: "download-eUIN-inst",
         input: "UIN/VID",
@@ -144,10 +130,11 @@ export const SIDEBAR_DATA = [
         request: "cardType",
         apiID: "mosip.resident.euin",
         icon: <DownIcon />,
+        image: require('../assets/images/download.jpg')
       },
      
       {
-        id: 6,
+        id: 5,
         name: "reprint-uin",
         instruction: "reprint-uin-inst",
         input: "UIN/VID",
@@ -157,9 +144,10 @@ export const SIDEBAR_DATA = [
         request: "cardType",
         apiID: "mosip.resident.reprintuin",
         icon: <FingerIcon />,
+        image: require('../assets/images/reprint.jpg')
       },
       {
-        id: 7,
+        id: 6,
         name: "view-trans-hist",
         instruction: "view-trans-hist-inst",
         input: "UIN/VID",
@@ -168,9 +156,10 @@ export const SIDEBAR_DATA = [
         action: "view-trans-hist-action",
         apiID: "mosip.resident.authhistory",
         icon: <HistIcon/>,
+        image: require('../assets/images/authhistory.jpg')
       },
       {
-        id: 8,
+        id: 7,
         name: "generate-virtual-id",
         instruction: "generate-virtual-id-inst",
         input: "UIN",
@@ -180,13 +169,14 @@ export const SIDEBAR_DATA = [
         request: "vidType",
         apiID: "mosip.resident.vid",
         icon: <AuthIcon />,
+        image: require('../assets/images/generate.jpg'),
         types: [
           'PERPETUAL',
           'TEMPORARY'
         ]
       },
       {
-        id: 9,
+        id: 8,
         name: "revoke-virtual-id",
         instruction: "revoke-virtual-id-inst",
         input: "UIN",
@@ -196,6 +186,7 @@ export const SIDEBAR_DATA = [
         request: "vidStatus",
         apiID:"mosip.resident.vidstatus",
         icon: <SafetyIcon />,
+        image: require('../assets/images/revoke.jpg'),
         types: [
           'PERPETUAL',
           'TEMPORARY'

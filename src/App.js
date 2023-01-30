@@ -31,6 +31,7 @@ import AuthHistory from "./pages/AuthHistory";
 import AuthConfimation from "./pages/AuthConfirmation";
 import UpdateConfimation from "./pages/UpdateConfirmation";
 import VIDConfimation from "./pages/VIDConfirmation";
+import ServiceList from "./components/ServiceList/ServiceList";
 
 
 
@@ -90,7 +91,8 @@ function App() {
           <Route path="/mosip.resident.vid" element={<VID/>}/>
           <Route path="/mosip.resident.vidstatus" element={<VidStatus/>}/>
           <Route path="/mosip.resident.authhistory" element={<AuthHistory/>}/>
-          <Route path="/services" element={<Service/>}/>
+          <Route path="/services" element={<ServiceList/>}/>
+          <Route path="/service" element={<Service/>}/>
           <Route path="/authcomfirm" element={<AuthConfimation/>}/>
           <Route path="/updateconfirm" element={<UpdateConfimation/>}/>
           <Route  path="/vidconfirm" element={<VIDConfimation/>}/>

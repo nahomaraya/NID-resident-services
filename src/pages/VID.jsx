@@ -93,8 +93,8 @@ const VID = (props) => {
       <>
         {isLoading? <LoadingScreen/> : 
         <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-         <div  class=" bg-[#d5e8f2] flex h-full">
-        <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-14">
+           <div class=" bg-welcome flex h-full">
+      <div class="md:container  mx-auto  rounded-lg p-14 mt-5">
         <h2 className="text-center font-bold text-white">Chosse VID type to generate</h2>
       
         <div className="flex flex-wrap px-6 py-6">

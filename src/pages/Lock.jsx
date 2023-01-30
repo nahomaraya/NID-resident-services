@@ -83,8 +83,8 @@ const Lock = (props) => {
       <>
       {isLoading? <LoadingScreen/> : 
       <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-        <div  class=" bg-[#cadadd] flex h-full">
-        <div class="md:container  mx-auto bg-welcome h-screen w-full bg-cover bg-center rounded-lg lg:p-14 md:p-2">
+        <div class=" bg-welcome flex h-full">
+      <div class="md:container  mx-auto  rounded-lg p-14 mt-5">
   
         <h2 className="text-center font-bold text-white">Choose auth type to lock</h2>
            
