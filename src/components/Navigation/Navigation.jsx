@@ -34,11 +34,22 @@ const { language, setLanguage } = useContext(LanguageContext);
       <Container fluid>
         <Navbar.Brand href="" className="flex items-center">  
         <Link to="">
-  <img src={NID} alt="Logo" className="w-10 h-10" />
-  </Link></Navbar.Brand>
+  <img src={NID} alt="Logo" className="w-10 h-10 mr-6" />
+  </Link>
+  <NavDropdown
+              id="nav-dropdown"
+              title={<><span className="text-[#17242a] text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}
+              menuVariant="dark"
+             
+            >
+              <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>
+            </NavDropdown>
+  
+  </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-dark-example" />
         <Navbar.Collapse id="navbar-dark-example">
-        <Nav className="ml-96 items-center">
+        <Nav className="ml-auto mr-20 items-center">
          
           {dummyData.map((itemData, index) => (
             // itemData.subMenu ? 
@@ -60,15 +71,8 @@ const { language, setLanguage } = useContext(LanguageContext);
               <span className="text-[#17242a] text-xl font-bold"><FormattedMessage id={itemData.name}/></span>
             </Link>
           </Nav.Item>))}
-          <NavDropdown
-              id="nav-dropdown"
-              title={<><span className="text-[#17242a] text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}
-              menuVariant="dark"
-             
-            >
-              <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>
-            </NavDropdown>
+          
+         
           </Nav>
          
           

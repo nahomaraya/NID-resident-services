@@ -30,15 +30,15 @@ const ServiceList = () => {
             item.subMenu.map((subitem, index) => (
             <div class=" my-1 p-3 pl-5 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
-            <article class="border-2 border-[#47f4c7] bg-[#76b5d4]  hover:bg-[#6aa2be] hover:scale-105 overflow-hidden rounded-lg shadow-lg">
+            <article onClick={()=>navigateService(subitem.name)} class="border-2 border-[#47f4c7] bg-[#76b5d4]  hover:bg-[#6aa2be] hover:scale-105 hover:cursor-pointer overflow-hidden rounded-lg shadow-lg">
 
-                <a href="#">
+                <a onClick={()=>navigateService(subitem.name)}>
                     <img alt="Placeholder" class="block h-40 w-full" src={require('../../assets/images/' + subitem.image)}/>
                 </a>
 
                 <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                     <h1 class="text-lg">
-                        <a class="no-underline hover:underline text-black cursor-pointer" onClick={()=>navigateService(subitem.name)}>
+                        <a class="no-underline hover:underline text-[#17242a] cursor-pointer" onClick={()=>navigateService(subitem.name)}>
                         <FormattedMessage id={subitem.name}/>
                         </a>
                     </h1>
@@ -46,12 +46,12 @@ const ServiceList = () => {
                 </header>
 
                 <footer class="flex items-center justify-between leading-none p-2  md:p-4">
-                    <a class="flex items-center no-underline  text-black" href="#">
+                  
                       
-                        <p class="ml-2 h-10 text-sm">
+                        <p class="ml-2 h-10 text-[#17242a] text-sm">
                       <FormattedMessage id ={subitem.instruction} />
                         </p>
-                    </a>
+                    
                    
                 </footer>
 
