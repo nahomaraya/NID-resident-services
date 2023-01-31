@@ -93,7 +93,9 @@ const InputBar = (props) => {
     
     useEffect(() => {
      initalService();
+   
     }, [])
+   
 
 
     useEffect(() => {
@@ -102,8 +104,10 @@ const InputBar = (props) => {
     }, [id])
 
     useEffect(() => {
+   
       console.log(service)
       props.setService(service)
+   
       // const toRef = setTimeout(() => {
       //   setLoading(true);
       //   clearTimeout(toRef);
@@ -128,7 +132,7 @@ const InputBar = (props) => {
   return (
   <>
         
-        <div class=" bg-welcome flex h-full">
+        <div class="bg-welcome h-full">
         <div class="md:container  mx-auto  rounded-lg p-14">
         {loading? 
         
@@ -151,7 +155,10 @@ const InputBar = (props) => {
                    <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={id} placeholder={service.input}  onChange={handleChange}
                    required/>
                 </div>
-                <div className="flex justify-center items-center lg:p-6 md:p-2"><h6 className="font-bold text-white  lg:text-2xl md:text-xs mr-4"><FormattedMessage id={"select-OTP-method"}/>: </h6><DropdownSelector  options={['send-phone', 'send-email']} onCallback = {handleCallback}/></div> 
+                <div className="flex justify-center items-center p-6 md:p-2">
+                  <h6 className="font-bold text-white  lg:text-2xl md:text-xs mr-4"><FormattedMessage id={"select-OTP-method"}/>: </h6>
+                  <DropdownSelector options={['send-phone', 'send-email']} onCallback = {handleCallback}/>
+                  </div> 
        
                 <div class="justify-center items-center p-1">
                     <button type="submit"  class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#214b60] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="go"/></button>

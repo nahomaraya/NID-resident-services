@@ -6,12 +6,12 @@ const Table = (props) => {
     
      return(
       <div>
-         <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-auto sm:shadow-lg my-5">
+         <table class="w-full flex flex-row flex-no-wrap  rounded-lg overflow-auto sm:shadow-lg my-5">
 			<thead class="text-white text-sm w-1/3">
             {props.data.map(data => (
 
-                <tr class="bg-[#6aa2be] flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0 ">
-                            {props.columns.map(column =>(<th class="p-3 text-left">{column}</th>))}
+                <tr class="bg-[#6aa2be] flex flex-col flex-no wrap md:table-row rounded-l-lg rounded-none mb-2 pt-2 ">
+                            {props.columns.map(column =>(<th class="p-3 text-left lg:text-xl md:text-base">{column}</th>))}
 
 
                 </tr>

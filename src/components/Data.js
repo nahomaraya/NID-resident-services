@@ -77,7 +77,7 @@ export const SIDEBAR_DATA = [
         otpReq: true,
         apiID: "mosip.resident.updateuin",
         icon: <LayoutIcon />,
-        image: require('../assets/images/demographic.jpg'),
+        image: 'demographic.jpg',
         documents: [
           "name",
           "email",
@@ -96,7 +96,7 @@ export const SIDEBAR_DATA = [
         action: "track-request-status-action",
         apiID: "mosip.resident.checkstatus",
         icon: <CalendarIcon />,
-        image: require('../assets/images/request.jpg')
+        image: 'request.jpg'
       },
       {
         id: 3,
@@ -109,7 +109,7 @@ export const SIDEBAR_DATA = [
         request: "authType",
         apiID: "mosip.resident.auth",
         icon: <Lock />,
-        image: require('../assets/images/lockUnlock.png'),
+        image: 'lockUnlock.png',
         types: [
           'Demographic Auth Type',
           'Biometric Auth Type',
@@ -130,7 +130,7 @@ export const SIDEBAR_DATA = [
         request: "cardType",
         apiID: "mosip.resident.euin",
         icon: <DownIcon />,
-        image: require('../assets/images/download.jpg')
+        image: 'download.jpg'
       },
      
       {
@@ -144,7 +144,7 @@ export const SIDEBAR_DATA = [
         request: "cardType",
         apiID: "mosip.resident.reprintuin",
         icon: <FingerIcon />,
-        image: require('../assets/images/reprint.jpg')
+        image: 'reprint.jpg'
       },
       {
         id: 6,
@@ -156,7 +156,7 @@ export const SIDEBAR_DATA = [
         action: "view-trans-hist-action",
         apiID: "mosip.resident.authhistory",
         icon: <HistIcon/>,
-        image: require('../assets/images/authhistory.jpg')
+        image: 'authhistory.jpg'
       },
       {
         id: 7,
@@ -169,7 +169,7 @@ export const SIDEBAR_DATA = [
         request: "vidType",
         apiID: "mosip.resident.vid",
         icon: <AuthIcon />,
-        image: require('../assets/images/generate.jpg'),
+        image: 'generate.jpg',
         types: [
           'PERPETUAL',
           'TEMPORARY'
@@ -186,7 +186,7 @@ export const SIDEBAR_DATA = [
         request: "vidStatus",
         apiID:"mosip.resident.vidstatus",
         icon: <SafetyIcon />,
-        image: require('../assets/images/revoke.jpg'),
+        image: 'revoke.jpg',
         types: [
           'PERPETUAL',
           'TEMPORARY'

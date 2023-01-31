@@ -24,8 +24,8 @@ const UpdateConfimation = (props) => {
     return(
       <>
         <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-        <div class=" bg-welcome flex h-full">
-      <div class="md:container  mx-auto  rounded-lg p-14 mt-5">
+        <div class=" bg-welcome h-full">
+      <div class="md:container  mx-auto  rounded-lg p-14 ">
             <h1 className="text-center font-bold text-white  lg:text-4xl md:text-2xl">Your demographic information has been successfully updated</h1>
             <h2 className="text-center font-bold text-white  lg:text-2xl md:text-sm p-4">Notification has been sent to the provided contact details</h2>
              

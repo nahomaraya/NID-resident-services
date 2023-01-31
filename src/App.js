@@ -91,12 +91,13 @@ function App() {
           <Route path="/mosip.resident.vid" element={<VID/>}/>
           <Route path="/mosip.resident.vidstatus" element={<VidStatus/>}/>
           <Route path="/mosip.resident.authhistory" element={<AuthHistory/>}/>
-          <Route path="/services" element={<ServiceList/>}/>
-          <Route path="/service" element={<Service/>}/>
           <Route path="/authcomfirm" element={<AuthConfimation/>}/>
           <Route path="/updateconfirm" element={<UpdateConfimation/>}/>
           <Route  path="/vidconfirm" element={<VIDConfimation/>}/>
 
+          <Route path="/services" element={<ServiceList/>}/>
+          <Route path="/service" element={<Service/>}/>
+       
          
           
           {/* {dummyData &&

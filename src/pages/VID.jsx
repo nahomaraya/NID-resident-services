@@ -97,7 +97,7 @@ const VID = (props) => {
       <div class="md:container  mx-auto  rounded-lg p-14 mt-5">
         <h2 className="text-center font-bold text-white">Chosse VID type to generate</h2>
       
-        <div className="flex flex-wrap px-6 py-6">
+        <div className="flex flex-wrap items-center justify-center px-6 py-6">
       { types.map(type => (
         <div class="flex flex-col items-center justify-center p-3 mb-5">
        
@@ -106,6 +106,10 @@ const VID = (props) => {
         </div>
       ))}
     </div>
+    <div class="justify-center items-center p-1">
+                  <button type="submit" onClick={() => navigate('/')} class="inline-block lg:mr-10 px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
+                  <button type="submit" onClick={() => navigate('/services')} class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
+              </div>
       </div>
       </div>
       </div>

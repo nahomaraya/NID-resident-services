@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowBackIcon } from "../Icons";
 import InputBar from "../InputBar/InputBar";
-import {  useLocation, useHistory, useNavigate } from "react-router-dom";
+import {  useLocation, useHistory, useNavigate, } from "react-router-dom";
 import OTP from "../OTP/OTP";
 import Footer from "../Footer/Footer";
 import Loading from "../LoadingScreen/Loading";
@@ -10,10 +10,12 @@ import Description from "../Description/Description";
 import otpContext from "../../providers/OTPprovider";
 import { useMediaQuery } from 'react-responsive'
 import ServiceList from "../ServiceList/ServiceList";
+import { useScrollTo } from "react-use-window-scroll"
 
 const Service = (props) => {
   const { name,inst,input,action,apiId,requestType } = props;
   const location = useLocation();
+  const navigate = useNavigate();
   const [card, setCard] = useState(true);
   const [selectedOption, setSelectedOption] = useState('');
   const [individualID, setIndividualID] = useState('');
@@ -21,6 +23,13 @@ const Service = (props) => {
   const [transitionID, setTransactionID] = useState('');
   const [service, setService] = useState({});
   const serviceType = location.state.service;
+  const scrollTo = useScrollTo();
+  useEffect(() => {
+    console.log("to the top");
+    scrollTo(0, 0);
+  }, [])
+  
+ 
   const setOtp = (otp) => {
       
        setSelectedOption(otp);
@@ -50,6 +59,8 @@ const Service = (props) => {
     query: '(min-width: 1224px)'
   });
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  
+
   
   if (name === "homepage") {
     return <div id="page">{name}</div>;

@@ -38,6 +38,22 @@ const AuthHistory = () => {
           transactionID: '#12231xX@#'
        
         },
+        {
+          id: '1234',
+          authType: 'Demographic',
+          date:'30-01-2023',
+          time:'16:56 PM',
+          transactionID: '#12231xX@#'
+       
+        },
+        {
+          id: '1234',
+          authType: 'Demographic',
+          date:'30-01-2023',
+          time:'16:56 PM',
+          transactionID: '#12231xX@#'
+       
+        },
       ]
       
     const navigate = useNavigate();
@@ -66,7 +82,7 @@ const AuthHistory = () => {
         const timer = setTimeout(()=> {
            setIsLoading(false);
         }, 5000);
-   
+        handlePost();
         return () => {
           clearTimeout(timer);
         }}
@@ -79,21 +95,19 @@ const AuthHistory = () => {
     return(
     <>
     {isLoading? <LoadingScreen/> :  
-      <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-        <div  class=" bg-[#d5e8f2] flex h-full">
-        <div class="container bg-welcome h-screen w-full bg-cover bg-center rounded-lg p-20">
-        <h1 className="text-center font-bold text-white  lg:text-4xl md:text-2xl">Auth Transaction History</h1>
-          {/* <Box >
-           <MaterialReactTable className="w-full" columns={columns} data={data} />
-           </Box>      
-           {/* <ResponsiveTable
-  columns={columns}
-  data={data}
-/> */} 
+      <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-welcome": "h-full bg-welcome"}>
+        
+        <div class="container  rounded-lg p-20">
+        <h1 className="text-center font-bold text-white  lg:text-4xl md:text-base">Auth Transaction History</h1>
+        
          <Table columns={columns} data={data}/>
-                
+
+              <div class="justify-center items-center">
+                  <button type="submit" onClick={() => navigate('/')} class="inline-block lg:mr-10 px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
+                  <button type="submit" onClick={() => navigate('/services')} class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
+              </div> 
         </div>
-        </div>
+        
     </div>
     }
     </>

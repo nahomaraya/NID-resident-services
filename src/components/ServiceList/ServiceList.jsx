@@ -1,11 +1,13 @@
 
 import React, {useCallback, useState, useEffect} from "react";
-import {Routes, Route, useNavigate, Navigate} from 'react-router-dom'
+import {Routes, Route, useNavigate, Navigate, useLocation} from 'react-router-dom'
 import { dummyData } from "..";
 import {FormattedMessage} from "react-intl";
 
 
+
 const ServiceList = () => {
+    const location = useLocation()
     const navigate = useNavigate();
     const navigateService = (service) =>
     {
@@ -13,6 +15,7 @@ const ServiceList = () => {
         console.log(service);
         navigate('/service',{state:{service}});
     };
+   
   
     
     return(
@@ -30,7 +33,7 @@ const ServiceList = () => {
             <article class="border-2 border-[#47f4c7] bg-[#76b5d4] overflow-hidden rounded-lg shadow-lg">
 
                 <a href="#">
-                    <img alt="Placeholder" class="block h-auto w-full" src={require(subitem.image)}/>
+                    <img alt="Placeholder" class="block h-40 w-full" src={require('../../assets/images/' + subitem.image)}/>
                 </a>
 
                 <header class="flex items-center justify-between leading-tight p-2 md:p-4">

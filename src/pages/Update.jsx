@@ -36,10 +36,10 @@ const UpdateName = (props) =>{
     <>
     
     <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">First Name</label>
-    <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
+    <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-white border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
     value={props.firstName} required/>
     <label for="checked-checkbox" class="ml-2 text-xl font-medium text-[#edf2f3]">Last Name</label>
-     <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
+     <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-white border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
     value={props.lastName} required/>
     
     <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
@@ -213,7 +213,7 @@ const UpdateUIN = (props) => {
         .then(response => {
             console.log("sucess");
         //   setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
-        navigate('/updatecomfirm',{state:{arr}});
+        navigate('/updateconfirm',{state:{arr}});
    
       });
     }
@@ -241,8 +241,8 @@ const UpdateUIN = (props) => {
         <>
         {isLoading? <LoadingScreen/> : 
    <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-     <div class=" bg-welcome flex h-full">
-      <div class="md:container  mx-auto  rounded-lg p-14 mt-5">
+      <div class="bg-welcome h-full">
+        <div class="md:container  mx-auto  rounded-lg p-14">
            
             
             {!update ?
