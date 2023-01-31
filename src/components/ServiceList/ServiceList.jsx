@@ -30,7 +30,7 @@ const ServiceList = () => {
             item.subMenu.map((subitem, index) => (
             <div class=" my-1 p-3 pl-5 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
-            <article class="border-2 border-[#47f4c7] bg-[#76b5d4] overflow-hidden rounded-lg shadow-lg">
+            <article class="border-2 border-[#47f4c7] bg-[#76b5d4]  hover:bg-[#6aa2be] hover:scale-105 overflow-hidden rounded-lg shadow-lg">
 
                 <a href="#">
                     <img alt="Placeholder" class="block h-40 w-full" src={require('../../assets/images/' + subitem.image)}/>
@@ -45,10 +45,10 @@ const ServiceList = () => {
                    
                 </header>
 
-                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                <footer class="flex items-center justify-between leading-none p-2  md:p-4">
                     <a class="flex items-center no-underline  text-black" href="#">
                       
-                        <p class="ml-2 text-sm">
+                        <p class="ml-2 h-10 text-sm">
                       <FormattedMessage id ={subitem.instruction} />
                         </p>
                     </a>

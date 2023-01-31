@@ -546,6 +546,21 @@
         }
       },
       "id": 34
+    },
+    {
+      "post": {
+        "request": {
+          "id": "mosip.resident.checkstatus",
+          "version": "1.1.5.6",
+          "requestTime": "1/31/2023, 12:21:56 PM",
+          "request": {
+            "individualId": "4444",
+            "individualIdType": "RID",
+            "otp": "000000"
+          }
+        }
+      },
+      "id": 35
     }
   ],
   "comments": [
