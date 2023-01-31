@@ -25,7 +25,7 @@ const Footer = () => {
                     </span>
                 </div>
                 <a
-                    href="id.gov.et"
+                    href="https://id.gov.et"
                     target="_blank"
                     className="item3"
                 >
