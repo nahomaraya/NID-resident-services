@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import LoadingScreen from "../components/LoadingScreen/Loading";
 import { createPost } from "../services/ResidentServices";
 import {FormattedMessage} from "react-intl";
+import { useId } from "react-id-generator";
 
 const TrackStatus = (props) => {
 //     let history = useHistory();
@@ -14,6 +15,7 @@ const TrackStatus = (props) => {
 //    window.location.reload(history.push("/"));
 //     };
     const navigate = useNavigate();
+    const [transactionId] = useId();
     const [isLoading, setIsLoading] = useState(true);
     let loadingGif = require("../assets/fingerprint.gif");
     const location = useLocation();
@@ -21,7 +23,7 @@ const TrackStatus = (props) => {
    
     
     const handlePost = () => {
-     
+      location.state.request.request.transactionID = transactionId;
       createPost(location.state)
           .then(response => {
               console.log("sucess");
