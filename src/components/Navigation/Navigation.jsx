@@ -8,7 +8,7 @@ import { LanguageContext } from "../../providers/LangProvider";
 import {FormattedMessage} from "react-intl"
 
 import { dummyData } from "..";
-import NID from './NID.svg'
+import logo from './logo.png'
 import {
   MDBContainer,
   MDBNavbar,
@@ -32,13 +32,21 @@ const { language, setLanguage } = useContext(LanguageContext);
     return (
       <Navbar  expand="lg" fixed="top" className="bg-gray-800 p-2 flex justify-between items-center">
       <Container fluid>
-        <Navbar.Brand href="" className="flex items-center">  
+        <Navbar.Brand href="" className="flex items-center ml-10 gap-2">  
         <Link to="">
-  <img src={NID} alt="Logo" className="w-10 h-10" />
-  </Link></Navbar.Brand>
+        <img src={logo} alt="Logo" className="w-10 h-10" />
+        </Link>
+        <NavDropdown
+              id="nav-dropdown"
+              title={<><span className="text-white text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}>
+              <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>
+          </NavDropdown>
+        </Navbar.Brand>
+      
         <Navbar.Toggle aria-controls="navbar-dark-example" />
         <Navbar.Collapse id="navbar-dark-example">
-        <Nav className="ml-96 items-center">
+        <Nav className="ml-auto mr-20 items-center">
          
           {dummyData.map((itemData, index) => (
             // itemData.subMenu ? 
@@ -55,9 +63,9 @@ const { language, setLanguage } = useContext(LanguageContext);
           // </Link>
           //  ))}
             // </NavDropdown>:
-           <Nav.Item class=" p-2 hover:text-[#304f55]">
-            <Link to={itemData.path} className="nav-link" >
-              <span className="text-[#09384F] text-xl font-bold"><FormattedMessage id={itemData.name}/></span>
+           <Nav.Item  className=" p-2 no-underline hover:underline hover:decoration-[#00f7c7]  hover:decoration-4 hover:decoration-offset-10 active:animate-pulse ">
+            <Link to={itemData.path}  className="nav-link" >
+              <span className="text-white text-xl font-bold"><FormattedMessage id={itemData.name}/></span>
             </Link>
           </Nav.Item>))}
         
@@ -66,15 +74,7 @@ const { language, setLanguage } = useContext(LanguageContext);
           
            
         </Navbar.Collapse>
-        <NavDropdown
-              id="nav-dropdown"
-              title={<><span className="text-[#09384F] text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}
-              menuVariant="dark"
-             
-            >
-              <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>
-            </NavDropdown>
+       
       </Container>
     </Navbar>
     
