@@ -1,6 +1,6 @@
 # Frest Sidebar
 
-<img src="https://raw.githubusercontent.com/JealousGx/snippets/frest-sidebar/src/assets/goal.png" alt="Sidebar" height="1024">
+
 
 Branch for Sidebar
 
