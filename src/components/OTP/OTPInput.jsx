@@ -23,7 +23,7 @@ export default class OTPInput extends Component {
         value={this.state.otp}
         onChange={this.handleChange}
         numInputs={6}
-        separator={<span>-</span>}
+        separator={<span className='text-[#00efc6]'>-</span>}
         inputProps={{ inputMode: 'numeric' }}
         inputStyle="inputStyle"
       

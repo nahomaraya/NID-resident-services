@@ -30,7 +30,7 @@ const ServiceList = () => {
             item.subMenu.map((subitem, index) => (
             <div class="my-1 p-3 pl-5 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
-            <article onClick={()=>navigateService(subitem.name)} class="group border-2 border-[#f6f6f6] bg-white hover:border-2  hover:-translate-y-1 hover:scale-110 hover:cursor-pointer hover:bg-[#00efc6] overflow-hidden rounded-xl shadow-lg">
+            <article onClick={()=>navigateService(subitem.name)} class=" border-2 border-[#f6f6f6] bg-white hover:bg-[#00efc6] hover:border-2  hover:-translate-y-1 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
 
                 <a onClick={()=>navigateService(subitem.name)}>
                     <img alt="Placeholder" class="block h-40 w-40 pl-4 ml-4" src={require('../../assets/images/' + subitem.image)}/>
