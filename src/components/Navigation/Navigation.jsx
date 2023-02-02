@@ -49,7 +49,7 @@ const { language, setLanguage } = useContext(LanguageContext);
          
           {dummyData.map((itemData, index) => (
          <>
-           <Nav.Item className="p-2 ml-4 no-underline hover:underline hover:decoration-[#00f7c7]  hover:decoration-4 hover:decoration-offset-10 active:animate-pulse ">
+           <Nav.Item className="p-2 ml-4 no-underline hover:underline hover:decoration-[#00f7c7]  hover:decoration-4 hover:decoration-offset-10 active:animate-pulse active:text-blue-400 ">
             <Link to={itemData.path}  className="nav-link" >
               <span className="text-[#005371] text-xl font-semibold"><FormattedMessage id={itemData.name}/></span>
             </Link>
