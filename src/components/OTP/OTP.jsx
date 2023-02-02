@@ -3,6 +3,7 @@ import React, {useState, Fragment, useCallback, useEffect} from "react";
 import {FormattedMessage} from "react-intl";
 import {Routes, Route, useNavigate, Navigate} from 'react-router-dom'
 import OTPInput from "./OTPInput";
+import { useMediaQuery } from 'react-responsive'
 import {
     Button,
     Dialog,
@@ -76,40 +77,45 @@ const OTP = (props) => {
      
       setRequest(request);
     }, []);
+    const isDesktopOrLaptop = useMediaQuery({
+      query: '(min-width: 1224px)'
+    });
     
     return(
    
-      <div class="bg-welcome h-full">
-      <div class="md:container  mx-auto  rounded-lg p-14">
-               
+    
+      <div class={isDesktopOrLaptop?"md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-20"}>
+              
                     {
                         phone? 
-                    <div class="flex flex-col mt-4">
-                        <span> <h1 class="text-center font-bold text-white lg:text-4xl md:text-2xl "><FormattedMessage id="enter-otp-phone"/></h1></span>
+                    <div class="flex flex-col">
+                        <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl md:text-sm"><FormattedMessage id="enter-otp-phone"/></h1></span>
                         
                     </div>:
-                    <div class="flex flex-col mt-4">
-                        <span> <h1 class="text-center font-bold  text-white lg:text-4xl md:text-2xl"><FormattedMessage id="enter-otp-email"/></h1></span>
+                    <div class="flex flex-col">
+                        <span> <h1 class="text-center font-bold  text-[#005471] lg:text-3xl md:text-sm"><FormattedMessage id="enter-otp-email"/></h1></span>
                       
                     </div>
                     }
                      
-                     <div class="flex justify-center text-center">
-                        
-                           { 
-                         phone?  <a  class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline hover:text-white text-gray-900 dark:text-gray-300" onClick={handleResent}><FormattedMessage id="send-via-email"/></a>:
-                        <a class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline hover:text-white text-gray-900 dark:text-gray-300" onClick={handleResent}><FormattedMessage id="send-via-phone"/></a>
-                      }
-                    </div>
-                    <div id="otp" class="flex flex-row justify-center text-center px-2 mt-3">
+                     <div id="otp" class="flex flex-row justify-center text-center p-8 ">
                        <OTPInput setOtpNo={setOtpNo}/>
       
                       </div>
+
+                     <div class="flex justify-center text-center">
+                        
+                           { 
+                         phone?  <a  class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline hover:text-[#9cafb8] text-[#005471]" onClick={handleResent}><FormattedMessage id="send-via-email"/></a>:
+                        <a class="py-4 ml-2 w-full text-sm font-medium hover:cursor-pointer hover:underline hover:text-[#9cafb8] text-[#005471]" onClick={handleResent}><FormattedMessage id="send-via-phone"/></a>
+                      }
+                    </div>
+                  
                       
-                      <div class="flex justify-center text-center mt-5 gap-6">
+                      <div class="flex justify-center text-center gap-6">
                       {/* <ResendOTP onResendClick={() => console.log("Resend clicked")} /> */}
-                      <button type="submit" onClick={handleVerify} class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="verify"/></button>
-                      <button type="button" onClick={handleOpen} class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="resend"/></button>
+                      <button type="submit" onClick={handleVerify} class="lg:w-1/3 md:w-full inline-block px-7 py-3  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="verify"/></button>
+                      <button type="button" onClick={handleOpen} class="lg:w-1/3 md:w-full inline-block px-7 py-3  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg  active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="resend"/></button>
                       {/* {
                         phone? <button type="button" onClick={() => setPhone(!phone)} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">Send via email</button>:
                         <button type="button" onClick={() => setPhone(!phone)} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">Send via phone</button>
@@ -149,7 +155,7 @@ const OTP = (props) => {
                  
                
             </div>
-            </div>
+         
     
  
     );
