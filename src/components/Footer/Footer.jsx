@@ -36,7 +36,7 @@ import { faCopyright, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 </div> */}
 const Footer = () => {
     return (
-<footer className="footer-bg" >
+<footer className="bg-footer bg-right-bottom bg-cover p-2" >
 
  
   <div class="mx-6 p-10 text-center md:text-left">
@@ -56,7 +56,7 @@ const Footer = () => {
         </h5>
         <p class="flex items-center justify-center text-white md:justify-start">
          <LocationOnOutlinedIcon />
-          <span className="ml-4 text-xs w">Addis Ababa, Bole, Welo Sefer Ethio-China Street</span></p>
+          <span className="ml-4 text-base ">Addis Ababa, Bole, Welo Sefer Ethio-China Street</span></p>
        
         <p class="flex items-center justify-center text-white md:justify-start mb-4 ml-2">
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone"
@@ -66,10 +66,10 @@ const Footer = () => {
               d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z">
             </path>
           </svg>
-          <span className="ml-2 text-sm mr-2 text-[#265970] font-bold">Call Us </span>+251111400787
+          <span className="ml-2 text-base mr-2 text-[#072c3f] font-bold">Call Us </span>+251111400787
         </p>
        
-        <div class="flex justify-center mr-96 mt-10">
+      <div class="flex justify-center mr-96 mt-10">
       <a href="https://www.facebook.com/IDethiopia/?ref=pages_you_manage" class="ml-10 text-white ">
         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
           class="w-2.5 " role="img" xmlns="http://www.w3.org/2000/svg"

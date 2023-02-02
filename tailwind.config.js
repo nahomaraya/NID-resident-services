@@ -12,6 +12,7 @@ module.exports = {
     },
     backgroundImage: {
       'welcome': "url('../public/background.jpg')",
+      'footer': "url('../public/footer.jpg')",
     },
   },
   plugins: [],
