@@ -15,7 +15,7 @@ export const messages = {
           "track-request-status-inst": "This feature will allow an individual to track status of his/her UIN generation",
           "track-request-status-action": "Are you sure you want to track your request status",
           "auth-type" : "Lock/Unlock AUTH types",
-          "auth-type-inst": "An individual can decide to lock/unlock specific Authentication Types (Demographic/Biometrics) of his/her UIN/VID for security reasons",
+          "auth-type-inst": "An individual can decide to lock/unlock specific authentication types of his/her UIN/VID",
           "auth-type-action": "Are you sure you want to lock/unlock your authentication type",
           "unlock-auth-type" :"Unlock AUTH types",
           "unlock-auth-type-inst": "An individual can decide to lock/unlock specific Authentication Types (Demographic/Biometrics) of his/her UIN/VID for security reasons",

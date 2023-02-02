@@ -77,7 +77,7 @@ export const SIDEBAR_DATA = [
         otpReq: true,
         apiID: "mosip.resident.updateuin",
         icon: <LayoutIcon />,
-        image: 'demographic.jpg',
+        image: 'update.png',
         documents: [
           "name",
           "email",
@@ -96,7 +96,7 @@ export const SIDEBAR_DATA = [
         action: "track-request-status-action",
         apiID: "mosip.resident.checkstatus",
         icon: <CalendarIcon />,
-        image: 'request.jpg'
+        image: 'track.png'
       },
       {
         id: 3,
@@ -109,7 +109,7 @@ export const SIDEBAR_DATA = [
         request: "authType",
         apiID: "mosip.resident.auth",
         icon: <Lock />,
-        image: 'lockUnlock.png',
+        image: 'authlock.png',
         types: [
           'Demographic Auth Type',
           'Biometric Auth Type',
@@ -130,7 +130,7 @@ export const SIDEBAR_DATA = [
         request: "cardType",
         apiID: "mosip.resident.euin",
         icon: <DownIcon />,
-        image: 'download.jpg'
+        image: 'download.png'
       },
      
       {
@@ -144,7 +144,7 @@ export const SIDEBAR_DATA = [
         request: "cardType",
         apiID: "mosip.resident.reprintuin",
         icon: <FingerIcon />,
-        image: 'reprint.jpg'
+        image: 'reprint.png'
       },
       {
         id: 6,
@@ -156,7 +156,7 @@ export const SIDEBAR_DATA = [
         action: "view-trans-hist-action",
         apiID: "mosip.resident.authhistory",
         icon: <HistIcon/>,
-        image: 'authhistory.jpg'
+        image: 'authhistory.png'
       },
       {
         id: 7,
@@ -169,7 +169,7 @@ export const SIDEBAR_DATA = [
         request: "vidType",
         apiID: "mosip.resident.vid",
         icon: <AuthIcon />,
-        image: 'generate.jpg',
+        image: 'generate.png',
         types: [
           'PERPETUAL',
           'TEMPORARY'
@@ -186,7 +186,7 @@ export const SIDEBAR_DATA = [
         request: "vidStatus",
         apiID:"mosip.resident.vidstatus",
         icon: <SafetyIcon />,
-        image: 'revoke.jpg',
+        image: 'revoke.png',
         types: [
           'PERPETUAL',
           'TEMPORARY'
