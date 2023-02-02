@@ -6,7 +6,7 @@ export const messages = {
         "home.select language":"Select your prefered language",
           "home.welcome-to":"Welcome to National ID Resident Services",
           "home": "Home",
-          "go": "Go",
+          "go": "Proceed",
           "lang": "Languages",
           "update-demographic-data": "Update Demographic Data",
           "update-demographic-data-inst" : "This feature will allow an individual to initiate update of his/her demographic details",

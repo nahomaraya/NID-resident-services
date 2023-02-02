@@ -132,29 +132,34 @@ const InputBar = (props) => {
   return (
   <>
         
-        <div class="bg-welcome h-full">
-        <div class="md:container  mx-auto  rounded-lg p-14">
+      
+        <div class="md:container  mx-auto mt-32 bg-[#e8e8e8] rounded-lg h-50 p-20">
         {loading? 
         
         <Spinner/>
          : 
+         <>
+          <div className="bg-[#005471] w-full">
+             <h1 className="text-white">Please Enter Your {service.input} Number</h1>
+          </div>
           <form  className="p-5" onSubmit={handleGoState}>
          
+              
                 <div class="flex items-center justify-center p-3 mb-5">
                      {/* <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                       <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                      </div> */}
-                    <h6 className="font-bold text-white lg:text-2xl md:text-xs mr-4">{service.input == "RID"? <FormattedMessage id={"enter-rid"}/>: <FormattedMessage id={"enter-uin"}/>}</h6> 
-                   <input class=" block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={id} placeholder={service.input}  onChange={handleChange}
+                    <h6 className="font-normal text-black lg:text-2xl md:text-xs mr-4">{service.input == "RID"? <FormattedMessage id={"enter-rid"}/>: <FormattedMessage id={"enter-uin"}/>}</h6> 
+                   <input class=" block md:w-full lg:w-1/3 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={id} placeholder={service.input}  onChange={handleChange}
                   maxLength="16" minLength="16" required/>
                 </div>
-                <div className="flex items-center justify-center p-1 md:p-2">
-                  <h6 className="font-bold text-white  lg:text-2xl md:text-xs mr-4"><FormattedMessage id={"select-OTP-method"}/>: </h6>
+                <div className="flex items-center justify-center p-1 mr-56 md:p-2">
+                  <h6 className="font-normal text-black  lg:text-2xl md:text-xs mr-4"><FormattedMessage id={"select-OTP-method"}/>: </h6>
                   <DropdownSelector options={['send-phone', 'send-email']} onCallback = {handleCallback}/>
                 </div> 
        
-                <div class="justify-center items-center p-1">
-                    <button type="submit"  class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#214b60] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="go"/></button>
+                <div class="justify-center items-center p-1 mr-96">
+                    <button type="submit"  class="inline-block px-7 py-3  bg-[#005471] text-white font-small text-base w-1/4 leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#214b60] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="go"/></button>
                 </div>
                       {/* <div class="sm:flex w-5/6 ml-auto  items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">
                           <input class="text-base text-gray-400 flex-grow outline-none px-2 " type="text" placeholder={props.input} />
@@ -167,9 +172,10 @@ const InputBar = (props) => {
                           </div>
                       </div> */}
           </form>
+          </>
          }
         </div>
-      </div>
+   
     
   
  

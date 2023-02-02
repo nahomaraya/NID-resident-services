@@ -66,7 +66,7 @@ const Service = (props) => {
     return <div id="page">{name}</div>;
   } else {
     return (
-      <div id="page" className={isDesktopOrLaptop? "pt-14  h-full ": "h-full"}>
+      <div id="page" className={isDesktopOrLaptop? "pt-14  h-full bg-service bg-cover bg-center  ": " bg-service bg-cover bg-center h-full"}>
       {card ? 
       <InputBar name={name} input={input} service={serviceType} onCardChange={setCard} setOtp={setOtp} setID={setID}  setService={setServiceType}/>
             // <ServiceList/>
