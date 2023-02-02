@@ -21,7 +21,7 @@ const ServiceList = () => {
     return(
         <>
        
-       <div class="bg-white">
+       <div class="bg-service bg-cover bg-center ">
         <div class="container  mt-12 mx-auto px-4 pt-4 md:px-12">
     <div class="flex flex-wrap -mx-1 lg:-mx-4 ">
 

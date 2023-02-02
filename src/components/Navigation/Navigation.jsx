@@ -38,7 +38,7 @@ const { language, setLanguage } = useContext(LanguageContext);
         </Link>
         <NavDropdown
               id="nav-dropdown"
-              title={<><span className="text-white text-xl font-medium"><FormattedMessage id={"lang"}/></span></>}>
+              title={<><span className="text-[#005371] text-xl font-semibold"><FormattedMessage id={"lang"}/></span></>}>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>
           </NavDropdown>
@@ -51,7 +51,7 @@ const { language, setLanguage } = useContext(LanguageContext);
          <>
            <Nav.Item className="p-2 ml-4 no-underline hover:underline hover:decoration-[#00f7c7]  hover:decoration-4 hover:decoration-offset-10 active:animate-pulse ">
             <Link to={itemData.path}  className="nav-link" >
-              <span className="text-white text-xl font-medium"><FormattedMessage id={itemData.name}/></span>
+              <span className="text-[#005371] text-xl font-semibold"><FormattedMessage id={itemData.name}/></span>
             </Link>
           </Nav.Item>
            
