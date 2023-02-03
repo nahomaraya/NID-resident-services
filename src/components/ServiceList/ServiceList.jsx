@@ -28,7 +28,7 @@ const ServiceList = () => {
     {dummyData.map((item, index) => (
             item.subMenu && 
             item.subMenu.map((subitem, index) => (
-            <div class="my-1 p-3 pl-5 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+            <div class="scale-75 my-2  p-3 pl-5  w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
             <article onClick={()=>navigateService(subitem.name)} class=" border-2 border-[#f6f6f6] bg-white hover:bg-blue-200  hover:-translate-y-1 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
 
@@ -36,12 +36,12 @@ const ServiceList = () => {
                     <img alt="Placeholder" class="block h-40 w-40 pl-4 ml-4" src={require('../../assets/images/' + subitem.image)}/>
                 </a>
 
-                <header class="flex items-center justify-between leading-tight p-2 ml-8 md:p-4">
+                <header class="flex items-center justify-between leading-tight  p-2 ml-8 md:p-4">
                     <h1 class="text-xl text-[#365c66] font-bold">
                       
                         <FormattedMessage id={subitem.name}/>
-                        <hr/>
-                        <p class="text-[#17242a]  text-base font-normal">
+                        <hr />
+                        <p class="text-[#17242a]  text-xl font-normal">
                       <FormattedMessage id ={subitem.instruction} />
                         </p>
                        

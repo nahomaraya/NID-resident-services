@@ -136,25 +136,29 @@ const InputBar = (props) => {
   <>
         
       
-        <div class={isDesktopOrLaptop?"md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-20"}>
+        <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-70 p:10"}>
         {loading? 
         
         <Spinner/>
          : 
          <>
-        
-          <form  className="p-15" onSubmit={handleGoState}>
+          <div class="flex flex-col">
+                        <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl md:text-sm">Please Enter Your {service.input} Number</h1></span>
+                        
+                    </div>
+          <form  className="p-15 " onSubmit={handleGoState}>
          
-              
-                <div class="flex items-center justify-start p-3 mr-auto lg:ml-10 md:ml-0 mb-2">
+       
+                <div class="flex items-center justify-start p-3 mr-auto  lg:ml-10  mb-2">
                      {/* <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                       <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                      </div> */}
+                     
                     <h6 className="font-normal text-black lg:text-2xl md:text-base mr-4">{service.input == "RID"? <FormattedMessage id={"enter-rid"}/>: <FormattedMessage id={"enter-uin"}/>}</h6> 
                    <input class=" block md:w-full lg:w-1/2 p-3 md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" value={id} placeholder={service.input}  onChange={handleChange}
                   maxLength="16" minLength="16" required/>
                 </div>
-                <div className="flex justify-start items-center p-3 mr-auto lg:ml-10 md:ml-0 md:p-2">
+                <div className="flex justify-start items-center p-3 mr-auto lg:ml-10  md:p-2">
                   <h6 className="font-normal text-black  lg:text-2xl md:text-base mr-4"><FormattedMessage id={"select-OTP-method"}/>: </h6>
                   <DropdownSelector options={['send-phone', 'send-email']} onCallback = {handleCallback}/>
                 </div> 

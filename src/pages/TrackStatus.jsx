@@ -59,7 +59,7 @@ const TrackStatus = (props) => {
         <>
         {isLoading? <LoadingScreen/> :  
       <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
-           <div class={isDesktopOrLaptop?"md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-20"}>
+           <div class={isDesktopOrLaptop?"md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
          
                   <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Status of UIN Generation</h1>
                     <h2 className="text-center font-normal text-gray-500  lg:text-2xl md:text-sm p-4">Your UIN is Processing. Please wait</h2>
