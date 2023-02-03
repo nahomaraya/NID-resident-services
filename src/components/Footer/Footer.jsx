@@ -1,64 +1,45 @@
 import React from "react";
 import "./Footer.css";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import {
-   
-    faFacebook,
-    faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { faCopyright, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useMediaQuery } from 'react-responsive';
+
 // "https://id.gov.et"
 // "https://www.facebook.com/IDethiopia/?ref=pages_you_manage"
 // "https://twitter.com/IDethiopia"
-{/* <div className="sm:flex sm:items-center sm:justify-between">
-<div class="flex items-center mb-4 lg:ml-80 mt-8 border-b-2 border-t-2 border-r-2 border-l-2 border-white rounded-3xl sm:mb-0 sm:ml-0 ">
-  
-    <span className="self-center p-4 text-2xl font-semibold whitespace-nowrap text-white"><span className="text-[#12d2ad]">NID</span> Resident Services</span>
-</div>
-<ul className="flex lg:flex-col  justify-center items-center lg:mr-96 lg:ml-20 sm:mr-0 mb-6 text-sm text-gray-500 gap-4 sm:mb-0 ">
-    <li>
-        
-        <h4 className="text-xl text-white">Address</h4>
-        <p className=" text-[#f8f8f8]"><span className="mr-4"><LocationOnOutlinedIcon/></span>General Wingate Street, Next to Abrehot National Library, Arat Kilo, Third Floor of Hilcoe building, Addis Ababa</p>
-    </li>
-    <li>
-        <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-    </li>
-    <li>
-        <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
-    </li>
-    <li>
-        <a href="#" class="hover:underline">Contact</a>
-    </li>
-</ul>
-</div> */}
+
+
+
 const Footer = () => {
+
+const isDesktopOrLaptop = useMediaQuery({
+  query: '(min-width: 1224px)'
+});
+const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     return (
-<footer className="bg-footer bg-right-bottom bg-cover p-2" >
+<footer className="bg-footer bg-right-bottom bg-cover" >
 
  
-  <div class="mx-6 p-10 text-center md:text-left">
-    <div class="flex gap-8">
-      <div class="">
+  <div class="mx-2 p-4 text-center md:text-left">
+    <div className={isDesktopOrLaptop?"flex gap-8":"flex-col gap-8"}>
+      
      
-        <div class="flex items-center mb-4 lg:ml-96 mt-8 border-b-2 border-t-2 border-r-2 border-l-2 border-white rounded-full sm:mb-0 sm:ml-0 ">
+        <div class="flex justify-center items-center mb-4 ml-8 lg:ml-96 mt-8 border-b-2 border-t-2 border-r-2 border-l-2 border-white rounded-full  ">
   
-    <h1 className="self-center pr-24 pl-24 pt-2 pb-2  text-4xl font-semibold whitespace-nowrap text-white"><span className="text-[#12d2ad]">NID</span> Online Helpdesk</h1>
+    <h1 className="self-center lg:px-24 py-2 text-xl lg:text-4xl  font-semibold whitespace-nowrap text-white"><span className="text-[#12d2ad]">NID</span> Online Helpdesk</h1>
 </div>
-      </div>
+      
      
       
-      <div class="ml-auto mr-4">
-        <h5 class="font-black text-white ml-8 flex justify-center md:justify-start">
+      <div class="ml-auto mr-4 lg:mr-64">
+        <h5 class="font-black text-white self-start">
           Address
         </h5>
-        <p class="flex items-center justify-center text-white md:justify-start">
+        <p class="flex justify-start  text-white">
          <LocationOnOutlinedIcon />
-          <span className="ml-4 text-base ">Addis Ababa, Bole, Welo Sefer Ethio-China Street</span></p>
+          <span className="text-base ml-4 ">Addis Ababa, Bole, Welo Sefer Ethio-China Street</span></p>
        
-        <p class="flex items-center justify-center text-white md:justify-start mb-4 ml-2">
+        <p class="flex justify-start text-white ">
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone"
             class="w-4 mr-3 " role="img" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512">
@@ -69,7 +50,7 @@ const Footer = () => {
           <span className="ml-2 text-base mr-2 text-[#072c3f] font-bold">Call Us </span>+251111400787
         </p>
        
-      <div class="flex justify-center mr-96 mt-10">
+      <div class="flex justify-center  mt-10">
       <a href="https://www.facebook.com/IDethiopia/?ref=pages_you_manage" class="ml-10 text-white ">
         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
           class="w-2.5 " role="img" xmlns="http://www.w3.org/2000/svg"
