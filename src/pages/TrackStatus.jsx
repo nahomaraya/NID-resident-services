@@ -65,7 +65,7 @@ const TrackStatus = (props) => {
                     <h2 className="text-center font-normal text-gray-500  lg:text-2xl md:text-sm p-4">Your UIN is Processing. Please wait</h2>
                 {/* <img className="h-20 w-20 self-center ml-24 " src={require('../assets/loading.png')} alt="loading"/> */}
                 
-                <div class="flex justify-center items-center lg:mt-24 md:mt-8 p-1 gap-10 ">
+                <div class="flex justify-center items-center lg:mt-24 md:mt-16 p-1 gap-10 ">
                   <button type="submit" onClick={() => navigate('/')} class="w-full inline-block  py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
                   <button type="submit" onClick={() => navigate('/services')} class="w-full inline-block py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
               </div>

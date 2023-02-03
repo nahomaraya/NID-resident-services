@@ -24,25 +24,62 @@ const AuthType = (props) => {
     };
 
      return(
-    props.locked?
-    <div class="flex flex-col items-center justify-center p-3 mb-3">
+  
+  //   <div class="flex flex-col items-center justify-center p-3 mb-3">
    
-    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
-        <LockIcon/>
-        {props.type}
+  //   <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
+  //   { props.locked?<LockIcon/>: <LockOpenIcon/>}
+  //       {props.type}
         
-    </button>  
-    <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Status: Locked</h6> 
-    </div>
-    :
-    <div class="flex flex-col items-center justify-center p-3 mb-3">
- 
-    <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
-        <LockOpenIcon/>
-        {props.type}
-    </button> 
-    <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Status: Unlocked</h6> 
-    </div>
+  //   </button>  
+  //  { props.locked?
+  //   <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Status: Locked</h6> 
+  //   :
+  //   <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Status: Unlocked</h6> }
+  //   </div>
+  <div class=" mx-8 my-2  w-full  lg:w-1/3">
+
+  <article  onClick={() => {handleClick(props.type, props.locked)}} class=" border-2 border-[#f6f6f6] bg-white hover:bg-blue-200  hover:-translate-y-1 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
+
+    
+   
+      <header class="flex  justify-center leading-tight p-2 md:p-4">
+      <a >
+        {props.locked?
+                <img alt="Placeholder" class="block h-10 w-10  mr-8 " src={require('../assets/lock.png')}/>:
+                <img alt="Placeholder" class="block h-10 w-10 mr-8 " src={require('../assets/unlock.png')}/>
+  
+        }
+          </a>
+          <h1 class="text-base lg:text-xl text-[#365c66] font-bold ">
+            
+             {props.type}
+            
+           
+             
+          </h1>
+          
+      </header>
+      <hr className={props.locked?"text-[#ef0029]" : "text-[#00efc6]"}/>
+      <p class={props.locked?"text-[#ef0029]  text-xs lg:text-base font-normal":"text-[#00efc6] text-xs lg:text-base font-normal"}>
+            Status: {props.locked? 'Locked':'Unlocked'}
+              </p>
+
+   
+    
+      {/* <footer class="flex items-center justify-between leading-none p-2  md:p-4">
+        
+            
+              <p class="ml-2 h-15 text-[#17242a] text-sm">
+            <FormattedMessage id ={subitem.instruction} />
+              </p>
+          
+         
+      </footer> */}
+
+  </article>
+
+</div> 
   
 
      );
@@ -146,13 +183,12 @@ const AuthLock = () => {
     return(
         <>
       {isLoading? <LoadingScreen/> : 
-      <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-     
-     <div class=" bg-welcome h-full">
-      <div class="md:container  mx-auto  rounded-lg p-14 ">
-        <h2 className="text-center font-bold text-white">Click on auth type to lock/unlock</h2>
+    <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
+    <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-10": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
+    
+    <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Click on Auth Type to Lock/Unlock</h2>
            
-      <div className="flex flex-wrap items-center justify-center px-6 py-6">
+      <div className="flex items-center justify-center px-6 py-6">
       { types.map(type => (
        
         // <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#284247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(type)}}>{type}</button>  
@@ -161,14 +197,14 @@ const AuthLock = () => {
       ))}
     </div>
 
-    <div class="justify-center items-center">
-                  <button type="submit" onClick={() => navigate('/')} class="inline-block lg:mr-10 px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#6aa2be] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
-                  <button type="submit" onClick={() => navigate('/services')} class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#6aa2be] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
+    <div class="flex justify-center items-center  gap-16">
+                  <button type="submit" onClick={() => navigate('/')} class="w-1/3 inline-block  py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
+                  <button type="submit" onClick={() => navigate('/services')} class="w-1/3 inline-block py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
               </div>
 
         </div>
         </div>
-    </div>
+    
 }
 <Dialog open={open} handler={handleClick}  animate={{mount: { scale: 1, y: 0 }, unmount: { scale: 0.9, y: -100 },}}>
                     <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">

@@ -143,7 +143,7 @@ const InputBar = (props) => {
          : 
          <>
           <div class="flex flex-col">
-                        <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl md:text-sm">Please Enter Your {service.input} Number</h1></span>
+                        <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl md:text-sm">Please Enter Your Fayda Number</h1></span>
                         
                     </div>
           <form  className="p-15 " onSubmit={handleGoState}>
@@ -156,7 +156,7 @@ const InputBar = (props) => {
                      
                     <h6 className="font-normal text-black lg:text-2xl md:text-base mr-4">{service.input == "RID"? <FormattedMessage id={"enter-rid"}/>: <FormattedMessage id={"enter-uin"}/>}</h6> 
                    <input class=" block md:w-full lg:w-1/2 p-3 md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" value={id} placeholder={service.input}  onChange={handleChange}
-                  maxLength="16" minLength="16" required/>
+                  maxLength="12" minLength="12" required/>
                 </div>
                 <div className="flex justify-start items-center p-3 mr-auto lg:ml-10  md:p-2">
                   <h6 className="font-normal text-black  lg:text-2xl md:text-base mr-4"><FormattedMessage id={"select-OTP-method"}/>: </h6>

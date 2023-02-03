@@ -42,6 +42,7 @@ const { language, setLanguage } = useContext(LanguageContext);
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>
           </NavDropdown>
+        
         </Navbar.Brand>
     
         <Navbar.Collapse id="navbar-dark-example">
