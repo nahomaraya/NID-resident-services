@@ -53,18 +53,18 @@ const TrackStatus = (props) => {
     return(
         <>
         {isLoading? <LoadingScreen/> :  
-        <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-    <div class=" bg-welcome flex h-full">
-      <div class="md:container  mx-auto  rounded-lg p-14 mt-5">
-                    <h1 className="text-center font-bold text-white  lg:text-4xl md:text-2xl">Revoke VID</h1>
-                    <h2 className="text-center font-bold text-white  lg:text-2xl md:text-sm p-4">Your VID has been revoked. Notification has been sent to the provided contact detail(s)</h2>
-                    <div class="justify-center items-center p-1">
-                  <button type="submit" onClick={() => navigate('/')} class="inline-block lg:mr-10 px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#2f4854] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
-                  <button type="submit" onClick={() => navigate('/services')} class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#2f4854] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
+               <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
+               <div class={isDesktopOrLaptop?"md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
+              
+                    <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Revoke VID</h1>
+                    <h2 className="text-center font-normal text-gray-500  lg:text-2xl md:text-sm p-4">Your VID has been revoked. Notification has been sent to the provided contact detail(s)</h2>
+                <div class="flex justify-center items-center lg:mt-24 md:mt-16 p-1 gap-10 ">
+                  <button type="submit" onClick={() => navigate('/')} class="w-full inline-block  py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
+                  <button type="submit" onClick={() => navigate('/services')} class="w-full inline-block py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
               </div>
                   
         </div>
-        </div>
+    
     </div>
     }
     </>
