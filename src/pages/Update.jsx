@@ -18,10 +18,14 @@ import { createPost } from "../services/ResidentServices";
 
 const Options = () => {}
 const UpdateName = (props) =>{
+   
     const [data, setData] = useState();
     const [file, setFile] = useState();
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
+    }
+    const handleClick = ()=>{
+      props.onClick(true)
     }
 
     const handleFileChange = (key, value) => {
@@ -33,21 +37,25 @@ const UpdateName = (props) =>{
       }, [props.active])
     
     return(
-    <>
     
-    <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-semibold text-gray-500">First Name</label>
-    <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-white border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
+   <>
+    <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">First Name</label>
+    <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
     value={props.firstName} required/>
-    <label for="checked-checkbox" class="ml-2 text-xl font-medium text-[#edf2f3]">Last Name</label>
-     <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-white border border-gray-300 rounded-lg bg-[#05212f] focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
+    <label for="checked-checkbox" class="ml-2 text-xl font-medium text-gray-500 ">Last Name</label>
+     <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
     value={props.lastName} required/>
     
-    <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+    <label class="ml-2 text-xl font-medium text-gray-500" for="file_input">Upload Name File</label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
-    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-[#05212f] border-gray-600 placeholder-gray-400">
-     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
-     </div>
-    </>);
+    <div className="flex flex-col gap-4">
+        <div className="block w-full text-base text-gray-500 rounded-md border border-gray-300  bg-white placeholder-gray-400">
+                <FileBase type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
+        </div>
+            <button type="submit" onClick={handleClick} class="inline-block px-5 py-2 w-full bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+    </div>  
+      </>
+        );
 }
 const UpdateEmail = (props) => {
     const [data, setData] = useState();
@@ -55,18 +63,23 @@ const UpdateEmail = (props) => {
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
+    const handleClick = ()=>{
+      props.onClick(true)
+    }
     
     useEffect(() => {
         props.onCallback(file);
       }, [props.active])
     return(<>
-      <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">Email</label>
-         <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email"  onChange={(e) => handleChange('email', e.target.value)}
+      <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Email</label>
+      <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Email"  onChange={(e) => handleChange('email', e.target.value)}
         value={props.email} required/>
-       <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+     
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
-     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  email:base64 })} onChange={(e) => e.target.files[0]} />
+      
+       <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+
      </div>
     </>);
 }
@@ -76,20 +89,25 @@ const UpdatePhone = (props) => {
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
+    const handleClick = ()=>{
+      props.onClick(true)
+    }
     
     useEffect(() => {
         props.onCallback(file);
       }, [props.active])
     
     return(<>
-      <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">Phone</label>
-          <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Phone"  onChange={(e) => handleChange('phone', e.target.value)}
+      <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Phone</label>
+          <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Phone"  onChange={(e) => handleChange('phone', e.target.value)}
         value={props.email} required/>
        <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
-     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  phone:base64 })} onChange={(e) => e.target.files[0]} />
-     </div>
+      
+      <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+
+    </div>
     </>);
 }
 
@@ -100,6 +118,9 @@ const UpdateDOB = (props) => {
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
+    const handleClick = ()=>{
+      props.onClick(true)
+    }
     
     useEffect(() => {
         props.onCallback(file);
@@ -107,14 +128,17 @@ const UpdateDOB = (props) => {
     
     return (
         <>
-    <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">Select Date of Birth</label>
-    <input type="date" class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select Date"  onChange={(e) => handleChange('date', e.target.value)}
+    <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Select Date of Birth</label>
+    <input type="date" class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Select Date"  onChange={(e) => handleChange('date', e.target.value)}
     value={props.date} max={moment().format("YYYY-MM-DD")} required/>
-     <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+     <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload DOB File</label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
-    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
-     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  dob:base64 })} onChange={(e) => e.target.files[0]} />
-     </div>
+    <div className="flex gap-4">
+        <div className="block w-1/2  text-base text-gray-500 rounded-md border border-gray-300  bg-white placeholder-gray-400">
+                <FileBase type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
+        </div>
+            <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+    </div>
  
         </>
     );
@@ -125,7 +149,9 @@ const UpdateAddress = (props) => {
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
-    
+    const handleClick = ()=>{
+      props.onClick(true)
+    }
     useEffect(() => {
         props.onCallback(file);
       }, [props.active])
@@ -133,24 +159,27 @@ const UpdateAddress = (props) => {
      
     return(
         <>
-        <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">Kebele</label>
-        <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Kebele"  onChange={(e) => handleChange('kebele', e.target.value)}
+        <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Kebele</label>
+        <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Kebele"  onChange={(e) => handleChange('kebele', e.target.value)}
         value={props.mobile} required/>
-          <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">Woreda</label>
-        <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Woreda"  onChange={(e) => handleChange('woreda', e.target.value)}
+          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Woreda</label>
+        <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Woreda"  onChange={(e) => handleChange('woreda', e.target.value)}
         value={props.mobile} required/>
-          <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">City</label>
-         <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City"  onChange={(e) => handleChange('city', e.target.value)}
+          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">City</label>
+         <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="City"  onChange={(e) => handleChange('city', e.target.value)}
         value={props.mobile} required/>
-          <label for="checked-checkbox" class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]">State</label>
-          <input class="block md:w-full lg:w-1/5 p-4  md:placeholder:text-left text-sm text-gray-900 border border-gray-300 rounded-lg bg-[#18272a] focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="State"  onChange={(e) => handleChange('state', e.target.value)}
+          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">State</label>
+          <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="State"  onChange={(e) => handleChange('state', e.target.value)}
         value={props.mobile} required/>
 
 <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
-    <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
-     <FileBase  type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  address:base64 })} onChange={(e) => e.target.files[0]} />
-     </div>
+    <div className="flex gap-4">
+        <div className="block w-1/2  text-base text-gray-500 rounded-md border border-gray-300  bg-white placeholder-gray-400">
+                <FileBase type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
+        </div>
+            <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+    </div>
         </>);
 
 }
@@ -198,6 +227,7 @@ const UpdateUIN = (props) => {
     const handleClick = () => {
         setSendRequest(true);
         setOpen(true);
+        console.log("true");
 
     }
     
@@ -241,7 +271,7 @@ const UpdateUIN = (props) => {
         <>
         {isLoading? <LoadingScreen/> : 
    <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
-   <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
+   <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-10": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
    
             
             {!update ?
@@ -282,17 +312,18 @@ const UpdateUIN = (props) => {
       :
       <>
           <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Enter New Data for Update</h2>
-       <div class="flex flex-col items-center justify-center gap-4">
-       { (request.name)&&  <UpdateName onCallback = {handleDemographics} active={sendRequest} />}
+       <div class="flex flex-col justify-start items-start gap-2">
+       { (request.name)&&  <UpdateName onCallback = {handleDemographics} onClick={handleClick} active={sendRequest} />}
        { (request.phone)&&  <UpdatePhone onCallback = {handleDemographics} active={sendRequest}/>}
        { (request.email)&&  <UpdateEmail onCallback = {handleDemographics} active={sendRequest}/>}
       
        { (request.dob) && <UpdateDOB onCallback = {handleDemographics} active={sendRequest}/>}
        { (request.address) && <UpdateAddress onCallback = {handleDemographics} active={sendRequest}/>}
-       </div>
-       <div class="justify-center items-center  mt-3">
+{/*       
           <button type="submit" onClick={handleClick} class="inline-block px-7 py-3   bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
-      </div>
+       */}
+       </div>
+      
        
 
       </>
