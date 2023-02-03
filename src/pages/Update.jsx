@@ -160,16 +160,16 @@ const UpdateAddress = (props) => {
     return(
         <>
         <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Kebele</label>
-        <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Kebele"  onChange={(e) => handleChange('kebele', e.target.value)}
+        <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="Kebele"  onChange={(e) => handleChange('kebele', e.target.value)}
         value={props.mobile} required/>
           <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Woreda</label>
-        <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Woreda"  onChange={(e) => handleChange('woreda', e.target.value)}
+        <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="Woreda"  onChange={(e) => handleChange('woreda', e.target.value)}
         value={props.mobile} required/>
           <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">City</label>
-         <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="City"  onChange={(e) => handleChange('city', e.target.value)}
+         <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="City"  onChange={(e) => handleChange('city', e.target.value)}
         value={props.mobile} required/>
           <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">State</label>
-          <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="State"  onChange={(e) => handleChange('state', e.target.value)}
+          <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="State"  onChange={(e) => handleChange('state', e.target.value)}
         value={props.mobile} required/>
 
 <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
@@ -277,7 +277,7 @@ const UpdateUIN = (props) => {
             {!update ?
             <>
              <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Please select field/s to update</h2>
-        <div class="flex flex-wrap   mt-8 mb-4 gap-10">
+        <div class="flex flex-wrap   mt-8  mb-4 gap-10">
              {/* <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
              </div> */}
