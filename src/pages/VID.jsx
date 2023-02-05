@@ -12,6 +12,59 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 
+const VIDtype = (props) => {
+  const handleClick = (type, lock) => {
+    props.setSelectedOption(type);
+  
+   
+};
+  return(
+   <div class=" mx-8 my-2  w-full  lg:w-1/3">
+
+  <article  onClick={() => {handleClick(props.type, props.locked)}} class=" border-2 border-[#f6f6f6] bg-white hover:bg-blue-200  hover:-translate-y-1 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
+
+    
+   
+      <header class="flex  justify-center leading-tight p-2 md:p-4">
+    
+     
+                <img alt="Placeholder" class="block h-12 w-12  mr-2 " src={require('../assets/'+ (props.type.icon))}/>:
+              
+  
+        
+         
+          <h1 class="text-base lg:text-xl text-[#365c66] font-bold ">
+            
+             {props.type.name}
+            
+           
+             
+          </h1>
+          
+      </header>
+      <hr className="text-[#00efc6]"/>
+      <p class="text-[#00efc6] text-xs lg:text-base font-normal">
+          {props.type.desc}
+              </p>
+
+   
+    
+      {/* <footer class="flex items-center justify-between leading-none p-2  md:p-4">
+        
+            
+              <p class="ml-2 h-15 text-[#17242a] text-sm">
+            <FormattedMessage id ={subitem.instruction} />
+              </p>
+          
+         
+      </footer> */}
+
+  </article>
+
+</div> 
+  );
+}
+
 const VID = (props) => {
   
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +75,7 @@ const VID = (props) => {
     let loadingGif = require("../assets/fingerprint.gif");
     const location = useLocation();
     const types = location.state.request.types;
-    console.log(types);
+    
     // location.state.request.request.cardType = "UIN";
     // console.log(location.state);
     //  createPost(location.state)
@@ -50,8 +103,8 @@ const VID = (props) => {
     
     const handleClick = (type) => {
       setOpen(!open);
-      setVidType(type);
-      console.log(type);
+      setVidType(type.name);
+      console.log(type.name);
   
     }
     const handlePost = (type) => {
@@ -92,27 +145,27 @@ const VID = (props) => {
     return(
       <>
         {isLoading? <LoadingScreen/> : 
-        <div id="page" className={isDesktopOrLaptop? "pt-16 h-full": "h-full"}>
-           <div class=" bg-welcome flex h-full">
-      <div class="md:container  mx-auto  rounded-lg p-14 mt-5">
-        <h2 className="text-center font-bold text-white">Chosse VID type to generate</h2>
+      <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
+      <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-10": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
+        <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Chosse VID type to generate</h2>
       
-        <div className="flex flex-wrap items-center justify-center px-6 py-6">
+        <div className="flex items-center justify-center px-6 py-6">
       { types.map(type => (
-        <div class="flex flex-col items-center justify-center p-3 mb-5">
+    //     <div class="flex flex-col items-center justify-center p-3 mb-5">
        
-     <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(type)}}>{type}</button>  
-     <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">THis is a {type} VID</h6> 
-        </div>
+    //  <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(type)}}>{type}</button>  
+    //  <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">THis is a {type} VID</h6> 
+    //     </div>
+    <VIDtype type={type} setSelectedOption={handleClick}/>
       ))}
     </div>
-    <div class="justify-center items-center p-1">
-                  <button type="submit" onClick={() => navigate('/')} class="inline-block lg:mr-10 px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
-                  <button type="submit" onClick={() => navigate('/services')} class="inline-block px-7 py-3  bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
+    <div class="flex justify-center items-center  gap-16">
+                  <button type="submit" onClick={() => navigate('/')} class="w-1/3 inline-block  py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
+                  <button type="submit" onClick={() => navigate('/services')} class="w-1/3 inline-block py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
               </div>
       </div>
       </div>
-      </div>
+     
 }
 <Dialog open={open} handler={handleClick}  animate={{mount: { scale: 1, y: 0 }, unmount: { scale: 0.9, y: -100 },}}>
                     <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">

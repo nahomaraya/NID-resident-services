@@ -1,4 +1,4 @@
-import {React, useContext} from "react";
+import {React, useContext, useState, useEffect } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import './Navigation.css';
@@ -9,6 +9,7 @@ import {FormattedMessage} from "react-intl"
 
 import { dummyData } from "..";
 import logo from './logo.png'
+import TextLoop from "react-text-loop";
 import {
   MDBContainer,
   MDBNavbar,
@@ -28,6 +29,8 @@ const Navigation = () => {
 //    <Link to={itemData.path} style={{ textDecoration: 'none' }} className="text-[#304f55] text-sm font-medium hover:text-[#96b5bb] mr-6">
 //    {itemData.icon} <FormattedMessage id={itemData.name}/>
 // </Link>
+
+
 const { language, setLanguage } = useContext(LanguageContext);
     return (
       <Navbar  expand="lg" fixed="top" className="bg-gray-800 p-2 flex justify-between items-center border-b">
@@ -38,7 +41,11 @@ const { language, setLanguage } = useContext(LanguageContext);
         </Link>
         <NavDropdown
               id="nav-dropdown"
-              title={<><span className="text-[#005371] text-xl font-semibold"><FormattedMessage id={"lang"}/></span></>}>
+              title={<> 
+              <TextLoop>
+              <span className="text-[#005371] text-2xl font-semibold">Languages</span>
+              <span className="text-[#005371] text-2xl font-semibold">ቋንቋ</span>
+                </TextLoop></>}>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>
           </NavDropdown>
@@ -59,7 +66,7 @@ const { language, setLanguage } = useContext(LanguageContext);
                       (!isActive ? "p-2 ml-4 no-underline hover:-translate-y-1 hover:scale-110 hover:cursor-pointer"
                      : "p-2 ml-4 underline decoration-[#00f7c7]  decoration-4 decoration-offset-10 hover:-translate-y-1 hover:scale-110 hover:cursor-pointer "
                       )}      to={itemData.path}>
-          <span className="text-[#005371] text-xl font-semibold"><FormattedMessage id={itemData.name}/></span>
+          <span className="text-[#005371] text-2xl font-semibold"><FormattedMessage id={itemData.name}/></span>
          
           </NavLink>
        

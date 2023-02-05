@@ -171,8 +171,13 @@ export const SIDEBAR_DATA = [
         icon: <AuthIcon />,
         image: 'generate.png',
         types: [
-          'PERPETUAL',
-          'TEMPORARY'
+          {name:'PERPETUAL',
+           desc: 'This ID is perpetual',
+           icon: 'perpetual.png'},
+          {name:'TEMPORARY',
+           desc: 'This ID is temporary',
+           icon: 'temporary.png'
+        }
         ]
       },
       {

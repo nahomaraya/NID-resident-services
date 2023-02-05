@@ -25,18 +25,7 @@ const AuthType = (props) => {
 
      return(
   
-  //   <div class="flex flex-col items-center justify-center p-3 mb-3">
-   
-  //   <button class="inline-block lg:mr-10 w-full px-4 py-4 mb-4 bg-[#072c3f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247] hover:shadow-lg  transition duration-150 ease-in-out" onClick={() => {handleClick(props.type, props.locked)}}>
-  //   { props.locked?<LockIcon/>: <LockOpenIcon/>}
-  //       {props.type}
-        
-  //   </button>  
-  //  { props.locked?
-  //   <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Status: Locked</h6> 
-  //   :
-  //   <h6 className="font-bold text-white  lg:text-xl md:text-xs mr-4">Status: Unlocked</h6> }
-  //   </div>
+ 
   <div class=" mx-8 my-2  w-full  lg:w-1/3">
 
   <article  onClick={() => {handleClick(props.type, props.locked)}} class=" border-2 border-[#f6f6f6] bg-white hover:bg-blue-200  hover:-translate-y-1 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
