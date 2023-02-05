@@ -89,11 +89,11 @@ const OTP = (props) => {
                     {
                         phone? 
                     <div class="flex flex-col">
-                        <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl md:text-sm"><FormattedMessage id="enter-otp-phone"/></h1></span>
+                        <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl text-xl"><FormattedMessage id="enter-otp-phone"/></h1></span>
                         
                     </div>:
                     <div class="flex flex-col">
-                        <span> <h1 class="text-center font-bold  text-[#005471] lg:text-3xl md:text-sm"><FormattedMessage id="enter-otp-email"/></h1></span>
+                        <span> <h1 class="text-center font-bold  text-[#005471] lg:text-3xl text-xl"><FormattedMessage id="enter-otp-email"/></h1></span>
                       
                     </div>
                     }
