@@ -94,7 +94,9 @@ const InputBar = (props) => {
     
     useEffect(() => {
      initalService();
-   
+     document.getElementById('box').classList.remove('scale-0');
+     document.getElementById('box').classList.add('scale-100');
+
     }, [])
    
 
@@ -136,13 +138,13 @@ const InputBar = (props) => {
   <>
         
       
-        <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-70 p:10"}>
+        <div id="box" class={isDesktopOrLaptop?"scale-0 md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "scale-0 md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-70 p:10"}>
         {loading? 
         
         <Spinner/>
          : 
          <>
-          <div class="flex flex-col">
+          <div  class="flex flex-col">
                         <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl text-xl">Please Enter Your Fayda Number</h1></span>
                         
                     </div>

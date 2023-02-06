@@ -28,12 +28,12 @@ const VIDtype = (props) => {
       <header class="flex  justify-center leading-tight p-2 md:p-4">
     
      
-                <img alt="Placeholder" class="block h-12 w-12  mr-2 " src={require('../assets/'+ (props.type.icon))}/>:
+                <img alt="Placeholder" class="block h-20 w-20  mr-2 " src={require('../assets/'+ (props.type.icon))}/>
               
   
         
          
-          <h1 class="text-base lg:text-xl text-[#365c66] font-bold ">
+          <h1 class="text-base lg:text-2xl mt-4 text-[#365c66] font-bold ">
             
              {props.type.name}
             

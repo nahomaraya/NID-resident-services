@@ -3,18 +3,24 @@ import React, {useCallback, useState, useEffect} from "react";
 import {Routes, Route, useNavigate, Navigate, useLocation} from 'react-router-dom'
 import { dummyData } from "..";
 import {FormattedMessage} from "react-intl";
+import { useTransition } from "transition-hook";
 
 
 
 const ServiceList = () => {
     const location = useLocation()
     const navigate = useNavigate();
+    const [onOff, setOnOff] = useState(true)
+    const {stage, shouldMount} = useTransition(onOff, 300)
     const navigateService = (service) =>
     {
       
         console.log(service);
         navigate('/service',{state:{service}});
     };
+   useEffect(() => {
+       
+   }, [])
    
   
     
@@ -28,9 +34,10 @@ const ServiceList = () => {
     {dummyData.map((item, index) => (
             item.subMenu && 
             item.subMenu.map((subitem, index) => (
-            <div class="scale-75 my-2  p-3 pl-5  w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+               
+            <div class="transition duration-500 scale-75 my-2  p-3 pl-5  w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
-            <article onClick={()=>navigateService(subitem.name)} class=" border-2 border-[#f6f6f6] bg-white hover:-translate-y-1 hover:scale-110 hover:border-b-green-200 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
+            <article onClick={()=>navigateService(subitem.name)} class="border-2 border-[#f6f6f6] bg-white hover:-translate-y-1 transform transition duration-500  hover:scale-110 hover:bg-green-500 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
 
                 <a onClick={()=>navigateService(subitem.name)}>
                     <img alt="placeholder" class="block h-40 w-40 pl-4 ml-4" src={require('../../assets/images/' + subitem.image)}/>
@@ -64,7 +71,7 @@ const ServiceList = () => {
             </article>
        
         </div>  
-            
+        
             ))
             ))}
         

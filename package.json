@@ -55,6 +55,7 @@
     "react-text-loop": "^2.3.0",
     "react-use-window-scroll": "^1.1.1",
     "styled-components": "^5.3.5",
+    "transition-hook": "^1.5.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

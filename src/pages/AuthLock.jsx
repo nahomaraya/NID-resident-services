@@ -35,12 +35,12 @@ const AuthType = (props) => {
       <header class="flex  justify-center leading-tight p-2 md:p-4">
       <a >
         {props.locked?
-                <img alt="Placeholder" class="block h-10 w-10  mr-8 " src={require('../assets/lock.png')}/>:
-                <img alt="Placeholder" class="block h-10 w-10 mr-8 " src={require('../assets/unlock.png')}/>
+                <img alt="Placeholder" class="block h-20 w-20  mr-4 " src={require('../assets/lock.png')}/>:
+                <img alt="Placeholder" class="block h-20 w-20 mr-4 " src={require('../assets/unlock.png')}/>
   
         }
           </a>
-          <h1 class="text-base lg:text-xl text-[#365c66] font-bold ">
+          <h1 class="text-base lg:text-2xl text-[#365c66] mt-4 font-bold ">
             
              {props.type}
             
