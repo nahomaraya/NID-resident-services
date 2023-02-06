@@ -19,21 +19,21 @@ const VIDtype = (props) => {
    
 };
   return(
-   <div class=" mx-8 my-2  w-full  lg:w-1/3">
+   <div class=" mx-8 my-2  w-full  lg:w-1/2">
 
-  <article  onClick={() => {handleClick(props.type, props.locked)}} class=" border-2 border-[#f6f6f6] bg-white hover:bg-blue-200  hover:-translate-y-1 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
+  <article  onClick={() => {handleClick(props.type, props.locked)}} class=" border-2 border-[#f6f6f6] bg-white hover:bg-blue-200  hover:-translate-y-1  transform transition duration-500 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
 
     
    
-      <header class="flex  justify-center leading-tight p-2 md:p-4">
+      <header class="flex  justify-center leading-tight p-4 md:p-4">
     
      
-                <img alt="Placeholder" class="block h-20 w-20  mr-2 " src={require('../assets/'+ (props.type.icon))}/>
+                <img alt="Placeholder" class="block h-10 w-10 lg:h-20 lg:w-20  " src={require('../assets/'+ (props.type.icon))}/>
               
   
         
          
-          <h1 class="text-base lg:text-2xl mt-4 text-[#365c66] font-bold ">
+          <h1 class="text-base lg:text-2xl  text-[#365c66]  mt-2 lg:mt-8  font-bold ">
             
              {props.type.name}
             

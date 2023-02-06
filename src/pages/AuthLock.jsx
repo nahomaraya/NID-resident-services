@@ -26,21 +26,21 @@ const AuthType = (props) => {
      return(
   
  
-  <div class=" mx-8 my-2  w-full  lg:w-1/3">
+  <div class=" mx-8 my-2  w-full  lg:w-1/2">
 
-  <article  onClick={() => {handleClick(props.type, props.locked)}} class=" border-2 border-[#f6f6f6] bg-white hover:bg-blue-200  hover:-translate-y-1 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
+  <article  onClick={() => {handleClick(props.type, props.locked)}} class=" border-2 border-[#f6f6f6] bg-white hover:bg-blue-200  hover:-translate-y-1 transform transition duration-500 hover:scale-110 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
 
     
    
       <header class="flex  justify-center leading-tight p-2 md:p-4">
       <a >
         {props.locked?
-                <img alt="Placeholder" class="block h-20 w-20  mr-4 " src={require('../assets/lock.png')}/>:
-                <img alt="Placeholder" class="block h-20 w-20 mr-4 " src={require('../assets/unlock.png')}/>
+                <img alt="Placeholder" class="block h-10 w-10 lg:h-20 lg:w-20  lg:mr-4 mr-8 " src={require('../assets/lock.png')}/>:
+                <img alt="Placeholder" class="block h-10 w-10 lg:h-20 lg:w-20  lg:mr-4 mr-8" src={require('../assets/unlock.png')}/>
   
         }
           </a>
-          <h1 class="text-base lg:text-2xl text-[#365c66] mt-4 font-bold ">
+          <h1 class="text-base lg:text-2xl text-[#365c66] lg:mt-6 mt-2   font-bold ">
             
              {props.type}
             

@@ -39,14 +39,17 @@ const UpdateName = (props) =>{
     return(
     
    <>
-    <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">First Name</label>
-    <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
+    <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 ">First Name</label>
+    <input class="block w-full  lg:p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
     value={props.firstName} required/>
-    <label for="checked-checkbox" class="ml-2 text-xl font-medium text-gray-500 ">Last Name</label>
-     <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
+    <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 ">Father's Name</label>
+     <input class="block w-full  lg:p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
+    value={props.lastName} required/>
+     <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 ">Grand Father's Name</label>
+     <input class="block w-full  lg:p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
     value={props.lastName} required/>
     
-    <label class="ml-2 text-xl font-medium text-gray-500" for="file_input">Upload Name File</label>
+    <label class="ml-2 lg:text-xl text-base font-medium text-gray-500" for="file_input">Upload Name File</label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="flex flex-col gap-4">
         <div className="block w-full text-base text-gray-500 rounded-md border border-gray-300  bg-white placeholder-gray-400">
@@ -271,13 +274,13 @@ const UpdateUIN = (props) => {
         <>
         {isLoading? <LoadingScreen/> : 
    <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
-   <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-10": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
+   <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-50 p-10": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
    
             
             {!update ?
             <>
              <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Please select field/s to update</h2>
-        <div class="flex flex-wrap   mt-8  mb-4 gap-10">
+        <div class="flex flex-wrap   mt-8 ml-4  mb-4 gap-10">
              {/* <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
              </div> */}
@@ -311,7 +314,7 @@ const UpdateUIN = (props) => {
       </>
       :
       <>
-          <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Enter New Data for Update</h2>
+          <h2 className="text-center font-bold text-[#005471]  lg:text-4xl text-2xl">Enter New Data for Update</h2>
        <div class="flex flex-col justify-start items-start gap-2">
        { (request.name)&&  <UpdateName onCallback = {handleDemographics} onClick={handleClick} active={sendRequest} />}
        { (request.phone)&&  <UpdatePhone onCallback = {handleDemographics} active={sendRequest}/>}

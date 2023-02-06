@@ -4,6 +4,7 @@ import {Routes, Route, useNavigate, Navigate, useLocation} from 'react-router-do
 import { dummyData } from "..";
 import {FormattedMessage} from "react-intl";
 import { useTransition } from "transition-hook";
+import { useScrollTo } from "react-use-window-scroll"
 
 
 
@@ -12,15 +13,17 @@ const ServiceList = () => {
     const navigate = useNavigate();
     const [onOff, setOnOff] = useState(true)
     const {stage, shouldMount} = useTransition(onOff, 300)
+    const scrollTo = useScrollTo();
     const navigateService = (service) =>
     {
       
         console.log(service);
         navigate('/service',{state:{service}});
     };
-   useEffect(() => {
-       
-   }, [])
+    useEffect(() => {
+        console.log("to the top");
+        scrollTo(0, 0);
+      }, [])
    
   
     

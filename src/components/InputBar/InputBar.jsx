@@ -94,8 +94,7 @@ const InputBar = (props) => {
     
     useEffect(() => {
      initalService();
-     document.getElementById('box').classList.remove('scale-0');
-     document.getElementById('box').classList.add('scale-100');
+  
 
     }, [])
    
@@ -138,7 +137,7 @@ const InputBar = (props) => {
   <>
         
       
-        <div id="box" class={isDesktopOrLaptop?"scale-0 md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "scale-0 md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-70 p:10"}>
+        <div  class={isDesktopOrLaptop?" md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": " md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-70 p:10"}>
         {loading? 
         
         <Spinner/>
@@ -165,7 +164,7 @@ const InputBar = (props) => {
                   <DropdownSelector options={['send-phone', 'send-email']} onCallback = {handleCallback}/>
                 </div> 
        
-                <div class="flex justify-start items-center p-1 lg:mt-16 md:mt-2 mr-auto lg:ml-10 md:ml-0">
+                <div class="flex justify-start items-center p-1 lg:mt-4 md:mt-2 mr-auto lg:ml-10 md:ml-0">
                     <button type="submit"  class="inline-block px-7 py-3  bg-[#005471] text-white font-small text-base lg:w-1/4 md:w-full  leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#214b60] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="go"/></button>
                 </div>
                       {/* <div class="sm:flex w-5/6 ml-auto  items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">

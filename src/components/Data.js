@@ -77,7 +77,7 @@ export const SIDEBAR_DATA = [
         otpReq: true,
         apiID: "mosip.resident.updateuin",
         icon: <LayoutIcon />,
-        image: 'update.png',
+        image: 'update.svg',
         documents: [
           "name",
           "email",
@@ -96,7 +96,7 @@ export const SIDEBAR_DATA = [
         action: "track-request-status-action",
         apiID: "mosip.resident.checkstatus",
         icon: <CalendarIcon />,
-        image: 'track.png'
+        image: 'track.svg'
       },
       {
         id: 3,
@@ -109,7 +109,7 @@ export const SIDEBAR_DATA = [
         request: "authType",
         apiID: "mosip.resident.auth",
         icon: <Lock />,
-        image: 'authlock.png',
+        image: 'authlock.svg',
         types: [
           'Demographic Auth Type',
           'Biometric Auth Type',
@@ -130,7 +130,7 @@ export const SIDEBAR_DATA = [
         request: "cardType",
         apiID: "mosip.resident.euin",
         icon: <DownIcon />,
-        image: 'download.png'
+        image: 'download.svg'
       },
      
       {
@@ -144,7 +144,7 @@ export const SIDEBAR_DATA = [
         request: "cardType",
         apiID: "mosip.resident.reprintuin",
         icon: <FingerIcon />,
-        image: 'reprint.png'
+        image: 'reprint.svg'
       },
       {
         id: 6,
@@ -156,7 +156,7 @@ export const SIDEBAR_DATA = [
         action: "view-trans-hist-action",
         apiID: "mosip.resident.authhistory",
         icon: <HistIcon/>,
-        image: 'authhistory.png'
+        image: 'authhistory.svg'
       },
       {
         id: 7,
@@ -169,14 +169,14 @@ export const SIDEBAR_DATA = [
         request: "vidType",
         apiID: "mosip.resident.vid",
         icon: <AuthIcon />,
-        image: 'generate.png',
+        image: 'generate.svg',
         types: [
           {name:'PERPETUAL',
            desc: 'This ID is perpetual',
-           icon: 'perpetual.png'},
+           icon: 'perpetual.svg'},
           {name:'TEMPORARY',
            desc: 'This ID is temporary',
-           icon: 'temporary.png'
+           icon: 'temporary.svg'
         }
         ]
       },
@@ -191,7 +191,7 @@ export const SIDEBAR_DATA = [
         request: "vidStatus",
         apiID:"mosip.resident.vidstatus",
         icon: <SafetyIcon />,
-        image: 'revoke.png',
+        image: 'revoke.svg',
         types: [
           'PERPETUAL',
           'TEMPORARY'
