@@ -33,6 +33,7 @@ const Navigation = () => {
 
 const { language, setLanguage } = useContext(LanguageContext);
     return (
+     
       <Navbar  expand="lg" fixed="top" className="bg-gray-800 p-2 flex justify-between items-center border-b">
       <Container fluid>
         <Navbar.Brand href="" className="flex items-center ml-10 gap-2">  
@@ -54,8 +55,7 @@ const { language, setLanguage } = useContext(LanguageContext);
     
         <Navbar.Collapse id="navbar-dark-example">
         <Nav className="ml-auto mr-20 items-center">
-         
-          {dummyData.map((itemData, index) => (
+        {dummyData.map((itemData, index) => (
          <>
             {/* <Nav.Item className="p-2 ml-4 no-underline hover:underline hover:decoration-[#00f7c7]  hover:decoration-4 hover:decoration-offset-10 active:animate-pulse active:text-blue-400 ">
             <Link to={itemData.path}  className="nav-link" >
@@ -73,6 +73,7 @@ const { language, setLanguage } = useContext(LanguageContext);
            
             </>
           ))}
+        
           
         </Nav>
          

@@ -39,8 +39,8 @@ const Sidebarr = ({children}) => {
               id="nav-dropdown"
               title={<> 
               <TextLoop>
-              <span className="text-[#005371] text-2xl font-semibold">Languages</span>
-              <span className="text-[#005371] text-2xl font-semibold">ቋንቋ</span>
+              <span className="text-[#005371] text-xl font-semibold">Languages</span>
+              <span className="text-[#005371] text-xl font-semibold">ቋንቋ</span>
                 </TextLoop></>}>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>

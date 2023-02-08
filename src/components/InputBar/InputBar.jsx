@@ -4,7 +4,8 @@ import DropdownSelector from "../Dropdown/DropdownSelector";
 import { dummyData } from "..";
 import Description from "../Description/Description";
 import Spinner from "../Spinner/Spinner";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
+import { useTransition } from "react-transition-state";
 import { load } from "@syncfusion/ej2-react-grids";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";

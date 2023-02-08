@@ -48,13 +48,13 @@ export const SIDEBAR_DATA = [
   {
     id: 2,
     name: "about",
-    path: "/about",
+    path: "#About",
     icon: <AboutIcon />,
   },
   {
     id: 3,
     name: "contact",
-    path: "/contact",
+    path: "#Contact",
     icon: <ContactIcon />,
   },
  
@@ -164,7 +164,7 @@ export const SIDEBAR_DATA = [
         instruction: "generate-virtual-id-inst",
         input: "UIN",
         otpReq: true,
-        path: "vid",
+        path: "vidconfirm",
         action: "generate-virtual-id-action",
         request: "vidType",
         apiID: "mosip.resident.vid",

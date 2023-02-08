@@ -10,7 +10,8 @@ import Description from "../Description/Description";
 import otpContext from "../../providers/OTPprovider";
 import { useMediaQuery } from 'react-responsive'
 import ServiceList from "../ServiceList/ServiceList";
-import { useScrollTo } from "react-use-window-scroll"
+import { useScrollTo } from "react-use-window-scroll";
+import { useTransition } from "react-transition-state";
 
 const Service = (props) => {
   const { name,inst,input,action,apiId,requestType } = props;
@@ -27,9 +28,17 @@ const Service = (props) => {
   useEffect(() => {
     console.log("to the top");
     scrollTo(0, 0);
+    toggle(true);
   }, [])
   
  
+  const [{ status, isMounted }, toggle] = useTransition({
+    timeout: 500,
+    mountOnEnter: true,
+    unmountOnExit: true,
+    preEnter: true
+  });
+
   const setOtp = (otp) => {
       
        setSelectedOption(otp);
@@ -68,14 +77,26 @@ const Service = (props) => {
     return (
       <div id="page" className={isDesktopOrLaptop? "pt-14  h-full bg-service bg-cover bg-center  ": " bg-service bg-cover bg-center h-full"}>
       {card ? 
+        (isMounted &&  
+          <div className={`transition duration-1000${
+           status === "preEnter" || status === "exiting"
+             ? " transform scale-90 opacity-0 "
+             : " "
+         }`}  > 
       <InputBar name={name} input={input} service={serviceType} onCardChange={setCard} setOtp={setOtp} setID={setID}  setService={setServiceType}/>
-            // <ServiceList/>
+          </div>)
       : 
-      <>
-      
+     
+     ( isMounted &&   
+        <div className={`transition duration-1000${
+           status === "preEnter" || status === "exiting"
+             ? " transform scale-90 opacity-0 "
+             : " "
+         }`}  > 
            <OTP  otp={selectedOption} id={individualID} service={service}/> 
-    
-      </>}
+           </div>
+      )
+      }
       
       
     </div>

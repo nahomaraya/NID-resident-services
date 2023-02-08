@@ -32,6 +32,7 @@ import AuthConfimation from "./pages/AuthConfirmation";
 import UpdateConfimation from "./pages/UpdateConfirmation";
 import VIDConfimation from "./pages/VIDConfirmation";
 import ServiceList from "./components/ServiceList/ServiceList";
+import Landing from "./pages/Landing/Landing";
 
 
 
@@ -80,7 +81,7 @@ function App() {
             {isTabletOrMobile &&  <Sidebarr /> }
        <Routes>
          {/* <Route path='*' element={<NotFound />} /> */}
-          <Route path="/" element={<Home/>} />
+          {/* <Route path="/" element={<Home/>} /> */}
           <Route path="/mosip.resident.checkstatus" element={<TrackStatus/>}/>
           <Route path="/mosip.resident.updateuin" element={<UpdateUIN/>}/>
           <Route path="/mosip.resident.authlock" element={<Lock/>}/>
@@ -88,13 +89,13 @@ function App() {
           <Route path="/mosip.resident.auth" element={<AuthLock/>}/>
           <Route path="/mosip.resident.euin" element={<DownloadEUin/>}/>
           <Route path="/mosip.resident.reprintuin" element={<Reprint/>}/>
-          <Route path="/mosip.resident.vid" element={<VID/>}/>
+          <Route path="/mosip.resident.vid" element={<VIDConfimation/>}/>
           <Route path="/mosip.resident.vidstatus" element={<VidStatus/>}/>
           <Route path="/mosip.resident.authhistory" element={<AuthHistory/>}/>
           <Route path="/authcomfirm" element={<AuthConfimation/>}/>
           <Route path="/updateconfirm" element={<UpdateConfimation/>}/>
-          <Route  path="/vidconfirm" element={<VIDConfimation/>}/>
-
+          {/* <Route  path="/vidconfirm" element={<VIDConfimation/>}/> */}
+          <Route path="/" element={<Landing/>}/>
           <Route path="/services" element={<ServiceList/>}/>
           <Route path="/service" element={<Service/>}/>
        

@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from "react";
 import {  useLocation, useHistory, useNavigate } from "react-router-dom";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
+import { createPost } from "../services/ResidentServices";
 import LoadingScreen from "../components/LoadingScreen/Loading";
 import {FormattedMessage} from "react-intl";
 import {
@@ -13,20 +14,55 @@ import {
 
 const VIDConfimation = (props) => {
 
+    const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(true);
+    let loadingGif = require("../assets/fingerprint.gif");
     const location = useLocation();
+    const types = location.state.request.types;
     const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)'
   });
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  
+
+  
+  const handlePost = () => {
+ 
+    location.state.request.request.vidType = "TEMPORARY";
+    console.log(location.state.request.request.vidType);
+ 
+    createPost(location.state)
+     .then(response => {
+         setIsLoading(true);
+         console.log("sucess");
+       // setRequest({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: ''}})
+      
+       
+   });
+  }
+
+  useEffect(() => {
+    if(location.state!=null){
+    const timer = setTimeout(()=> {
+       setIsLoading(false);
+    }, 5000);
+    handlePost()
+    return () => {
+      clearTimeout(timer);
+    }}
+    else{
+      navigate('/');
+    }
+  }, [])
+  
 
 
-    const navigate = useNavigate();
     return(
       <>
        <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
            <div class={isDesktopOrLaptop?"md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
           
-            <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">You generated a {location.state.vidType} VID</h1>
+            <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">You generated a temporary VID</h1>
             <h2 className="text-center font-normal text-gray-500  lg:text-2xl md:text-sm p-4">Notification has been sent to the provided contact details</h2>
              
             
