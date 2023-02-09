@@ -3,7 +3,8 @@ import React, {useState, Fragment, useCallback, useEffect} from "react";
 import {FormattedMessage} from "react-intl";
 import {Routes, Route, useNavigate, Navigate} from 'react-router-dom'
 import OTPInput from "./OTPInput";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
+import { useTransition } from "react-transition-state";
 import {
     Button,
     Dialog,
@@ -23,6 +24,12 @@ const OTP = (props) => {
     const [otpResent, setOTPResent] = useState(false);
     const [verify, setverify] = useState(false);
  
+    const [{ status, isMounted }, toggle] = useTransition({
+      timeout: 500,
+      mountOnEnter: true,
+      unmountOnExit: true,
+      preEnter: true
+    });
     
     const handleResent = () => {
       setPhone(!phone)
@@ -76,13 +83,20 @@ const OTP = (props) => {
       }
      
       setRequest(request);
+      toggle(true);
     }, []);
     const isDesktopOrLaptop = useMediaQuery({
       query: '(min-width: 1224px)'
     });
     
     return(
-   
+      <>
+      { isMounted &&   
+        <div className={`transition duration-1000${
+           status === "preEnter" || status === "exiting"
+             ? " transform translate-x-full opacity-0 "
+             : " "
+         }`}  > 
     
       <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
               
@@ -123,6 +137,10 @@ const OTP = (props) => {
                      
                       
                       </div>
+                      </div>
+             
+             </div>
+}
              
                     <Dialog open={otpResent} handler={handleOpen}  animate={{ mount: { scale: 1, y: 0 }, unmount: { scale: 0.9, y: -100 }, }}>
                     <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">
@@ -153,9 +171,8 @@ const OTP = (props) => {
                     </div>
                     </Dialog>
                  
-               
-            </div>
-         
+                    </>     
+        
     
  
     );

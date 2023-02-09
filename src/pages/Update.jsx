@@ -5,6 +5,7 @@ import {  useLocation, useHistory, useNavigate } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
 import LoadingScreen from "../components/LoadingScreen/Loading";
 import {FormattedMessage} from "react-intl";
+import { useTransition } from "react-transition-state";
 import {
     Button,
     Dialog,
@@ -21,6 +22,12 @@ const UpdateName = (props) =>{
    
     const [data, setData] = useState();
     const [file, setFile] = useState();
+    const [{ status, isMounted }, toggle] = useTransition({
+      timeout: 500,
+      mountOnEnter: true,
+      unmountOnExit: true,
+      preEnter: true
+    });
     const handleChange = (key,value) => {
         setData({...data, [key]: value});
     }
@@ -162,6 +169,7 @@ const UpdateAddress = (props) => {
      
     return(
         <>
+        
         <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Kebele</label>
         <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="Kebele"  onChange={(e) => handleChange('kebele', e.target.value)}
         value={props.mobile} required/>
@@ -174,8 +182,8 @@ const UpdateAddress = (props) => {
           <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">State</label>
           <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="State"  onChange={(e) => handleChange('state', e.target.value)}
         value={props.mobile} required/>
-
-<label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+        
+        <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="flex gap-4">
         <div className="block w-1/2  text-base text-gray-500 rounded-md border border-gray-300  bg-white placeholder-gray-400">
@@ -195,6 +203,13 @@ const UpdateUIN = (props) => {
     const [documents, setDocuments] = useState([]);
     const [open, setOpen] = useState(false);
     const [data, setData] = useState();
+    const [{ status, isMounted }, toggle] = useTransition({
+      timeout: 500,
+      mountOnEnter: true,
+      unmountOnExit: true,
+      preEnter: true
+    });
+    
 
     const [isLoading, setIsLoading] = useState(true);
     let loadingGif = require("../assets/fingerprint.gif");
@@ -261,6 +276,7 @@ const UpdateUIN = (props) => {
         const timer = setTimeout(()=> {
            setIsLoading(false);
         }, 5000);
+        toggle(true);
       
         return () => {
           clearTimeout(timer);
@@ -273,12 +289,19 @@ const UpdateUIN = (props) => {
     return(
         <>
         {isLoading? <LoadingScreen/> : 
+   
    <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
-   <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-50 p-10": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
+     {isMounted &&   
+        <div className={`transition duration-1000${status === "preEnter" || status === "exiting"
+             ? " transform translate-x-full opacity-0 "
+             : " "
+         }`}  > 
+          <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-50 p-10": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
    
             
             {!update ?
             <>
+            
              <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Please select field/s to update</h2>
         <div class="flex flex-wrap   mt-8 ml-4  mb-4 gap-10">
              {/* <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -311,9 +334,12 @@ const UpdateUIN = (props) => {
       <div class="justify-start items-center ">
           <button type="submit" onClick={()=>{setUpdate(true)}} class="w-1/3 inline-block px-7 py-3  bg-[#005471] text-white font-semibold text-base leading-tight  rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Submit</button>
       </div>
+      
+    
       </>
       :
       <>
+     
           <h2 className="text-center font-bold text-[#005471]  lg:text-4xl text-2xl">Enter New Data for Update</h2>
        <div class="flex flex-col justify-start items-start gap-2">
        { (request.name)&&  <UpdateName onCallback = {handleDemographics} onClick={handleClick} active={sendRequest} />}
@@ -326,19 +352,9 @@ const UpdateUIN = (props) => {
           <button type="submit" onClick={handleClick} class="inline-block px-7 py-3   bg-[#5e90a9] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
        */}
        </div>
-      
-       
-
-      </>
-            
-        
-        
-        }
-            
-           
-        
-
-        </div>
+      </>}
+    </div>
+  </div>}
         <Dialog open={open} handler={handleDemographics}  animate={{mount: { scale: 1, y: 0 }, unmount: { scale: 0.9, y: -100 },}}>
                     <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">
                         <div className="bg-white rounded-lg shadow-xl p-4 md:p-8 lg:p-12 xl:p-16">

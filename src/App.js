@@ -81,21 +81,21 @@ function App() {
             {isTabletOrMobile &&  <Sidebarr /> }
        <Routes>
          {/* <Route path='*' element={<NotFound />} /> */}
-          {/* <Route path="/" element={<Home/>} /> */}
-          <Route path="/mosip.resident.checkstatus" element={<TrackStatus/>}/>
-          <Route path="/mosip.resident.updateuin" element={<UpdateUIN/>}/>
-          <Route path="/mosip.resident.authlock" element={<Lock/>}/>
-          <Route path="/mosip.resident.authunlock" element={<Unlock/>}/>
-          <Route path="/mosip.resident.auth" element={<AuthLock/>}/>
-          <Route path="/mosip.resident.euin" element={<DownloadEUin/>}/>
-          <Route path="/mosip.resident.reprintuin" element={<Reprint/>}/>
-          <Route path="/mosip.resident.vid" element={<VIDConfimation/>}/>
-          <Route path="/mosip.resident.vidstatus" element={<VidStatus/>}/>
-          <Route path="/mosip.resident.authhistory" element={<AuthHistory/>}/>
+          <Route path="/" element={<Home/>} />
+          <Route path="/nid.resident.checkstatus" element={<TrackStatus/>}/>
+          <Route path="/nid.resident.updateuin" element={<UpdateUIN/>}/>
+          <Route path="/nid.resident.authlock" element={<Lock/>}/>
+          <Route path="/nid.resident.authunlock" element={<Unlock/>}/>
+          <Route path="/nid.resident.auth" element={<AuthLock/>}/>
+          <Route path="/nid.resident.euin" element={<DownloadEUin/>}/>
+          <Route path="/nid.resident.reprintuin" element={<Reprint/>}/>
+          <Route path="/nid.resident.vid" element={<VIDConfimation/>}/>
+          <Route path="/nid.resident.vidstatus" element={<VidStatus/>}/>
+          <Route path="/nid.resident.authhistory" element={<AuthHistory/>}/>
           <Route path="/authcomfirm" element={<AuthConfimation/>}/>
           <Route path="/updateconfirm" element={<UpdateConfimation/>}/>
           {/* <Route  path="/vidconfirm" element={<VIDConfimation/>}/> */}
-          <Route path="/" element={<Landing/>}/>
+          {/* <Route path="/" element={<Landing/>}/> */}
           <Route path="/services" element={<ServiceList/>}/>
           <Route path="/service" element={<Service/>}/>
        

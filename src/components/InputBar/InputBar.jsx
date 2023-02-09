@@ -5,6 +5,7 @@ import { dummyData } from "..";
 import Description from "../Description/Description";
 import Spinner from "../Spinner/Spinner";
 import { useMediaQuery } from 'react-responsive';
+
 import { useTransition } from "react-transition-state";
 import { load } from "@syncfusion/ej2-react-grids";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -15,6 +16,12 @@ const InputBar = (props) => {
     const[id, setId] = useState('');
     const [otp, setOtp] = useState('');
     const [loading, setLoading] = useState(false);
+    const [{ status, isMounted }, toggle] = useTransition({
+      timeout: 500,
+      mountOnEnter: true,
+      unmountOnExit: true,
+      preEnter: true
+    });
     const [service, setService] = useState({   
   
     });
@@ -95,7 +102,7 @@ const InputBar = (props) => {
     
     useEffect(() => {
      initalService();
-  
+     toggle(true);
 
     }, [])
    
@@ -136,14 +143,16 @@ const InputBar = (props) => {
     }); 
   return (
   <>
-        
+         {isMounted &&  
+          <div className={`transition duration-1000${
+           status === "preEnter" || status === "exiting"
+             ? " transform translate-x-full opacity-0 "
+             : " "
+         }`}  > 
       
         <div  class={isDesktopOrLaptop?" md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": " md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-30 w-70 p:10"}>
-        {loading? 
-        
-        <Spinner/>
-         : 
-         <>
+      
+         
           <div  class="flex flex-col">
                         <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl text-xl">Please Enter Your Fayda Number</h1></span>
                         
@@ -179,13 +188,12 @@ const InputBar = (props) => {
                           </div>
                       </div> */}
           </form>
-          </>
-         }
+         
         </div>
    
     
   
- 
+        </div> }
     
    
   </>

@@ -3,6 +3,7 @@ import {  useLocation, useHistory, useNavigate } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
 import LoadingScreen from "../components/LoadingScreen/Loading";
 import {FormattedMessage} from "react-intl";
+import { useTransition } from "react-transition-state";
 import {
   Button,
   Dialog,
@@ -80,6 +81,12 @@ const AuthLock = () => {
   const [authType, setAuthType] = useState();
   const [authAction, setAuthAction] = useState();
   const navigate = useNavigate();
+  const [{ status, isMounted }, toggle] = useTransition({
+    timeout: 500,
+    mountOnEnter: true,
+    unmountOnExit: true,
+    preEnter: true
+  });
  
  
   const [isLoading, setIsLoading] = useState(true);
@@ -160,7 +167,7 @@ const AuthLock = () => {
         const timer = setTimeout(()=> {
            setIsLoading(false);
         }, 5000);
-       
+        toggle(true);
         return () => {
           clearTimeout(timer);
         }}
@@ -173,6 +180,13 @@ const AuthLock = () => {
         <>
       {isLoading? <LoadingScreen/> : 
     <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
+     { isMounted &&   
+        <div className={`transition duration-1000${
+           status === "preEnter" || status === "exiting"
+             ? " transform translate-x-full opacity-0 "
+             : " "
+         }`}  > 
+    
     <div class={isDesktopOrLaptop?"md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-10": "md:container  mx-auto mt-24 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
     
     <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Click on Auth Type to Lock/Unlock</h2>
@@ -192,6 +206,7 @@ const AuthLock = () => {
               </div>
 
         </div>
+        </div>}
         </div>
     
 }

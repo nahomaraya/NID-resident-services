@@ -49,12 +49,12 @@ const ServiceList = () => {
               isMounted && (  
            <div className={`transition duration-1000${
             status === "preEnter" || status === "exiting"
-              ? " transform scale-90 opacity-0 my-2  p-3 pl-5  w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
+              ? " transform scale-90  opacity-0 my-2  p-3 pl-5  w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
               : " my-2  p-3 pl-5  w-full lg:my-4 lg:px-4 lg:w-1/3"
           }`}  > 
             <div >
 
-            <article onClick={()=>navigateService(subitem.name)} class=" scale-90 border-2 border-[#f6f6f6] bg-white hover:-translate-y-1 transform transition duration-500  hover:scale-110 hover:bg-green-500 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
+            <article onClick={()=>navigateService(subitem.name)} class=" scale-90 border-2 border-[#f6f6f6] bg-white hover:-translate-y-1 transform transition duration-500  hover:scale-100 hover:bg-green-500 hover:cursor-pointer  overflow-hidden rounded-xl shadow-lg">
 
                 <a onClick={()=>navigateService(subitem.name)}>
                     <img alt="placeholder" class="block h-40 w-40 pl-4 ml-4" src={require('../../assets/images/' + subitem.image)}/>

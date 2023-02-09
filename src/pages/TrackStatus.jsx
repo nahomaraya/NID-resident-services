@@ -3,6 +3,7 @@ import {  useLocation, useHistory, useNavigate } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
 import LoadingScreen from "../components/LoadingScreen/Loading";
 import { createPost } from "../services/ResidentServices";
+import { useTransition } from "react-transition-state";
 import {FormattedMessage} from "react-intl";
 import { useId } from "react-id-generator";
 
@@ -22,7 +23,12 @@ const TrackStatus = (props) => {
     let loadingGif = require("../assets/fingerprint.gif");
     const location = useLocation();
     console.log(location.state);
-   
+    const [{ status, isMounted }, toggle] = useTransition({
+      timeout: 500,
+      mountOnEnter: true,
+      unmountOnExit: true,
+      preEnter: true
+    });
     
     const handlePost = () => {
       location.state.request.request.transactionID = transactionId.generate(8)+ "-" + transactionId.generate(4)+ "-" +transactionId.generate(4)+"-"+transactionId.generate(4)+"-"+transactionId.generate(12);
@@ -45,6 +51,7 @@ const TrackStatus = (props) => {
         const timer = setTimeout(()=> {
            setIsLoading(false);
         }, 5000);
+        toggle(true);
         handlePost();
         return () => {
           clearTimeout(timer);
@@ -59,6 +66,12 @@ const TrackStatus = (props) => {
         <>
         {isLoading? <LoadingScreen/> :  
       <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
+             { isMounted &&   
+        <div className={`transition duration-1000${
+           status === "preEnter" || status === "exiting"
+             ? " transform translate-x-full opacity-0 "
+             : " "
+         }`}  > 
            <div class={isDesktopOrLaptop?"md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-50 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-50 w-70 p-10"}>
          
                   <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Status of UIN Generation</h1>
@@ -72,7 +85,7 @@ const TrackStatus = (props) => {
                 
                 
         </div>
-       
+       </div>}
     </div>
     }
     </>

@@ -28,17 +28,13 @@ const Service = (props) => {
   useEffect(() => {
     console.log("to the top");
     scrollTo(0, 0);
-    toggle(true);
+  
   }, [])
   
  
-  const [{ status, isMounted }, toggle] = useTransition({
-    timeout: 500,
-    mountOnEnter: true,
-    unmountOnExit: true,
-    preEnter: true
-  });
-
+ 
+  
+  
   const setOtp = (otp) => {
       
        setSelectedOption(otp);
@@ -77,25 +73,12 @@ const Service = (props) => {
     return (
       <div id="page" className={isDesktopOrLaptop? "pt-14  h-full bg-service bg-cover bg-center  ": " bg-service bg-cover bg-center h-full"}>
       {card ? 
-        (isMounted &&  
-          <div className={`transition duration-1000${
-           status === "preEnter" || status === "exiting"
-             ? " transform scale-90 opacity-0 "
-             : " "
-         }`}  > 
-      <InputBar name={name} input={input} service={serviceType} onCardChange={setCard} setOtp={setOtp} setID={setID}  setService={setServiceType}/>
-          </div>)
-      : 
      
-     ( isMounted &&   
-        <div className={`transition duration-1000${
-           status === "preEnter" || status === "exiting"
-             ? " transform scale-90 opacity-0 "
-             : " "
-         }`}  > 
-           <OTP  otp={selectedOption} id={individualID} service={service}/> 
-           </div>
-      )
+      <InputBar name={name} input={input} service={serviceType} onCardChange={setCard} setOtp={setOtp} setID={setID}  setService={setServiceType}/>
+        
+      : 
+      <OTP  otp={selectedOption} id={individualID} service={service}/> 
+      
       }
       
       

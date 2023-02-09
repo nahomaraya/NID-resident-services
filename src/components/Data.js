@@ -48,13 +48,13 @@ export const SIDEBAR_DATA = [
   {
     id: 2,
     name: "about",
-    path: "#About",
+    path: "/about",
     icon: <AboutIcon />,
   },
   {
     id: 3,
     name: "contact",
-    path: "#Contact",
+    path: "/contact",
     icon: <ContactIcon />,
   },
  
@@ -75,7 +75,7 @@ export const SIDEBAR_DATA = [
         action: "update-demographic-data-action",
         request: "demographics",
         otpReq: true,
-        apiID: "mosip.resident.updateuin",
+        apiID: "nid.resident.updateuin",
         icon: <LayoutIcon />,
         image: 'update.svg',
         documents: [
@@ -94,7 +94,7 @@ export const SIDEBAR_DATA = [
         input: "RID",
         otpReq: false,
         action: "track-request-status-action",
-        apiID: "mosip.resident.checkstatus",
+        apiID: "nid.resident.checkstatus",
         icon: <CalendarIcon />,
         image: 'track.svg'
       },
@@ -107,7 +107,7 @@ export const SIDEBAR_DATA = [
         otpReq: true,
         action: "auth-type-action",
         request: "authType",
-        apiID: "mosip.resident.auth",
+        apiID: "nid.resident.auth",
         icon: <Lock />,
         image: 'authlock.svg',
         types: [
@@ -128,7 +128,7 @@ export const SIDEBAR_DATA = [
         path: "uin",
         action: "download-eUIN-action",
         request: "cardType",
-        apiID: "mosip.resident.euin",
+        apiID: "nid.resident.euin",
         icon: <DownIcon />,
         image: 'download.svg'
       },
@@ -142,7 +142,7 @@ export const SIDEBAR_DATA = [
         path: "reprint",
         action: "reprint-uin-action",
         request: "cardType",
-        apiID: "mosip.resident.reprintuin",
+        apiID: "nid.resident.reprintuin",
         icon: <FingerIcon />,
         image: 'reprint.svg'
       },
@@ -154,7 +154,7 @@ export const SIDEBAR_DATA = [
         otpReq: true,
         path: "trans",
         action: "view-trans-hist-action",
-        apiID: "mosip.resident.authhistory",
+        apiID: "nid.resident.authhistory",
         icon: <HistIcon/>,
         image: 'authhistory.svg'
       },
@@ -167,7 +167,7 @@ export const SIDEBAR_DATA = [
         path: "vidconfirm",
         action: "generate-virtual-id-action",
         request: "vidType",
-        apiID: "mosip.resident.vid",
+        apiID: "nid.resident.vid",
         icon: <AuthIcon />,
         image: 'generate.svg',
         types: [
@@ -189,7 +189,7 @@ export const SIDEBAR_DATA = [
         path: "vid",
         action: "revoke-virtual-id-action",
         request: "vidStatus",
-        apiID:"mosip.resident.vidstatus",
+        apiID:"nid.resident.vidstatus",
         icon: <SafetyIcon />,
         image: 'revoke.svg',
         types: [
