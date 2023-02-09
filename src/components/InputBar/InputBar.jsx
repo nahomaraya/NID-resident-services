@@ -154,7 +154,7 @@ const InputBar = (props) => {
       
          
           <div  class="flex flex-col">
-                        <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl text-xl">Please Enter Your Fayda Number</h1></span>
+                        <span> <h1 class="text-center font-bold text-[#005471] lg:text-3xl text-xl"><FormattedMessage id={"please-enter-your-fayda-number"}/></h1></span>
                         
                     </div>
           <form  className="p-15 " onSubmit={handleGoState}>

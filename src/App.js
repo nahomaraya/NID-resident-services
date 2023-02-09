@@ -32,7 +32,7 @@ import AuthConfimation from "./pages/AuthConfirmation";
 import UpdateConfimation from "./pages/UpdateConfirmation";
 import VIDConfimation from "./pages/VIDConfirmation";
 import ServiceList from "./components/ServiceList/ServiceList";
-import Landing from "./pages/Landing/Landing";
+
 
 
 

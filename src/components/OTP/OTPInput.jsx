@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OtpInput from 'react-otp-input';
+import {FormattedMessage} from "react-intl";
 
 export default class OTPInput extends Component {
   state = { otp: '' };
@@ -28,7 +29,7 @@ export default class OTPInput extends Component {
         inputStyle="inputStyle"
       
       />
-       <button type="submit" onClick={()=>this.setState({otp:''})} class="w-full inline-block px-4  bg-[#00efc6] text-white  font-semibold text-sm leading-tight  rounded-lg shadow-md hover:bg-[#31aa8b] hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out">Clear Input</button>
+       <button type="submit" onClick={()=>this.setState({otp:''})} class="w-full inline-block px-4  bg-[#00efc6] text-white  font-semibold text-sm leading-tight  rounded-lg shadow-md hover:bg-[#31aa8b] hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id={"clear-input"}/></button>
                  
       
       </div>

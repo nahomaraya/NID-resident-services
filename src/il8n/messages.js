@@ -60,6 +60,20 @@ export const messages = {
           "select-OTP-method": " Select Verification Method",
           "enter-uin": "Enter your UIN Number",
           "enter-rid": "Enter your RID Number",
+          "please-enter-your-fayda-number": "Please Enter Your Fayda Number",
+          "clear-input": "Clear Input",
+          "choose-auth-type": "Click on Auth Type to Lock/Unlock",
+          "Demographic": "Demographic",
+           "Biometric": "Biometric",
+           "locked": "Locked",
+           "unlocked": "Unlocked",
+           "status": "Status",
+           "back-to-home": "Back To Home",
+           "back-to-services": "Back To Services",
+           "status-uin":"Status of FIN Generation",
+           "uin-processing": "Your FIN is Processing.Please wait",
+           "are-you-sure":"Are you sure you want to"
+
           },
         
     [LOCALES.FRENCH]: {
@@ -118,7 +132,7 @@ export const messages = {
       "page-inst-UIN/VID": "የእርስዎን UIN ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
       "page-inst-RID": "የእርስዎን RID ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
       "page-inst-UIN": "የእርስዎን UIN ያስገቡ እና የOTP ማረጋገጫ ሁነታን ይምረጡ",
-    
+      "clear-input": "ሰረዝ",
       "services": "አገልግሎቶች",
       "about": "ስለ እኛ",
       "contact": "አግኙን",
@@ -126,8 +140,19 @@ export const messages = {
       "select-OTP-method": "የOTP ማረጋገጫ ዘዴን",
       "enter-uin": "የእርስዎን UIN ቁጥር ያስገቡ",
       "enter-rid": "የእርስዎን RID ቁጥር ያስገቡ",
-
-    }
+      "please-enter-your-fayda-number": "እባክዎ የፋይዳ ቁጥርዎን ያስገቡ",
+      "choose-auth-type": "ለመቆለፍ/ለመክፈት የAuth አይነትን ይምረጡ",
+      "Demographic": "ስነ ሕዝብ",
+      "Biometric": "ባዮሜትሪክ",
+      "locked": "ተቆልፏል",
+      "unlocked": "ተከፍቷል",
+      "status": "ሁኔታ",
+      "back-to-home": "ወደ ዋናው ተመለስ",
+      "back-to-services": "ወደ አገልግሎቶች ተመለስ",
+      "status-uin":"የFIN ጥያቄ ሁኔታ",
+      "uin-processing": "የእርስዎ FIN በሂደት ላይ ነው። እባክዎ ይጠብቁ",
+      "are-you-sure":"እርግጠኛ ኖት"   
+     }
         
     };
    
