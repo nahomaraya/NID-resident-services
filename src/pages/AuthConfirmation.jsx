@@ -22,12 +22,12 @@ const AuthConfimation = (props) => {
            {location.state.authAction? 
     <>
      <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">{location.state.authType} <FormattedMessage id={'sucess-locked'}/></h1>
-     <h2 className="text-center font-normal text-gray-500  lg:text-2xl md:text-sm p-4">Your will not be able to authenticate using {location.state.authType}  thus preventing potential misuse</h2>
+     <h2 className="text-center font-normal text-gray-500  lg:text-2xl md:text-sm p-4"><FormattedMessage id={'no-authtype'}/></h2>
      </>
      :
      <>
      <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Your {location.state.authType}  <FormattedMessage id={'sucess-unlocked'}/></h1>
-     <h2 className="text-center font-normal text-gray-500  lg:text-2xl md:text-sm p-4">Your will able to authenticate using {location.state.authType}  from now  on</h2>
+     <h2 className="text-center font-normal text-gray-500  lg:text-2xl md:text-sm p-4"><FormattedMessage id={'yes-authtype'}/></h2>
      </>
   }
           

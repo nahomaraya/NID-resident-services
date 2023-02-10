@@ -46,23 +46,23 @@ const UpdateName = (props) =>{
     return(
     
    <>
-    <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 ">First Name</label>
+    <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 "><FormattedMessage id={"first-name"}/></label>
     <input class="block w-full  lg:p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="First Name"  onChange={(e) => handleChange('first-name', e.target.value)}
     value={props.firstName} required/>
-    <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 ">Father's Name</label>
+    <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 "><FormattedMessage id={"father-name"}/></label>
      <input class="block w-full  lg:p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
     value={props.lastName} required/>
-     <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 ">Grand Father's Name</label>
+     <label for="checked-checkbox" class="ml-2 lg:text-xl text-base font-medium text-gray-500 "><FormattedMessage id={"grand-father-name"}/></label>
      <input class="block w-full  lg:p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Last Name"  onChange={(e)=> handleChange('last-name', e.target.value)}
     value={props.lastName} required/>
     
-    <label class="ml-2 lg:text-xl text-base font-medium text-gray-500" for="file_input">Upload Name File</label>
+    <label class="ml-2 lg:text-xl text-base font-medium text-gray-500" for="file_input"><FormattedMessage id={"upload-file"}/></label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="flex flex-col gap-4">
         <div className="block w-full text-base text-gray-500 rounded-md border border-gray-300  bg-white placeholder-gray-400">
                 <FileBase type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
         </div>
-            <button type="submit" onClick={handleClick} class="inline-block px-5 py-2 w-full bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+            <button type="submit" onClick={handleClick} class="inline-block px-5 py-2 w-full bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id={'send-update-request'}/></button>
     </div>  
       </>
         );
@@ -81,14 +81,14 @@ const UpdateEmail = (props) => {
         props.onCallback(file);
       }, [props.active])
     return(<>
-      <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Email</label>
+      <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 "><FormattedMessage id={"email"}/></label>
       <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Email"  onChange={(e) => handleChange('email', e.target.value)}
         value={props.email} required/>
      
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
       
-       <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+       <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id={'send-update-request'}/></button>
 
      </div>
     </>);
@@ -108,14 +108,14 @@ const UpdatePhone = (props) => {
       }, [props.active])
     
     return(<>
-      <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Phone</label>
+      <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 "><FormattedMessage id={"phone"}/></label>
           <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Phone"  onChange={(e) => handleChange('phone', e.target.value)}
         value={props.email} required/>
-       <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+       <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input"><FormattedMessage id={"upload-file"}/></label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="block md:w-full lg:w-1/6 p-1.5  text-sm  border  rounded-lg cursor-pointer  text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400">
       
-      <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+      <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id={'send-update-request'}/></button>
 
     </div>
     </>);
@@ -138,16 +138,16 @@ const UpdateDOB = (props) => {
     
     return (
         <>
-    <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Select Date of Birth</label>
+    <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 "><FormattedMessage id={"select-dob"}/></label>
     <input type="date" class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-blue-500 focus:border-blue-500" placeholder="Select Date"  onChange={(e) => handleChange('date', e.target.value)}
     value={props.date} max={moment().format("YYYY-MM-DD")} required/>
-     <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload DOB File</label>
+     <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input"><FormattedMessage id={"upload-file"}/></label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="flex gap-4">
         <div className="block w-1/2  text-base text-gray-500 rounded-md border border-gray-300  bg-white placeholder-gray-400">
                 <FileBase type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
         </div>
-            <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+            <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id={'send-update-request'}/></button>
     </div>
  
         </>
@@ -170,26 +170,26 @@ const UpdateAddress = (props) => {
     return(
         <>
         
-        <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Kebele</label>
+        <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 "><FormattedMessage id={"kebele"}/></label>
         <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="Kebele"  onChange={(e) => handleChange('kebele', e.target.value)}
         value={props.mobile} required/>
-          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">Woreda</label>
+          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 "><FormattedMessage id={"woreda"}/></label>
         <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="Woreda"  onChange={(e) => handleChange('woreda', e.target.value)}
         value={props.mobile} required/>
-          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">City</label>
+          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 "><FormattedMessage id={"city"}/></label>
          <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="City"  onChange={(e) => handleChange('city', e.target.value)}
         value={props.mobile} required/>
-          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 ">State</label>
+          <label for="checked-checkbox" class="mt-2 ml-2 text-xl font-medium text-gray-500 "><FormattedMessage id={"state"}/></label>
           <input class="block w-full  p-2  md:placeholder:text-left text-base text-black rounded-md border border-gray-300  bg-white focus:ring-[#00efc6] focus:border-[#00efc6]" placeholder="State"  onChange={(e) => handleChange('state', e.target.value)}
         value={props.mobile} required/>
         
-        <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input">Upload Name File</label>
+        <label class="mt-8 ml-2 text-xl font-medium text-[#edf2f3]" for="file_input"><FormattedMessage id={"upload-file"}/></label>
     {/* <input class="block md:w-full lg:w-1/3 p-1.5  text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  id="file_input" type="file" onChange={ (e) => handleFileChange('first-name', e.target.value)} /> */}
     <div className="flex gap-4">
         <div className="block w-1/2  text-base text-gray-500 rounded-md border border-gray-300  bg-white placeholder-gray-400">
                 <FileBase type="file" multiple={false} onDone={({ base64 }) => setFile({...file,  name:base64 })} onChange={(e) => e.target.files[0]} />
         </div>
-            <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Send Update Request</button>
+            <button type="submit" onClick={handleClick} class="inline-block px-4 py-1 ml-auto  bg-[#005471] text-white font-semibold text-base leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id={'send-update-request'}/></button>
     </div>
         </>);
 
@@ -332,7 +332,7 @@ const UpdateUIN = (props) => {
   
 </div>
       <div class="justify-start items-center ">
-          <button type="submit" onClick={()=>{setUpdate(true)}} class="w-1/3 inline-block px-7 py-3  bg-[#005471] text-white font-semibold text-base leading-tight  rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+          <button type="submit" onClick={()=>{setUpdate(true)}} class="w-1/3 inline-block px-7 py-3  bg-[#005471] text-white font-semibold text-base leading-tight  rounded-xl shadow-md hover:bg-[#083247]  hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id={"submit"}/></button>
       </div>
       
     

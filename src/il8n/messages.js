@@ -68,6 +68,8 @@ export const messages = {
            "locked": "Locked",
            "unlocked": "Unlocked",
            "status": "Status",
+           'no-authtype': 'You will not be able to authenticate using this authtype  thus preventing potential misuse',
+           'yes-authtype': 'Your will able to authenticate using this authtype  from now  on',
            "back-to-home": "Back To Home",
            "back-to-services": "Back To Services",
            "status-uin":"Status of FIN Generation",
@@ -92,7 +94,19 @@ export const messages = {
            "online-helpdesk": "Online Helpdesk",
            "address": "Address",
            "home-address":"Addis Ababa, Bole, Welo Sefer Ethio-China Street",
-           "call-us": "Call Us"
+           "call-us": "Call Us",
+           "submit": "Submit",
+           "send-update-request": "Send Update Request",
+           "upload-file": "Upload File",
+           "first-name": "First Name",
+           "father-name" : "Father's Name",
+           "grand-father-name" : "Grandfather's Name",
+           "select-dob": "Select Date of Birth",
+           "kebele": "Kebele",
+           "woreda": "Woreda",
+           "city": "City",
+           "state": "State",
+
           
          
            
@@ -171,6 +185,8 @@ export const messages = {
       "locked": "ተቆልፏል",
       "unlocked": "ተከፍቷል",
       "status": "ሁኔታ",
+      'no-authtype': 'ይህንን AuthType በመጠቀም ማረጋገጥ አይችሉም ስለዚህ አላግባብ መጠቀምን ይከላከላል',
+      'yes-authtype': 'ከአሁን በኋላ ይህን AuthType በመጠቀም ማረጋገጥ ይችላሉ',
       "back-to-home": "ወደ ዋናው ተመለስ",
       "back-to-services": "ወደ አገልግሎቶች ተመለስ",
       "status-uin":"የFIN ጥያቄ ሁኔታ",
@@ -196,7 +212,18 @@ export const messages = {
       "online-helpdesk": "የመስመር ላይ እገዛ",
       "address": "አድራሻ",
       "home-address":"አዲስ አበባ፣ ቦሌ፣ ወሎ ሰፈር ኢትዮ-ቻይና ጎዳና",
-      "call-us": "ይደውሉልን"
+      "call-us": "ይደውሉልን",
+      "submit": "አስገባ",
+      "send-update-request": "የዝማኔ ጥያቄ ላክ",
+      "upload-file": "ፋይል ይምረጡ",
+      "first-name": "ስም",
+      "father-name" : "የአባት ስም",
+      "grand-father-name" : "የአያት ስም",
+      "select-dob": "የትውልድ ቀን ምረጥ",
+      "kebele": "ቀበሌ",
+      "woreda": "ወረዳ",
+      "city": "ከተማ",
+      "state": "ክልል",
           
      }
         

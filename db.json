@@ -117,6 +117,98 @@
         }
       },
       "id": 6
+    },
+    {
+      "post": {
+        "request": {
+          "id": "nid.resident.authhistory",
+          "version": "1.1.5.6",
+          "requestTime": "2/10/2023, 2:53:00 PM",
+          "request": {
+            "individualId": "111111111111",
+            "individualIdType": "FIN/FAN",
+            "otp": "000000"
+          }
+        }
+      },
+      "id": 7
+    },
+    {
+      "post": {
+        "request": {
+          "id": "nid.resident.authhistory",
+          "version": "1.1.5.6",
+          "requestTime": "2/10/2023, 2:53:00 PM",
+          "request": {
+            "individualId": "111111111111",
+            "individualIdType": "FIN/FAN",
+            "otp": "000000"
+          }
+        }
+      },
+      "id": 8
+    },
+    {
+      "post": {
+        "request": {
+          "id": "nid.resident.authhistory",
+          "version": "1.1.5.6",
+          "requestTime": "2/10/2023, 2:53:00 PM",
+          "request": {
+            "individualId": "111111111111",
+            "individualIdType": "FIN/FAN",
+            "otp": "000000"
+          }
+        }
+      },
+      "id": 9
+    },
+    {
+      "post": {
+        "request": {
+          "id": "nid.resident.vidstatus",
+          "version": "1.1.5.6",
+          "requestTime": "2/10/2023, 2:56:10 PM",
+          "request": {
+            "individualId": "111111111111",
+            "individualIdType": "FIN",
+            "otp": "000000"
+          },
+          "types": [
+            "PERPETUAL",
+            "TEMPORARY"
+          ]
+        }
+      },
+      "id": 10
+    },
+    {
+      "post": {
+        "request": {
+          "id": "nid.resident.vid",
+          "version": "1.1.5.6",
+          "requestTime": "2/10/2023, 2:56:32 PM",
+          "request": {
+            "individualId": "111111111111",
+            "individualIdType": "FIN",
+            "otp": "000000",
+            "vidType": "TEMPORARY"
+          },
+          "types": [
+            {
+              "name": "PERPETUAL",
+              "desc": "This ID is perpetual",
+              "icon": "perpetual.svg"
+            },
+            {
+              "name": "TEMPORARY",
+              "desc": "This ID is temporary",
+              "icon": "temporary.svg"
+            }
+          ]
+        }
+      },
+      "id": 11
     }
   ],
   "comments": [

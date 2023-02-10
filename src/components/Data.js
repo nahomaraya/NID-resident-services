@@ -68,6 +68,18 @@ export const SIDEBAR_DATA = [
     subMenu: [
       {
         id: 1,
+        name: "track-request-status",
+        instruction: "track-request-status-inst",
+        path: "trs",
+        input: "RID",
+        otpReq: false,
+        action: "track-request-status-action",
+        apiID: "nid.resident.checkstatus",
+        icon: <CalendarIcon />,
+        image: 'track.svg'
+      },
+      {
+        id: 2,
         name: "update-demographic-data",
         instruction: "update-demographic-data-inst",
         path: "/udd",
@@ -86,18 +98,7 @@ export const SIDEBAR_DATA = [
         ]
        
       },
-      {
-        id: 2,
-        name: "track-request-status",
-        instruction: "track-request-status-inst",
-        path: "trs",
-        input: "RID",
-        otpReq: false,
-        action: "track-request-status-action",
-        apiID: "nid.resident.checkstatus",
-        icon: <CalendarIcon />,
-        image: 'track.svg'
-      },
+     
       {
         id: 3,
         name: "auth-type",
