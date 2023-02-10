@@ -8,7 +8,7 @@ import { createPost } from "../services/ResidentServices";
 // import ResponsiveTable from 'material-ui-ts-responsive-table'
 import {FormattedMessage} from "react-intl";
 import MaterialReactTable from 'material-react-table';
-import { Box } from "@mui/system";
+
 
 // import Table from 'react-tailwind-table';
 
@@ -141,7 +141,7 @@ const AuthHistory = () => {
     <>
     {isLoading? <LoadingScreen/> :  
        <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
-    <h1 className="text-center font-bold text-white mt-8 lg:text-4xl md:text-base">Auth Transaction History</h1>
+    <h1 className="text-center font-bold text-white mt-8 lg:text-4xl md:text-base"><FormattedMessage id={'view-trans-hist'}/></h1>
         
         <MaterialReactTable 
         columns={columns} 
@@ -187,9 +187,10 @@ const AuthHistory = () => {
        />
 
 <div class="flex justify-center items-center lg:mt-24 md:mt-16 p-1 gap-10 ">
-                  <button type="submit" onClick={() => navigate('/')} class="w-full lg:w-1/4 inline-block  py-3 px-4  bg-[#6aa2be] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Home</button>
-                  <button type="submit" onClick={() => navigate('/services')} class="w-full lg:w-1/4 inline-block py-3 px-4  bg-[#6aa2be] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:text-white hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Back to Services</button>
-              </div>
+                  <button type="submit" onClick={() => navigate('/')} class="w-full inline-block  py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="back-to-home"/></button>
+                  <button type="submit" onClick={() => navigate('/services')} class="w-full inline-block py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:bg-[#3b5a6a] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id="back-to-services"/></button>
+       
+ </div>
                   
         </div>
    

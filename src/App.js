@@ -23,8 +23,7 @@ import UpdateUIN from "./pages/Update";
 import DownloadEUin from "./pages/DownloadEUin";
 import Reprint from "./pages/Reprint";
 import VID from "./pages/VID";
-import Lock from "./pages/Lock";
-import Unlock from "./pages/Unlock";
+
 import VidStatus from "./pages/VidStatus";
 import AuthLock from "./pages/AuthLock";
 import AuthHistory from "./pages/AuthHistory";
@@ -85,8 +84,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/nid.resident.checkstatus" element={<TrackStatus/>}/>
           <Route path="/nid.resident.updateuin" element={<UpdateUIN/>}/>
-          <Route path="/nid.resident.authlock" element={<Lock/>}/>
-          <Route path="/nid.resident.authunlock" element={<Unlock/>}/>
+        
           <Route path="/nid.resident.auth" element={<AuthLock/>}/>
           <Route path="/nid.resident.euin" element={<DownloadEUin/>}/>
           <Route path="/nid.resident.reprintuin" element={<Reprint/>}/>

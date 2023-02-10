@@ -87,6 +87,36 @@
         }
       },
       "id": 4
+    },
+    {
+      "post": {
+        "request": {
+          "id": "nid.resident.authhistory",
+          "version": "1.1.5.6",
+          "requestTime": "2/10/2023, 11:24:25 AM",
+          "request": {
+            "individualId": "111111111111",
+            "individualIdType": "FIN/FAN",
+            "otp": "000000"
+          }
+        }
+      },
+      "id": 5
+    },
+    {
+      "post": {
+        "request": {
+          "id": "nid.resident.authhistory",
+          "version": "1.1.5.6",
+          "requestTime": "2/10/2023, 11:24:25 AM",
+          "request": {
+            "individualId": "111111111111",
+            "individualIdType": "FIN/FAN",
+            "otp": "000000"
+          }
+        }
+      },
+      "id": 6
     }
   ],
   "comments": [

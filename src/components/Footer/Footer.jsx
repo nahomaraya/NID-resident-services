@@ -3,6 +3,7 @@ import "./Footer.css";
 
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { useMediaQuery } from 'react-responsive';
+import {FormattedMessage} from "react-intl";
 
 // "https://id.gov.et"
 // "https://www.facebook.com/IDethiopia/?ref=pages_you_manage"
@@ -26,18 +27,18 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
      
         <div class="flex justify-center items-center mb-4 ml-8 lg:ml-96 mt-8 border-b-2 border-t-2 border-r-2 border-l-2 border-white rounded-full  ">
   
-    <h1 className="self-center lg:px-24 py-2 text-xl lg:text-4xl  font-semibold whitespace-nowrap text-white"><span className="text-[#12d2ad]">NID</span> Online Helpdesk</h1>
+    <h1 className="self-center lg:px-24 py-2 text-xl lg:text-4xl  font-semibold whitespace-nowrap text-white"><span className="text-[#12d2ad] p-2"><FormattedMessage id={"nid"}/></span><FormattedMessage id={"online-helpdesk"}/></h1>
 </div>
       
      
       
       <div class="ml-auto mr-4 lg:mr-64">
         <h5 class="font-black text-white self-start">
-          Address
+         <FormattedMessage id={"address"}/> 
         </h5>
         <p class="flex justify-start  text-white">
          <LocationOnOutlinedIcon />
-          <span className="text-base ml-4 ">Addis Ababa, Bole, Welo Sefer Ethio-China Street</span></p>
+          <span className="text-base ml-4 "><FormattedMessage id={"home-address"}/></span></p>
        
         <p class="flex justify-start text-white text-xl ">
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone"
@@ -47,7 +48,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
               d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z">
             </path>
           </svg>
-          <span className="ml-2  mr-2 text-[#072c3f] font-bold">Call Us </span>+251111400787
+          <span className="ml-2  mr-2 text-[#072c3f] font-bold"><FormattedMessage id={"call-us"}/> </span>+251111400787
         </p>
        
       <div class="flex justify-center  mt-10">

@@ -1,15 +1,13 @@
 import {React, useState, useEffect} from "react";
-import {  useLocation, useHistory, useNavigate } from "react-router-dom";
+import {  useLocation,  useNavigate } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
 import LoadingScreen from "../components/LoadingScreen/Loading";
 import { createPost } from "../services/ResidentServices";
 import {FormattedMessage} from "react-intl";
 import {
-  Button,
+
   Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
+ 
 } from "@material-tailwind/react";
 
 
@@ -57,7 +55,7 @@ const DownloadEUin = (props) => {
         {isLoading? <LoadingScreen/> : 
            <div id="page" className={isDesktopOrLaptop? "pt-16 h-full bg-service bg-cover bg-center": "h-full bg-service bg-cover bg-center"}>
            <div class={isDesktopOrLaptop?"md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-55 w-55 p-20": "md:container  mx-auto mt-32 bg-[#e8e8e8] border-2 border-[#f6f6f6] rounded-3xl h-70 w-70 p-10"}>
-                <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">E-UIN Preview</h1>
+                <h1 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl"><FormattedMessage id={"e-uin-preview"}/></h1>
                      <div className={isDesktopOrLaptop? "flex items-center justify-center gap-10  px-6 py-6":"flex flex-col items-center justify-center gap-5  px-6  py-6"}>
                          <img alt="Placeholder" className={isDesktopOrLaptop?"block h-50 w-50 mr-8":"block h-55 w-55 mr-8 "} src={require('../assets/front.jpg')}/>
                         <img alt="Placeholder" className={isDesktopOrLaptop? "block h-50 w-50 mr-8":"block h-55 w-55 mr-8 " } src={require('../assets/back.jpg')}/>
@@ -67,7 +65,7 @@ const DownloadEUin = (props) => {
                 <button type="submit" onClick={downloadLink} class="inline-block px-7 py-3  bg-[#50848f] text-white font-small text-sm leading-tight uppercase rounded-full shadow-md hover:bg-[#3a6c7d] hover:shadow-lg focus:bg-[#3a6c7d] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Download</button>
             </div> */}
                   <div class="flex  justify-center items-center lg:mt-4 mt-2  ">
-                       <button type="submit" onClick={handleVerify} class="w-1/3 inline-block py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out">Click Here to Download E-UIN</button>
+                       <button type="submit" onClick={handleVerify} class="w-1/3 inline-block py-3 px-4  bg-[#005471] text-white font-semibold text-sm leading-tight uppercase rounded-xl shadow-md hover:bg-[#083247] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#304f55] active:shadow-lg transition duration-150 ease-in-out"><FormattedMessage id={"click-euin-down"}/></button>
               </div>
             </div>
             </div>

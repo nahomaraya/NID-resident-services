@@ -1,4 +1,4 @@
-import {React, useContext, useState, useEffect } from "react";
+import {React, useContext} from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import './Navigation.css';
@@ -10,18 +10,6 @@ import {FormattedMessage} from "react-intl"
 import { dummyData } from "..";
 import logo from './logo.png'
 import TextLoop from "react-text-loop";
-import {
-  MDBContainer,
-  MDBNavbar,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem,
-  MDBDropdownLink,
-} from 'mdb-react-ui-kit';
-import DropdownNavbar from "../Dropdown/DropdownNavbar";
 
 
 const Navigation = () => {
@@ -43,9 +31,9 @@ const { language, setLanguage } = useContext(LanguageContext);
         <NavDropdown
               id="nav-dropdown"
               title={<> 
-              <TextLoop>
-              <span className="text-[#005371] text-2xl font-semibold">Languages</span>
-              <span className="text-[#005371] text-2xl font-semibold">ቋንቋ</span>
+              <TextLoop className="text-[#005371] text-2xl font-semibold" children={["Langauges", "ቋንቋ"]} >
+              {/* <span className="text-[#005371] text-2xl font-semibold">Languages</span>
+              <span className="text-[#005371] text-2xl font-semibold">ቋንቋ</span> */}
                 </TextLoop></>}>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>

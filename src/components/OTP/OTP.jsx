@@ -1,22 +1,16 @@
 
 import React, {useState, Fragment, useCallback, useEffect} from "react";
 import {FormattedMessage} from "react-intl";
-import {Routes, Route, useNavigate, Navigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import OTPInput from "./OTPInput";
 import { useMediaQuery } from 'react-responsive';
 import { useTransition } from "react-transition-state";
 import {
-    Button,
+   
     Dialog,
-    DialogHeader,
-    DialogBody,
-    DialogFooter,
+  
   } from "@material-tailwind/react";
-  import { Radio } from "@material-tailwind/react";
-import LoadingScreen from "../LoadingScreen/Loading";
-import { createPost } from "../../services/ResidentServices";
-import { version } from "react-dom";
-
+ 
 const OTP = (props) => {
     const [request, setRequest ] = useState({id: '', version:'', requestTime:'', request:{individualId: '',  individualIdType: '',  otp: '',}});
     const [otpNo, setOtpNo] = useState('');
