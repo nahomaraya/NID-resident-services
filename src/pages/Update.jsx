@@ -302,7 +302,7 @@ const UpdateUIN = (props) => {
             {!update ?
             <>
             
-             <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl">Please select field/s to update</h2>
+             <h2 className="text-center font-bold text-[#005471]  lg:text-4xl md:text-2xl"><FormattedMessage id={"please-select-fields"}/></h2>
         <div class="flex flex-wrap   mt-8 ml-4  mb-4 gap-10">
              {/* <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -310,24 +310,24 @@ const UpdateUIN = (props) => {
            
    <div class="flex items-center">
           <input id="default-checkbox" type="checkbox" value="name" onClick={()=>{request.name=!request.name}} class="w-4 h-4 text-[#00efc6] bg-gray-100 border-gray-300 rounded focus:ring-[#00efc6] focus:ring-2 "/>
-          <label for="default-checkbox" class="ml-2 text-xl font-semibold text-gray-500 ">Name</label>
+          <label for="default-checkbox" class="ml-2 text-xl font-semibold text-gray-500 "><FormattedMessage id={"name"}/></label>
   </div>
  
   <div class="flex items-center ">
           <input id="checked-checkbox" type="checkbox" value="phone" onClick={()=> {request.phone=!request.phone}} class="w-4 h-4 text-[#00efc6] bg-gray-100 border-gray-300 rounded focus:ring-[#00efc6] focus:ring-2 "/>
-          <label for="checked-checkbox" class="ml-2 text-xl font-semibold text-gray-500 ">Phone</label>
+          <label for="checked-checkbox" class="ml-2 text-xl font-semibold text-gray-500 "><FormattedMessage id={"phone"}/></label>
   </div>
   <div class="flex items-center ">
           <input id="checked-checkbox" type="checkbox" value="email" onClick={()=> {request.email=!request.email}} class="w-4 h-4 text-[#00efc6] bg-gray-100 border-gray-300 rounded focus:ring-[#00efc6] focus:ring-2 "/>
-          <label for="checked-checkbox" class="ml-2 text-xl font-semibold text-gray-500 ">Email</label>
+          <label for="checked-checkbox" class="ml-2 text-xl font-semibold text-gray-500 "><FormattedMessage id={"email"}/></label>
   </div>
   <div class="flex items-center">
           <input id="checked-checkbox" type="checkbox" value="dob" onClick={()=> {request.dob=!request.dob}} class="w-4 h-4 text-[#00efc6] bg-gray-100 border-gray-300 rounded focus:ring-[#00efc6] focus:ring-2"/>
-          <label for="checked-checkbox" class="ml-2 text-xl font-semibold text-gray-500 ">Date of Birth</label>
+          <label for="checked-checkbox" class="ml-2 text-xl font-semibold text-gray-500 "><FormattedMessage id={"dob"}/></label>
   </div>
   <div class="flex items-center">
           <input id="checked-checkbox" type="checkbox" value="address" onClick={()=> {request.address=!request.address}} class="w-4 h-4 text-[#00efc6] bg-gray-100 border-gray-300 rounded focus:ring-[#00efc6] focus:ring-2 "/>
-          <label for="checked-checkbox" class="ml-2 text-xl font-semibold text-gray-500 ">Address</label>
+          <label for="checked-checkbox" class="ml-2 text-xl font-semibold text-gray-500 "><FormattedMessage id={"address"}/></label>
   </div>
   
 </div>
@@ -358,8 +358,8 @@ const UpdateUIN = (props) => {
         <Dialog open={open} handler={handleDemographics}  animate={{mount: { scale: 1, y: 0 }, unmount: { scale: 0.9, y: -100 },}}>
                     <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">
                         <div className="bg-white rounded-lg shadow-xl p-4 md:p-8 lg:p-12 xl:p-16">
-                            <h2 className="text-2xl font-bold mb-4 md:text-3xl lg:text-4xl xl:text-5xl">Update Demographics</h2>
-                            <p className="text-gray-600 mb-4 md:text-xl lg:text-2xl xl:text-3xl">Are you sure you want update your demographic info?</p>
+                            <h2 className="text-2xl font-bold mb-4 md:text-3xl lg:text-4xl xl:text-5xl"><FormattedMessage id={"update-demographics"}/></h2>
+                            <p className="text-gray-600 mb-4 md:text-xl lg:text-2xl xl:text-3xl"><FormattedMessage id={"are-you-sure-demographic"}/></p>
                             <div class="flex justify-center text-center mt-4 gap-6">
                             <button onClick={handlePost} className=" inline-block px-7 py-3 bg-green-400 text-gray-800 hover:bg-green-500 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out font-bold  rounded-full md:py-3 lg:py-4 xl:py-5">
                             <FormattedMessage id="yes"/>

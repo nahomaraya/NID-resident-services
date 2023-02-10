@@ -32,6 +32,7 @@ import AuthConfimation from "./pages/AuthConfirmation";
 import UpdateConfimation from "./pages/UpdateConfirmation";
 import VIDConfimation from "./pages/VIDConfirmation";
 import ServiceList from "./components/ServiceList/ServiceList";
+import DownloadConfirmation from "./pages/DownloadConfirmation";
 
 
 
@@ -94,6 +95,7 @@ function App() {
           <Route path="/nid.resident.authhistory" element={<AuthHistory/>}/>
           <Route path="/authcomfirm" element={<AuthConfimation/>}/>
           <Route path="/updateconfirm" element={<UpdateConfimation/>}/>
+          <Route path="/downloadconfirm" element={<DownloadConfirmation/>}/>
           {/* <Route  path="/vidconfirm" element={<VIDConfimation/>}/> */}
           {/* <Route path="/" element={<Landing/>}/> */}
           <Route path="/services" element={<ServiceList/>}/>

@@ -72,7 +72,14 @@ export const messages = {
            "back-to-services": "Back To Services",
            "status-uin":"Status of FIN Generation",
            "uin-processing": "Your FIN is Processing.Please wait",
-           "are-you-sure":"Are you sure you want to"
+           "are-you-sure":"Are you sure you want to",
+           "please-select-fields":"Please select field/s to update",
+           "are-you-sure-demographic":"Are you sure you want update your demographic info?",
+           "name":"Name",
+           "phone": "Phone",
+           "email": "Email",
+           "dob": "Date of Birth",
+           "address": "Address"
 
           },
         
@@ -151,7 +158,14 @@ export const messages = {
       "back-to-services": "ወደ አገልግሎቶች ተመለስ",
       "status-uin":"የFIN ጥያቄ ሁኔታ",
       "uin-processing": "የእርስዎ FIN በሂደት ላይ ነው። እባክዎ ይጠብቁ",
-      "are-you-sure":"እርግጠኛ ኖት"   
+      "are-you-sure":"እርግጠኛ ኖት" ,
+      "please-select-fields":"ይምረጡ ለማዘመን ምርጫዎች",
+      "are-you-sure-demographic":"እርግጠኛ ነዎት የስነ ሕዝብ አወቃቀር መረጃዎን ማዘመን ይፈልጋሉ?",
+      "name":"ስም" ,
+      "phone": "ስልክ",
+      "email": "ኢሜል",
+      "dob": "የተወለደበት ቀን",
+      "address": "አድራሻ" 
      }
         
     };
