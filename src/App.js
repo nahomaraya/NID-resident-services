@@ -23,9 +23,16 @@ import UpdateUIN from "./pages/Update";
 import DownloadEUin from "./pages/DownloadEUin";
 import Reprint from "./pages/Reprint";
 import VID from "./pages/VID";
-import Lock from "./pages/Lock";
-import Unlock from "./pages/Unlock";
+
 import VidStatus from "./pages/VidStatus";
+import AuthLock from "./pages/AuthLock";
+import AuthHistory from "./pages/AuthHistory";
+import AuthConfimation from "./pages/AuthConfirmation";
+import UpdateConfimation from "./pages/UpdateConfirmation";
+import VIDConfimation from "./pages/VIDConfirmation";
+import ServiceList from "./components/ServiceList/ServiceList";
+import DownloadConfirmation from "./pages/DownloadConfirmation";
+
 
 
 
@@ -75,15 +82,24 @@ function App() {
        <Routes>
          {/* <Route path='*' element={<NotFound />} /> */}
           <Route path="/" element={<Home/>} />
-          <Route path="/mosip.resident.checkstatus" element={<TrackStatus/>}/>
-          <Route path="/mosip.resident.updateuin" element={<UpdateUIN/>}/>
-          <Route path="/mosip.resident.authlock" element={<Lock/>}/>
-          <Route path="/mosip.resident.authunlock" element={<Unlock/>}/>
-          <Route path="/mosip.resident.euin" element={<DownloadEUin/>}/>
-          <Route path="/mosip.resident.reprintuin" element={<Reprint/>}/>
-          <Route path="/mosip.resident.vid" element={<VID/>}/>
-          <Route path="/mosip.resident.vidstatus" element={<VidStatus/>}/>
-          <Route path="/services" element={<Service/>}/>
+          <Route path="/nid.resident.checkstatus" element={<TrackStatus/>}/>
+          <Route path="/nid.resident.updateuin" element={<UpdateUIN/>}/>
+        
+          <Route path="/nid.resident.auth" element={<AuthLock/>}/>
+          <Route path="/nid.resident.euin" element={<DownloadEUin/>}/>
+          <Route path="/nid.resident.reprintuin" element={<Reprint/>}/>
+          <Route path="/nid.resident.vid" element={<VIDConfimation/>}/>
+          <Route path="/nid.resident.vidstatus" element={<VidStatus/>}/>
+          <Route path="/nid.resident.authhistory" element={<AuthHistory/>}/>
+          <Route path="/authcomfirm" element={<AuthConfimation/>}/>
+          <Route path="/updateconfirm" element={<UpdateConfimation/>}/>
+          <Route path="/downloadconfirm" element={<DownloadConfirmation/>}/>
+          {/* <Route  path="/vidconfirm" element={<VIDConfimation/>}/> */}
+          {/* <Route path="/" element={<Landing/>}/> */}
+          <Route path="/services" element={<ServiceList/>}/>
+          <Route path="/service" element={<Service/>}/>
+       
+         
           
           {/* {dummyData &&
             dummyData.map((item, index) => (

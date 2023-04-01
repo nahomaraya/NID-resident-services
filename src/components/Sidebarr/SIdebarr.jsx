@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Sidebarr.css';
-import NID from './NID.svg'
+import logo from './logo.png'
 
 import { dummyData } from "..";
 import { Link } from "react-router-dom";
@@ -15,6 +15,7 @@ import NIDIcon from '../Icon/NIDIcon';
 
 import { LOCALES } from "../../il8n/locales";
 import { LanguageContext } from "../../providers/LangProvider";
+import TextLoop from "react-text-loop";
 
 const Sidebarr = ({children}) => {
 
@@ -32,21 +33,23 @@ const Sidebarr = ({children}) => {
           className={`bi ${showNav ? '' : 'bi-list'}`}
           onClick={() => setShowNav(!showNav)} 
           />
+            
            
-          <NavDropdown
-              id="nav-dropdown-dark-example"
-              title={<><span className="text-[#304f55] text-xl font-bold"><FormattedMessage id={"lang"}/></span></>}
-              menuVariant="dark"
-             
-            >
+            <NavDropdown
+              id="nav-dropdown"
+              title={<> 
+              <TextLoop>
+              <span className="text-[#005371] text-xl font-semibold">Languages</span>
+              <span className="text-[#005371] text-xl font-semibold">ቋንቋ</span>
+                </TextLoop></>}>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.ENGLISH)}>English</NavDropdown.Item>
               <NavDropdown.Item onClick={() => setLanguage(LOCALES.AMHARIC)}>አማርኛ</NavDropdown.Item>
-            </NavDropdown>
+          </NavDropdown>
       </div>
       <div className="header_img">
         <Link to="">
         <img
-          src={NID}
+          src={logo}
           alt="NID"
           />
         </Link>

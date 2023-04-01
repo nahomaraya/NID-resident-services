@@ -1,25 +1,24 @@
 .navbar{
-  display: flex;
-  justify-content: flex-end; 
-  background-color: #dce6e8;
-}
-.nav-left{
-    float: left;
- }
-.nav-right{
-   float: right;
-}
-.nav-item {
-    padding: 0 10px;
+    display: flex;
+    justify-content: flex-end; 
+    background-color: whitesmoke;
   }
-.nav-dropdown{
-    background-color: #dce6e8;
-    position:absolute;
-}
-  
-  .nav-link {
-    font-size: large;
-    text-decoration: none;
-    color: black;
+  .nav-left{
+      float: left;
+   }
+  .nav-right{
+     float: right;
   }
-  
+  .nav-item {
+      padding: 0 10px;
+    }
+  .nav-dropdown{
+      background-color: #dce6e8;
+      position:absolute;
+  }
+    
+    /* .nav-link {
+      font-size: large;
+      
+    }
+     */

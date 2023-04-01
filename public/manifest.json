@@ -1,6 +1,5 @@
 {
-  "short_name": "JealousGx",
-  "name": "Matt | Front End Web Developer",
+
   "icons": [
     {
       "src": "/favicons/favicon-16x16.png",
@@ -34,5 +33,5 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "standalone"
 }

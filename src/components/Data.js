@@ -24,6 +24,7 @@ import {
  
 } from "./Icons";
 
+
 export const langs = [
   {
     id: 1,
@@ -67,15 +68,28 @@ export const SIDEBAR_DATA = [
     subMenu: [
       {
         id: 1,
+        name: "track-request-status",
+        instruction: "track-request-status-inst",
+        path: "trs",
+        input: "RID",
+        otpReq: false,
+        action: "track-request-status-action",
+        apiID: "nid.resident.checkstatus",
+        icon: <CalendarIcon />,
+        image: 'track.svg'
+      },
+      {
+        id: 2,
         name: "update-demographic-data",
         instruction: "update-demographic-data-inst",
         path: "/udd",
-        input: "UIN/VID",
+        input: "FIN/FAN",
         action: "update-demographic-data-action",
         request: "demographics",
         otpReq: true,
-        apiID: "mosip.resident.updateuin",
+        apiID: "nid.resident.updateuin",
         icon: <LayoutIcon />,
+        image: 'update.svg',
         documents: [
           "name",
           "email",
@@ -84,28 +98,19 @@ export const SIDEBAR_DATA = [
         ]
        
       },
-      {
-        id: 2,
-        name: "track-request-status",
-        instruction: "track-request-status-inst",
-        path: "trs",
-        input: "RID",
-        otpReq: false,
-        action: "track-request-status-action",
-        apiID: "mosip.resident.checkstatus",
-        icon: <CalendarIcon />,
-      },
+     
       {
         id: 3,
-        name: "lock-auth-type",
-        instruction: "lock-auth-type-inst",
+        name: "auth-type",
+        instruction: "auth-type-inst",
         path: "lut",
-        input: "UIN/VID",
+        input: "FIN/FAN",
         otpReq: true,
-        action: "lock-auth-type-action",
+        action: "auth-type-action",
         request: "authType",
-        apiID: "mosip.resident.authlock",
+        apiID: "nid.resident.auth",
         icon: <Lock />,
+        image: 'authlock.svg',
         types: [
           'Demographic Auth Type',
           'Biometric Auth Type',
@@ -114,88 +119,81 @@ export const SIDEBAR_DATA = [
           'Biometric-FID Auth Type '
         ]
       },
+      
+     
       {
         id: 4,
-        name: "unlock-auth-type",
-        instruction: "unlock-auth-type-inst",
-        path: "ult",
-        input: "UIN/VID",
-        otpReq: true,
-        action: "unlock-auth-type-action",
-        request: "authType",
-        apiID: "mosip.resident.authunlock",
-        icon: <LockIcon />,
-        types: [
-          'Demographic Auth Type',
-          'Biometric Auth Type',
-          'Biometirc-FMR Auth Type',
-          'Biometirc-IIR Auth Type',
-          'Biometric-FID Auth Type '
-        ]
-      },
-      {
-        id: 5,
         name: "download-eUIN",
         instruction: "download-eUIN-inst",
-        input: "UIN/VID",
+        input: "FIN/FAN",
         otpReq: true,
         path: "uin",
         action: "download-eUIN-action",
         request: "cardType",
-        apiID: "mosip.resident.euin",
+        apiID: "nid.resident.euin",
         icon: <DownIcon />,
+        image: 'download.svg'
       },
      
       {
-        id: 6,
+        id: 5,
         name: "reprint-uin",
         instruction: "reprint-uin-inst",
-        input: "UIN/VID",
+        input: "FIN/FAN",
         otpReq: true,
         path: "reprint",
         action: "reprint-uin-action",
         request: "cardType",
-        apiID: "mosip.resident.reprintuin",
+        apiID: "nid.resident.reprintuin",
         icon: <FingerIcon />,
+        image: 'reprint.svg'
       },
       {
-        id: 7,
+        id: 6,
         name: "view-trans-hist",
         instruction: "view-trans-hist-inst",
-        input: "UIN/VID",
+        input: "FIN/FAN",
         otpReq: true,
         path: "trans",
         action: "view-trans-hist-action",
-        apiID: "mosip.resident.authhistory",
+        apiID: "nid.resident.authhistory",
         icon: <HistIcon/>,
+        image: 'authhistory.svg'
       },
       {
-        id: 8,
+        id: 7,
         name: "generate-virtual-id",
         instruction: "generate-virtual-id-inst",
-        input: "UIN",
+        input: "FIN",
         otpReq: true,
-        path: "vid",
+        path: "vidconfirm",
         action: "generate-virtual-id-action",
         request: "vidType",
-        apiID: "mosip.resident.vid",
+        apiID: "nid.resident.vid",
         icon: <AuthIcon />,
+        image: 'generate.svg',
         types: [
-          'PERPETUAL',
-          'TEMPORARY'
+          {name:'PERPETUAL',
+           desc: 'This ID is perpetual',
+           icon: 'perpetual.svg'},
+          {name:'TEMPORARY',
+           desc: 'This ID is temporary',
+           icon: 'temporary.svg'
+        }
         ]
       },
       {
-        id: 9,
+        id: 8,
         name: "revoke-virtual-id",
         instruction: "revoke-virtual-id-inst",
-        input: "UIN",
+        input: "FIN",
         otpReq: true,
         path: "vid",
         action: "revoke-virtual-id-action",
         request: "vidStatus",
-        apiID:"mosip.resident.vidstatus",
+        apiID:"nid.resident.vidstatus",
         icon: <SafetyIcon />,
+        image: 'revoke.svg',
         types: [
           'PERPETUAL',
           'TEMPORARY'
