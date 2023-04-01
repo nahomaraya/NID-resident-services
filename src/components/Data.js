@@ -119,6 +119,7 @@ export const SIDEBAR_DATA = [
           'Biometric-FID Auth Type '
         ]
       },
+      
      
       {
         id: 4,

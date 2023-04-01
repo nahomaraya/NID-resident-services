@@ -61,6 +61,7 @@ export const messages = {
           "enter-uin": "Enter your FIN Number",
           "enter-rid": "Enter your RID Number",
           "please-enter-your-fayda-number": "Please Enter Your Fayda Number",
+          "please-enter-your-rid-number" : "Please Enter Your Request ID received during FIN registration",
           "clear-input": "Clear Input",
           "choose-auth-type": "Click on Auth Type to Lock/Unlock",
           "Demographic": "Demographic",
@@ -114,11 +115,7 @@ export const messages = {
 
           },
         
-    [LOCALES.FRENCH]: {
-            "home.select language":"Sélectionnez votre langue préférée",
-              "home.welcome-to":"Bienvenue aux services d'identification nationale aux résidents",
-              "Update Demographic Data": "Mettre à jour les données démographiques",
-              },
+  
     [LOCALES.AMHARIC]: {
       "home.select language":"ቋንቋ ይምረጡ",
       "home.welcome-to":"እንኳን ወደ ብሔራዊ መታወቂያ ነዋሪ አገልግሎቶች በደህና መጡ",
@@ -179,6 +176,7 @@ export const messages = {
       "enter-uin": "የእርስዎን FIN ቁጥር ያስገቡ",
       "enter-rid": "የእርስዎን RID ቁጥር ያስገቡ",
       "please-enter-your-fayda-number": "እባክዎ የፋይዳ ቁጥርዎን ያስገቡ",
+      "please-enter-your-rid-number" : "እባክዎ በ FIN ምዝገባ ወቅት የተቀበሉትን የጥያቄ መታወቂያዎን ያስገቡ",
       "choose-auth-type": "ለመቆለፍ/ለመክፈት የAuth አይነትን ይምረጡ",
       "Demographic": "ስነ ሕዝብ",
       "Biometric": "ባዮሜትሪክ",
