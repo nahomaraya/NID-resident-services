@@ -61,7 +61,7 @@ export const messages = {
           "enter-uin": "Enter your FIN Number",
           "enter-rid": "Enter your RID Number",
           "please-enter-your-fayda-number": "Please Enter Your Fayda Number",
-          "please-enter-your-rid-number" : "Please Enter Your Request ID received during FIN registration",
+          "please-enter-your-rid-number" : "Please enter the Request ID received during FIN registration",
           "clear-input": "Clear Input",
           "choose-auth-type": "Click on Auth Type to Lock/Unlock",
           "Demographic": "Demographic",
